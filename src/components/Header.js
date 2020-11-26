@@ -23,10 +23,10 @@ export function Header() {
       <div
         className="d-md-none"
         style={{
-          height: "100%",
           backgroundImage: `url(/img/home-demo-background.jpg)`,
-          backgroundSize: "cover",
           backgroundPosition: "center center",
+          backgroundSize: "cover",
+          height: "100%",
         }}
       />
       <div style={{ position: "absolute", top: 150, width: "100%" }}>
@@ -42,19 +42,21 @@ export function Header() {
             >
               <div style={{ color: "white" }}>
                 <h1 className="mb-5">
-                  <b>Stop à l'addiction à l'alcool</b>
+                  <b>Stop à l&apos;addiction à l&apos;alcool</b>
                 </h1>
                 <h3>
                   <p>
                     5 millions de personnes en France sont dépendantes à
-                    l'alcool mais seulement 5% d'entre elle est prise en charge
-                    par un professionnel de santé.
+                    l&apos;alcool mais seulement 5% d&apos;entre elle est prise
+                    en charge par un professionnel de santé.
                   </p>
                   <p>
-                    Aujourd'hui, l'alcool tue plus de 50 000 personnes chaque
-                    année.
+                    Aujourd&apos;hui, l&apos;alcool tue plus de 50 000 personnes
+                    chaque année.
                   </p>
-                  <p>Agissons ensemble contre l'addiction à l'alcool.</p>
+                  <p>
+                    Agissons ensemble contre l&apos;addiction à l&apos;alcool.
+                  </p>
                 </h3>
                 <br />
                 <br />

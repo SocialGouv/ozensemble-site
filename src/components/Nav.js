@@ -31,7 +31,7 @@ export function Nav() {
           <BSNav>
             <NavLink href="/#pourquoi">Apprenez à réagir</NavLink>
             <NavLink href="/#comment">Comment ça marche ?</NavLink>
-            <NavLink href="/#qui">L'alcool en France</NavLink>
+            <NavLink href="/#qui">L&apos;alcool en France</NavLink>
             <NavLink href="/#qui">Qui sommes-nous ?</NavLink>
             <NavLink href="/#contact">Contact</NavLink>
           </BSNav>
