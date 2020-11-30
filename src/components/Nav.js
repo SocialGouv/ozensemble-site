@@ -19,7 +19,7 @@ export function Nav() {
               src="/img/logo-oz.png"
               width={68}
               height={68}
-              alt="Logo MonSuiviPsy"
+              alt="Logo OzEnsemble"
             />
           </a>
         </div>
