@@ -1,5 +1,5 @@
-import React from "react";
-import { Row, Col } from "react-bootstrap";
+import React from "react"
+import { Row, Col } from "react-bootstrap"
 
 export function FeatureRow({
   image,
@@ -32,5 +32,5 @@ export function FeatureRow({
         </Col>
       </Row>
     </React.Fragment>
-  );
+  )
 }

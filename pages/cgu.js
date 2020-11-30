@@ -1,6 +1,6 @@
-import React from "react";
-import Head from "next/head";
-import { Layout } from "../src/components/Layout";
+import React from "react"
+import Head from "next/head"
+import { Layout } from "../src/components/Layout"
 
 export default function Mentions() {
   return (
@@ -11,7 +11,7 @@ export default function Mentions() {
       <h1>Conditions générales et mentions légales</h1>
       <h3>Présentation</h3>
       <p>
-        Mon suivi psy est un service de suivi de la consommation d’alcool à
+        Oz Ensemble est un service de suivi de la consommation d’alcool à
         destination des particuliers et de celles et ceux qui les conseillent,
         dans un cadre professionnel ou bénévole. Il s’agit d’une application
         mobile qui permet de d’évaluer son niveau de consommation, les risques
@@ -22,12 +22,12 @@ export default function Mentions() {
         toutes et tous.
       </p>
       <h3> Vocabulaire</h3>
-      <li>« Nous » se réfère à l’éditeur de Mon suivi psy. </li>
-      <li>« Vous » se réfère à un·e usager de Mon suivi psy.</li>
+      <li>« Nous » se réfère à l’éditeur de Oz Ensemble. </li>
+      <li>« Vous » se réfère à un·e usager de Oz Ensemble.</li>
       <li>
         {" "}
         « Partenaires » se réfère aux organismes responsables d’attribuer les
-        aides calculées par Mon suivi psy.{" "}
+        aides calculées par Oz Ensemble.{" "}
       </li>
       <h3>Absence de garantie</h3>
       Les résultats fournis par ce service ont une valeur informative et ne
@@ -35,20 +35,20 @@ export default function Mentions() {
       l’exactitude du contenu des sites externes vers lesquels nous redirigeons
       la navigation. Ces sites ne sont pas non plus régis par les mêmes
       conditions d’utilisation, notamment en ce qui concerne leur traitement des
-      données à caractère personnel. Nous mettons Mon suivi psy à disposition
-      sans garantie sur sa disponibilité, en « best effort ». Cela signifie que
+      données à caractère personnel. Nous mettons Oz Ensemble à disposition sans
+      garantie sur sa disponibilité, en « best effort ». Cela signifie que
       d’éventuelles indisponibilités n’ouvriront pas droit à compensation
       financière.
       <h3>Vos données</h3>
       <p>
-        Mon suivi psy ne vous demande ni ne stocke d’information nominative
-        telle que nom, prénoms ou adresse. Pour autant, lorsque vous que vous
+        Oz Ensemble ne vous demande ni ne stocke d’information nominative telle
+        que nom, prénoms ou adresse. Pour autant, lorsque vous que vous
         demanderez à être contacté, vous nous transmettrez des coordonnées
         nécessaires à la prise de contact par nos services. Ces coordonnées sont
         des données personnelles et nous en avons donc déclaré le traitement
         auprès de la CNIL. Nous conservons ces données pendant deux ans à
         compter de la première saisie pour analyser les usages, mesurer l’impact
-        et la diffusion territoriale de Mon suivi psy, et améliorer le service.
+        et la diffusion territoriale de Oz Ensemble, et améliorer le service.
         Vous avez un droit d’accès, de rectification et de suppression de vos
         données. Pour l’exercer, envoyez-nous un courriel à l’adresse à
         compléter en précisant les coordonnées transmises. Comme nous
@@ -58,7 +58,7 @@ export default function Mentions() {
       <p>
         Nous nous engageons à ne jamais exploiter les informations que vous nous
         transmettrez dans un but commercial ou publicitaire. De manière
-        générale, Mon suivi psy n’accepte aucune forme de publicité autre que
+        générale, Oz Ensemble n’accepte aucune forme de publicité autre que
         celle que constitue la présentation des aides des partenaires. Nous
         collectons également des données anonymes d’audience, indépendamment des
         suivis de consommation effectués. Cela nous permet par exemple de
@@ -71,10 +71,10 @@ export default function Mentions() {
       </p>
       <h3>Évolutions</h3>
       <p>
-        Nous pouvons faire évoluer Mon suivi psy sans information préalable.
-        Nous ajoutons régulièrement des aides, améliorons l’interface et
-        modifions des formulations sur la base de vos retours et des évolutions
-        règlementaires. Nous pouvons suspendre l’accès à Mon suivi psy sans
+        Nous pouvons faire évoluer Oz Ensemble sans information préalable. Nous
+        ajoutons régulièrement des aides, améliorons l’interface et modifions
+        des formulations sur la base de vos retours et des évolutions
+        règlementaires. Nous pouvons suspendre l’accès à Oz Ensemble sans
         information préalable, notamment pour des raisons de maintenance. Nous
         mettons l’application à jour plusieurs fois par semaine.
         L’indisponibilité ne dépasse généralement pas une dizaine de secondes.
@@ -86,7 +86,7 @@ export default function Mentions() {
       </p>
       <h3>Utilisation</h3>
       <p>
-        Mon suivi psy est en téléchargement libre sur les plateformes Apple App
+        Oz Ensemble est en téléchargement libre sur les plateformes Apple App
         Store et Google Play. Son utilisation est gratuite et facultative. Si
         vous effectuez un suivi de votre consommation, vous acceptez ces
         conditions d’utilisation. Comme indiqué dans l’article L. 112-9 du code
@@ -108,7 +108,7 @@ export default function Mentions() {
         <b>Hébergeur</b>: Microsoft France
       </li>
     </Layout>
-  );
+  )
 }
 /*
 

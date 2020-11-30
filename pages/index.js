@@ -1,18 +1,19 @@
-import React from "react";
-import styled from "styled-components";
-import dynamic from "next/dynamic";
+import React from "react"
+import styled from "styled-components"
+import dynamic from "next/dynamic"
 
-import { Row, Col } from "react-bootstrap";
+import { Button, Row, Col } from "react-bootstrap"
 
-import { Layout } from "../src/components/Layout";
-import { FeatureRow } from "../src/components/FeatureRow";
+import { Layout } from "../src/components/Layout"
+import { FeatureRow } from "../src/components/FeatureRow"
+import Kpi from "../src/components/Kpi"
 
 const LeafletMap = dynamic(
   () => import("../src/components/Map").then((mod) => mod.Map),
   {
     ssr: false,
   }
-);
+)
 
 export default function index() {
   return (
@@ -22,7 +23,19 @@ export default function index() {
       <Pourquoi />
       <br />
       <br />
+      <Info />
+      <br />
+      <br />
       <Comment />
+      <br />
+      <br />
+      <EnFrance />
+      <br />
+      <br />
+      <Speech />
+      <br />
+      <br />
+      <Aide />
       <br />
       <br />
       <Qui />
@@ -30,147 +43,367 @@ export default function index() {
       <br />
       <Contact />
     </Layout>
-  );
+  )
 }
 
 const SectionTitle = styled.h2`
+  font-size: 3rem;
+  margin-top: 1rem;
   color: var(--primary);
-`;
+`
 
 function Pourquoi() {
   return (
     <section id="pourquoi">
       <div className="container">
         <div className="section-heading text-center">
-          <SectionTitle>Pourquoi mon suivi psy ?</SectionTitle>
-          <br />
-          <br />
-          <Col xs={{ span: 10, offset: 1 }}>
-            <p className="text-left">
-              <strong>
-                Les troubles psychiatriques affectent 1 personne sur 5 chaque
-                année (donnée OMS).Trouver le bon traitement peut prendre
-                plusieurs années. Pendant ce temps-là, les symptômes évoluent et
-                peuvent devenir chroniques. L’état clinique peut s’aggraver et
-                le traitement devenir moins efficace.
-              </strong>
-            </p>
-            <p style={{ color: "var(--info)" }} className="text-left">
-              <strong>
-                Plus les informations concernant mes symptômes sont proches de
-                la réalité, de ce que je vis, plus mon médecin sera en mesure de
-                me prescrire le bon traitement et d'adapter au mieux mon suivi.
-              </strong>{" "}
-            </p>
-          </Col>
+          <SectionTitle>Apprenez à réagir</SectionTitle>
         </div>
         <br />
         <br />
         <Row style={{ marginBottom: 40 }}>
-          <Col xs={{ span: 10, offset: 1 }}>
+          <Col xs={{ offset: 1, span: 10 }}>
             <FeatureRow
-              title="Service gratuit anonyme"
-              image="/img/icon-person.png"
+              title="Vous êtes un professionnel de santé"
+              image="/img/icon-doctor.png"
             >
-              Le service est totalement gratuit, anonyme et sans création de
-              compte
+              Vous désirez :
+              <ul>
+                <li>
+                  Apprendre à détecter et orienter une personne dépendante à
+                  l&apos;alcool
+                </li>
+                <li>
+                  Accompagner vos patients vers une maitrise de leur
+                  consommation d&apos;alcool
+                </li>
+              </ul>
+              <Button
+                href="https://play.google.com/store/apps/details?id=com.addicto"
+                size="lg"
+                target="_blank"
+                style={{
+                  backgroundColor: "#6acb9a",
+                  border: "none",
+                  "box-shadow": "0 2px 0 #54a27b",
+                }}
+              >
+                Téléchargez l&apos;app
+              </Button>
             </FeatureRow>
           </Col>
         </Row>
-        <Row>
-          <Col xs={{ span: 10, offset: 1 }}>
-            <FeatureRow title="Sécurité des données" image="/img/icon-eu.png">
-              La personne reste propriétaire de ses données et ne les partage
-              avec son praticien que si elle le souhaite
+        <Row style={{ marginBottom: 40 }}>
+          <Col xs={{ offset: 1, span: 10 }}>
+            <FeatureRow
+              title="Vous êtes un acteur social"
+              image="/img/icon-help.png"
+            >
+              Vous désirez :
+              <ul>
+                <li>
+                  Apprendre à aider une personne dépendante à l&apos;alcool
+                </li>
+                <li>
+                  Sensibiliser vos bénéficiaires à maitrise leur consommation
+                  d&apos;alcool
+                </li>
+              </ul>
+              <Button
+                href="https://play.google.com/store/apps/details?id=com.addicto"
+                size="lg"
+                target="_blank"
+                style={{
+                  backgroundColor: "#6acb9a",
+                  border: "none",
+                  "box-shadow": "0 2px 0 #54a27b",
+                }}
+              >
+                Téléchargez l&apos;app
+              </Button>
+            </FeatureRow>
+          </Col>
+        </Row>
+        <Row style={{ marginBottom: 40 }}>
+          <Col xs={{ offset: 1, span: 10 }}>
+            <FeatureRow
+              title="Vous êtes un proche"
+              image="/img/icon-family.png"
+            >
+              Vous désirez aider un proche dépendant à l&apos;alcool mais vous
+              ne savez pas comment vous y prendre ?
+              <br />
+              <br />
+              <Button
+                href="https://play.google.com/store/apps/details?id=com.addicto"
+                size="lg"
+                target="_blank"
+                style={{
+                  backgroundColor: "#6acb9a",
+                  border: "none",
+                  "box-shadow": "0 2px 0 #54a27b",
+                }}
+              >
+                Téléchargez l&apos;app
+              </Button>
+            </FeatureRow>
+          </Col>
+        </Row>
+        <Row style={{ marginBottom: 40 }}>
+          <Col xs={{ offset: 1, span: 10 }}>
+            <FeatureRow title="Vous ?" image="/img/icon-finger.png">
+              Vous buvez plus de 2 verres par jour ? Vous désirez apprendre à
+              maitriser votre consommation d&apos;alcool ?
+              <br />
+              <br />
+              <Button
+                href="https://play.google.com/store/apps/details?id=com.addicto"
+                size="lg"
+                target="_blank"
+                style={{
+                  backgroundColor: "#6acb9a",
+                  border: "none",
+                  "box-shadow": "0 2px 0 #54a27b",
+                }}
+              >
+                Téléchargez l&apos;app
+              </Button>
             </FeatureRow>
           </Col>
         </Row>
       </div>
     </section>
-  );
+  )
+}
+
+function Info() {
+  return (
+    <section id="info">
+      <div className="container">
+        <hr />
+        <br />
+        <br />
+        <div className="section-heading text-center">
+          <SectionTitle>S&apos;informer pour mieux agir</SectionTitle>
+        </div>
+        <br />
+        <br />
+        <Row style={{ marginBottom: 40 }}>
+          <Col xs={{ offset: 1, span: 10 }}>
+            <FeatureRow title="" image="/img/icon-info.png" imageSpan={6}>
+              <p>
+                <b>
+                  L&apos;alcool en France représente la 2ᵉ cause de mortalité
+                  évitable après le tabac et c&apos;est malheureusement plus de
+                  50 000 personnes qui en meurt chaque année.
+                </b>
+              </p>
+              <p>
+                Découvrez le combat de l&apos;association CaPASSCité, fondatrice
+                de l&apos;application mobile Oz Ensemble.
+              </p>
+              <Button
+                href="https://capasscite.fr/association/"
+                size="lg"
+                target="_blank"
+                style={{
+                  backgroundColor: "#6acb9a",
+                  border: "none",
+                  "box-shadow": "0 2px 0 #54a27b",
+                }}
+              >
+                En savoir plus
+              </Button>
+            </FeatureRow>
+          </Col>
+        </Row>
+      </div>
+    </section>
+  )
 }
 
 function Comment() {
   return (
     <section id="comment">
       <div className="container">
+        <hr />
+        <br />
+        <br />
         <div className="section-heading text-center">
-          <SectionTitle style={{ fontSize: "2.5em" }}>
-            Comment ce service fonctionne ?
-          </SectionTitle>
-          <br />
-          <Col xs={{ span: 10, offset: 1 }}>
-            <strong>
-              Mon suivi psy, c’est une aide, pour un dialogue avec le praticien,
-              qui s’adresse à tous.
-            </strong>{" "}
-          </Col>
+          <SectionTitle>Comment ça marche ?</SectionTitle>
         </div>
         <br />
         <br />
         <Row>
-          <Col xs={{ span: 10, offset: 1 }}>
+          <Col xs={{ offset: 1, span: 10 }}>
             <FeatureRow
-              title="Le choix des symptômes"
-              image="/img/demo-journal.png"
+              title="Comprendre sa consommation"
+              image="/img/demo-eval.png"
               imageSpan={4}
             >
-              La possibilité de sélectionner les symptômes et les effets
-              indésirables des traitements médicamenteux, que je souhaite suivre
-              <br />
-              <div className="text-muted">
-                Fonctionnalité non disponible en V1
-              </div>
+              <b>
+                À l&apos;issu d&apos;un questionnaire d&apos;1 minute,
+                l&apos;usager obtient un aperçu de ses potentiels comportements
+                à risques vis-à-vis de sa consommation d&apos;alcool.
+              </b>
             </FeatureRow>
             <FeatureRow
-              title="Un rappel quotidien"
-              image="/img/demo-rappels.png"
+              title="Suivre sa conso"
+              image="/img/demo-followup.png"
               imageSpan={4}
               reverse
             >
-              Un rappel quotidien pour m’aider à y penser
+              <b>
+                Grâce à l&apos;agenda de conso, l&apos;usager apprend à suivre
+                régulièrement sa consommation.
+              </b>
             </FeatureRow>
             <FeatureRow
-              title="Une solution simple et ludique"
-              image="/img/demo-mood.png"
+              title="Se faire aider"
+              image="/img/demo-assist.png"
               imageSpan={4}
             >
-              Des écrans simples permettant une saisie rapide
-            </FeatureRow>
-            <FeatureRow
-              title="Des écrans de synthèses"
-              image="/img/demo-dashboard.png"
-              imageSpan={4}
-              reverse
-            >
-              Une synthèse de l’évolution de l’intensité des symptômes
-            </FeatureRow>
-            <FeatureRow
-              title="Des informations sur les symptômes"
-              image="/img/demo-info.png"
-              imageSpan={4}
-            >
-              Un accès à des données informatives concernant les symptômes
-              suivis
-            </FeatureRow>
-            <FeatureRow
-              title="La transmission au practicien"
-              image="/img/demo-journal.png"
-              imageSpan={4}
-              reverse
-            >
-              La possibilité de transmettre au praticien les données par mail
-              <br />
-              <div className="text-muted">
-                Fonctionnalité non disponible en V1. Disponible d’ici
-                mi-novembre
-              </div>
+              <b>
+                Des professionnels en addictologie se tiennent à disposition
+                pour répondre gratuitement et de manière anonyme aux questions
+                de l&apos;usager.
+              </b>
             </FeatureRow>
           </Col>
         </Row>
       </div>
     </section>
-  );
+  )
+}
+
+function EnFrance() {
+  return (
+    <section id="enfrance">
+      <div className="container">
+        <hr />
+        <br />
+        <br />
+        <div className="section-heading text-center">
+          <SectionTitle>L&apos;alcool en France ...</SectionTitle>
+        </div>
+        <br />
+        <br />
+        <Row style={{ marginBottom: 40 }}>
+          <Col
+            xs={{ offset: 1, span: 10 }}
+            style={{ display: "flex", "flex-wrap": "wrap" }}
+          >
+            <Kpi
+              text="Coût social de l'alcool en France"
+              value="160 millions d'€"
+            />
+            <Kpi text="décès en France" value="50 000" />
+            <Kpi text="cause de mortalité évitable" value="2ème" />
+            <Kpi
+              text="de personnes dépendantes à l'alcool en France"
+              value="5 millions"
+            />
+          </Col>
+        </Row>
+      </div>
+    </section>
+  )
+}
+
+function Speech() {
+  return (
+    <section id="speech">
+      <div className="container">
+        <hr />
+        <br />
+        <br />
+        <div className="section-heading text-center">
+          <SectionTitle>
+            Dr Géraldine Talbot, fondatrice d&apos;Oz Ensemble
+          </SectionTitle>
+        </div>
+        <br />
+        <br />
+        <Row style={{ marginBottom: 40 }}>
+          <Col xs={{ offset: 1, span: 10 }}>
+            <Row
+              style={{
+                alignItems: "center",
+              }}
+            >
+              <Col xs={12} md={5} className="mb-3 mb-md-0">
+                <div style={{ padding: "56.25% 0 0 0", position: "relative" }}>
+                  <iframe
+                    title="vimeo"
+                    src="https://player.vimeo.com/video/394184070?title=0&byline=0&portrait=0"
+                    style={{
+                      position: "absolute",
+                      top: "0",
+                      left: "0",
+                      width: "100%",
+                      height: "100%",
+                    }}
+                    frameborder="0"
+                    allow="autoplay; fullscreen"
+                    allowfullscreen
+                  />
+                </div>
+                <script src="https://player.vimeo.com/api/player.js" />
+              </Col>
+              <Col xs={12} md={7}>
+                <b>
+                  Le Dr Géraldine Talbot, directrice de l&apos;association
+                  CaPASSCité nous explique pourquoi elle a décidé de lancer
+                  l&apos;application mobile Oz Ensemble.
+                </b>
+              </Col>
+            </Row>
+          </Col>
+        </Row>
+      </div>
+    </section>
+  )
+}
+
+function Aide() {
+  return (
+    <section id="aide">
+      <div className="container">
+        <hr />
+        <br />
+        <br />
+        <div className="section-heading text-center">
+          <SectionTitle>Aidez-nous à en parler</SectionTitle>
+        </div>
+        <br />
+        <br />
+        <Row style={{ marginBottom: 40 }}>
+          <Col xs={{ offset: 1, span: 10 }} className="text-center">
+            <p>
+              Rejoignez le mouvement Oz Ensemble et aidez-nous à former un
+              maximum de personnes à réagir face à l&apos;addiction à
+              l&apos;alcool. Partagez l&apos;app Oz Ensemble sur les réseaux
+              sociaux :
+            </p>
+            <br />
+            <br />
+            <a
+              href="https://twitter.com/OzEnsemble"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <img
+                width="124px"
+                height="124px"
+                src="/img/twitter.png"
+                alt="twitter logo"
+              />
+            </a>
+          </Col>
+        </Row>
+      </div>
+    </section>
+  )
 }
 
 function Qui() {
@@ -179,18 +412,16 @@ function Qui() {
       <div className="container">
         <hr />
         <br />
+        <br />
         <div className="section-heading text-center">
-          <SectionTitle style={{ fontSize: "2.5em" }}>
-            Qui sommes-nous ?
-          </SectionTitle>
+          <SectionTitle>Qui sommes-nous ?</SectionTitle>
           <br />
-          <Col xs={{ span: 10, offset: 1 }}>
+          <Col xs={{ offset: 1, span: 10 }}>
             <p>
               <strong>
-                Ce service, créé par le Dr Lya Pedron, est développé par la
-                Fabrique Numérique des Ministères Sociaux et l’Établissement
-                public de santé Barthélémy Durand et est financé par l’Agence
-                Régionale de Santé d’Île de France.
+                Ce service, créé par le Dr Géraldine TALBOT, est développé par
+                la Fabrique Numérique des Ministères Sociaux et
+                l&apos;association CaPASSCité.
               </strong>
             </p>
           </Col>
@@ -201,28 +432,29 @@ function Qui() {
           src="/img/logo-ministere.png"
           alt="Logo Minisères des solidarités et de la Santé"
         />
-        <img src="/img/logo-bd.png" alt="Logo BD" />
-        <img src="/img/logo-ARS.png" alt="Logo ARS" />
+        <img src="/img/logo-capasscite.png" alt="Logo CaPassCite" />
       </div>
     </section>
-  );
+  )
 }
 
 function Contact() {
   return (
     <section id="contact">
-      <div className="container">
+      <div className="container text-center">
         <hr />
         <br />
         <div className="section-heading text-center">
-          <SectionTitle style={{ fontSize: "2.5em" }}>
-            Contactez-nous
-          </SectionTitle>
+          <SectionTitle>Contactez-nous</SectionTitle>
         </div>
         <br />
         <br />
-        <LeafletMap />
+        Contactez-nous par email{" "}
+        <a href="mailto:ozensemble@fabrique.social.gouv.fr&subject=MonSuiviPsy">
+          ozensemble@fabrique.social.gouv.fr
+        </a>
+        {/* <LeafletMap /> */}
       </div>
     </section>
-  );
+  )
 }

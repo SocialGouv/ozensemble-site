@@ -1,4 +1,4 @@
-import React from "react";
+import React from "react"
 
 export function Header() {
   return (
@@ -23,10 +23,10 @@ export function Header() {
       <div
         className="d-md-none"
         style={{
-          height: "100%",
           backgroundImage: `url(/img/home-demo-background.jpg)`,
-          backgroundSize: "cover",
           backgroundPosition: "center center",
+          backgroundSize: "cover",
+          height: "100%",
         }}
       />
       <div style={{ position: "absolute", top: 150, width: "100%" }}>
@@ -42,11 +42,21 @@ export function Header() {
             >
               <div style={{ color: "white" }}>
                 <h1 className="mb-5">
-                  <b>MON SUIVI PSY</b>
+                  <b>Stop à l&apos;addiction à l&apos;alcool</b>
                 </h1>
                 <h3>
-                  Mieux connaître mes symptômes pour un meilleur accompagnement
-                  par mon médecin
+                  <p>
+                    5 millions de personnes en France sont dépendantes à
+                    l&apos;alcool mais seulement 5% d&apos;entre elle est prise
+                    en charge par un professionnel de santé.
+                  </p>
+                  <p>
+                    Aujourd&apos;hui, l&apos;alcool tue plus de 50 000 personnes
+                    chaque année.
+                  </p>
+                  <p>
+                    Agissons ensemble contre l&apos;addiction à l&apos;alcool.
+                  </p>
                 </h3>
                 <br />
                 <br />
@@ -57,8 +67,9 @@ export function Header() {
                   >
                     <img width={200} src="/img/app-store-badge.svg" alt="" />
                   </a>
+                  &nbsp;&nbsp;
                   <a
-                    href="https://play.google.com/store/apps/details?id=com.monsuivipsy&hl=fr&gl=US"
+                    href="https://play.google.com/store/apps/details?id=com.addicto&hl=fr&gl=US"
                     target="noopener noreferrer"
                   >
                     <img width={200} src="/img/google-play-badge.svg" alt="" />
@@ -79,5 +90,5 @@ export function Header() {
         </div>
       </div>
     </header>
-  );
+  )
 }
