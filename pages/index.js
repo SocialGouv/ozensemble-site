@@ -444,7 +444,7 @@ function Contact() {
         <br />
         <br />
         Contactez-nous par email{" "}
-        <a href="mailto:ozensemble@fabrique.social.gouv.fr&subject=MonSuiviPsy">
+        <a href="mailto:ozensemble@fabrique.social.gouv.fr&subject=OzEnsemble">
           ozensemble@fabrique.social.gouv.fr
         </a>
         {/* <LeafletMap /> */}
