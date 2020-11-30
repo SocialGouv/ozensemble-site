@@ -52,6 +52,12 @@ const SectionTitle = styled.h2`
   color: var(--primary);
 `
 
+const Video = styled.video`
+  &:focus {
+    outline: none;
+  }
+`
+
 function Pourquoi() {
   return (
     <section id="pourquoi">
@@ -332,23 +338,11 @@ function Speech() {
               }}
             >
               <Col xs={12} md={5} className="mb-3 mb-md-0">
-                <div style={{ padding: "56.25% 0 0 0", position: "relative" }}>
-                  <iframe
-                    title="vimeo"
-                    src="https://player.vimeo.com/video/394184070?title=0&byline=0&portrait=0"
-                    style={{
-                      position: "absolute",
-                      top: "0",
-                      left: "0",
-                      width: "100%",
-                      height: "100%",
-                    }}
-                    frameborder="0"
-                    allow="autoplay; fullscreen"
-                    allowfullscreen
-                  />
-                </div>
-                <script src="https://player.vimeo.com/api/player.js" />
+                <Video width="100%" height="240" controls>
+                  <track kind="captions" />
+                  <source src="/presentation.mp4" type="video/mp4" />
+                  Your browser does not support the video tag.
+                </Video>
               </Col>
               <Col xs={12} md={7}>
                 <b>

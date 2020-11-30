@@ -62,7 +62,7 @@ export function Header() {
                 <br />
                 <div>
                   <a
-                    href="https://apps.apple.com/us/app/mon-suivi-psy/id1540061393"
+                    href="https://apps.apple.com/us/app/oz-ensemble/id1498190343"
                     target="noopener noreferrer"
                   >
                     <img width={200} src="/img/app-store-badge.svg" alt="" />
