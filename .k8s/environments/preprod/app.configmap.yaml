@@ -5,5 +5,3 @@ metadata:
 data:
   NODE_ENV: "production"
   PORT: "3000"
-  NEXT_PUBLIC_MATOMO_URL: "https://matomo.fabrique.social.gouv.fr/"
-  NEXT_PUBLIC_MATOMO_SITE_ID: "34"
