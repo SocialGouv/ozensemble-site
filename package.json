@@ -21,7 +21,8 @@
     "start": "next start",
     "build": "next build",
     "export": "next export",
-    "lint": "eslint pages/*.js"
+    "lint": "eslint pages/*.js",
+    "k8s": "yarn --silent --cwd .k8s"
   },
   "devDependencies": {
     "@socialgouv/eslint-config-react": "^1.46.0",
