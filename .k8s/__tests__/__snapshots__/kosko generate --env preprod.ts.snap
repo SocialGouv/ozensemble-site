@@ -92,29 +92,8 @@ spec:
               path: /index.html
               port: http
             periodSeconds: 5
-          envFrom:
-            - configMapRef:
-                name: app-configmap
 apiVersion: apps/v1
 kind: Deployment
----
-metadata:
-  name: app-configmap
-  annotations:
-    app.gitlab.com/app: socialgouv-ozensemble-site
-    app.gitlab.com/env: preprod-dev2
-    app.gitlab.com/env.name: preprod-dev2
-  labels:
-    application: v1-2-3-ozensemble-site
-    owner: ozensemble-site
-    team: ozensemble-site
-    cert: wildcard
-  namespace: ozensemble-site-24-preprod-dev2
-data:
-  NODE_ENV: production
-  PORT: '3000'
-apiVersion: v1
-kind: ConfigMap
 ---
 metadata:
   labels:
