@@ -113,7 +113,7 @@ metadata:
   namespace: ozensemble-site
 spec:
   rules:
-    - host: ozensemble-site.fabrique.social.gouv.fr
+    - host: ozensemble.fabrique.social.gouv.fr
       http:
         paths:
           - backend:
@@ -122,7 +122,7 @@ spec:
             path: /
   tls:
     - hosts:
-        - ozensemble-site.fabrique.social.gouv.fr
+        - ozensemble.fabrique.social.gouv.fr
       secretName: app-crt
 apiVersion: extensions/v1beta1
 kind: Ingress

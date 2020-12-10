@@ -5,10 +5,10 @@ exports[`kosko generate --preprod 1`] = `
 metadata:
   annotations:
     field.cattle.io/creatorId: gitlab
-    field.cattle.io/projectId: 'c-f8qps:p-46tj7'
-    git/branch: beta-db-12
+    field.cattle.io/projectId: ''
+    git/branch: v1.2.3
     git/remote: >-
-      https://gitlab-ci-token:[MASKED]@gitlab.factory.social.gouv.fr/SocialGouv/socialgouv-github-io.git
+      https://gitlab-ci-token:[MASKED]@gitlab.factory.social.gouv.fr/SocialGouv/ozensemble-site.git
     app.gitlab.com/app: socialgouv-ozensemble-site
     app.gitlab.com/env: preprod-dev2
     app.gitlab.com/env.name: preprod-dev2
@@ -18,7 +18,7 @@ metadata:
     owner: ozensemble-site
     team: ozensemble-site
     cert: wildcard
-  name: ozensemble-site-24-preprod-dev2
+  name: ozensemble-site-85-preprod-dev2
 apiVersion: v1
 kind: Namespace
 ---
@@ -35,7 +35,7 @@ metadata:
     cert: wildcard
     component: nginx
   name: app
-  namespace: ozensemble-site-24-preprod-dev2
+  namespace: ozensemble-site-85-preprod-dev2
 spec:
   replicas: 1
   selector:
@@ -107,7 +107,7 @@ metadata:
     app.gitlab.com/app: socialgouv-ozensemble-site
     app.gitlab.com/env: preprod-dev2
     app.gitlab.com/env.name: preprod-dev2
-  namespace: ozensemble-site-24-preprod-dev2
+  namespace: ozensemble-site-85-preprod-dev2
 spec:
   ports:
     - name: http
@@ -132,7 +132,7 @@ metadata:
     team: ozensemble-site
     cert: wildcard
   name: app
-  namespace: ozensemble-site-24-preprod-dev2
+  namespace: ozensemble-site-85-preprod-dev2
 spec:
   rules:
     - host: preprod-ozensemble-site.dev2.fabrique.social.gouv.fr
