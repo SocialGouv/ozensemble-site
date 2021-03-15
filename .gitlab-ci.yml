@@ -1,9 +1,11 @@
 include:
   - project: SocialGouv/gitlab-ci-yml
     file: /autodevops.yml
-    ref: v20.1.2
+    ref: v20.7.10
 
 variables:
+  AUTO_DEVOPS_KANIKO: "🕹️"
+  AUTO_DEVOPS_ENABLE_KAPP: "🕹️"
   AUTO_DEVOPS_RELEASE_AUTO: "🔖"
   AUTO_DEVOPS_PRODUCTION_AUTO: "🚀"
 
@@ -21,9 +23,6 @@ Test:
   rules:
     - when: never
 
-# NOTE(douglasduteil): use custom build job
-# The website it statically built with Nextjs
-# Here we manually run `yarn next export` and reuse the `out` dir in Dockerfile
 Build:
   needs: []
   cache:
@@ -36,19 +35,11 @@ Build:
   script:
     - yarn config set cache-folder $CI_PROJECT_DIR/.cache/yarn
     - yarn --frozen-lockfile --prefer-offline
-    - yarn next build
-    - yarn next export
+    - yarn build
+    - yarn export
   variables:
     VERSION: ${CI_COMMIT_SHORT_SHA}
   artifacts:
     expire_in: 1 day
     paths:
       - out
-
-# NOTE(julienbouquillon): use custom register job
-# By default, kosko-charts use a "/app" for default docker images names
-# TODO: discuss
-Register image:
-  extends: .autodevops_register_image
-  variables:
-    IMAGE_NAME: $CI_REGISTRY_IMAGE/app
