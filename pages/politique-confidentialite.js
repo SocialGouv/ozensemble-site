@@ -32,8 +32,10 @@ export default function Confiendialite() {
             <br />
             <h2>Données à caractère personnel traitées</h2>
             Le site peut collecter les données à caractère personnel suivantes :
-            <li>Données de connexion</li>
-            <li>Cookies</li>
+            <ul>
+              <li>Données de connexion</li>
+              <li>Cookies</li>
+            </ul>
             <br />
             <h2>Bases juridiques des traitements de données</h2>
             Le traitement de données à caractère personnel est nécessaire au
@@ -89,13 +91,15 @@ export default function Confiendialite() {
             <h2>Droit des personnes concernées</h2>
             Vous disposez des droits suivants concernant vos données à caractère
             personnel :
-            <li>Droit d’information et droit d’accès aux données</li>
-            <li>
-              Droit de rectification et le cas échéant de suppression des
-              données
-            </li>
-            <li>Droit à la limitation du traitement de données</li>
-            <li>Droit au retrait du consentement </li>
+            <ul>
+              <li>Droit d’information et droit d’accès aux données</li>
+              <li>
+                Droit de rectification et le cas échéant de suppression des
+                données
+              </li>
+              <li>Droit à la limitation du traitement de données</li>
+              <li>Droit au retrait du consentement </li>
+            </ul>
             <br />
             Pour les exercer, faites-nous parvenir une demande en précisant la
             date et l’heure précise de la requête – ces éléments sont
@@ -137,21 +141,25 @@ export default function Confiendialite() {
             données sont notamment :
             <br />
             <br />
-            <li>Chiffrement des données</li>
-            <li>Journalisation</li>
-            <li>Gestion des identités et des accès</li>
-            <li>Stockage des données en base de données</li>
-            <li>Stockage des mots de passe en base sont hâchés</li>
-            <li>Cloisonnement des données</li>
-            <li>Configuration et analyse des failles</li>
-            <li>Surveillance</li>
-            <li>Protection contre les virus, malwares et logiciels espions</li>
-            <li>Protection des réseaux</li>
-            <li>Sauvegarde</li>
-            <li>
-              Mesures restrictives limitant l’accès physiques aux données à
-              caractère personnel
-            </li>
+            <ul>
+              <li>Chiffrement des données</li>
+              <li>Journalisation</li>
+              <li>Gestion des identités et des accès</li>
+              <li>Stockage des données en base de données</li>
+              <li>Stockage des mots de passe en base sont hâchés</li>
+              <li>Cloisonnement des données</li>
+              <li>Configuration et analyse des failles</li>
+              <li>Surveillance</li>
+              <li>
+                Protection contre les virus, malwares et logiciels espions
+              </li>
+              <li>Protection des réseaux</li>
+              <li>Sauvegarde</li>
+              <li>
+                Mesures restrictives limitant l’accès physiques aux données à
+                caractère personnel
+              </li>
+            </ul>
             <br />
             <br />
             <h3>Sous-traitants</h3>
@@ -191,14 +199,16 @@ export default function Confiendialite() {
             <br />
             <br />
             Il convient d’indiquer que :
-            <li>
-              Les données collectées ne sont pas recoupées avec d’autres
-              traitements.
-            </li>
-            <li>
-              Les cookies ne permettent pas de suivre la navigation de
-              l’internaute sur d’autres sites.
-            </li>
+            <ul>
+              <li>
+                Les données collectées ne sont pas recoupées avec d’autres
+                traitements.
+              </li>
+              <li>
+                Les cookies ne permettent pas de suivre la navigation de
+                l’internaute sur d’autres sites.
+              </li>
+            </ul>
           </Col>
         </Row>
       </Container>
