@@ -107,7 +107,7 @@ export default function Confiendialite() {
             par voie électronique à l’adresse suivante :
             <br />
             <br />
-            [Adressedecontact]
+            <a href="mailto:ozensemble@fabrique.social.gouv.fr">ozensemble@fabrique.social.gouv.fr</a>
             <br />
             <br />
             En raison de l’obligation de sécurité et de confidentialité dans le
