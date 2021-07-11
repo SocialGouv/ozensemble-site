@@ -23,6 +23,11 @@ Test:
   rules:
     - when: never
 
+Production:
+  extends: .autodevops_production
+  variables:
+    KOSKO_APPEND_YAML_FROM: .socialgouv/environments/prod/manifests
+
 Build:
   needs: []
   cache:
