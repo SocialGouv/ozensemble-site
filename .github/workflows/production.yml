@@ -28,7 +28,6 @@ jobs:
       with:
         environment: prod
         project: ${{ env.project }}
-        productionNamespace: ozensemble
         token: ${{ secrets.GITHUB_TOKEN }}
         imageName: ozensemble/ozensemble-site
         kubeconfig: ${{ secrets.SOCIALGOUV_KUBE_CONFIG_PROD }}
