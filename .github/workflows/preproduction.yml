@@ -14,11 +14,15 @@ jobs:
   deploy:
     name: Deploy
     runs-on: ubuntu-latest
+    environment:
+      name: preproduction
+      url: https://${{ env.ns }}.${{ env.SOCIALGOUV_BASE_DOMAIN }}
     steps:
 
     - name: Get project name
       run: |
         echo "project=${GITHUB_REPOSITORY#*/}" >> $GITHUB_ENV
+        echo "ns=${GITHUB_REPOSITORY#*/}-${GITHUB_REF##*/}" >> $GITHUB_ENV
 
     - name: Use autodevops-review to deploy review branch
       uses: SocialGouv/actions/autodevops@autodevops-app
