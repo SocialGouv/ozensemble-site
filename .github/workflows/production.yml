@@ -23,7 +23,7 @@ jobs:
       run: |
         echo "project=${GITHUB_REPOSITORY#*/}" >> $GITHUB_ENV
 
-    - name: Use autodevops-review to deploy production
+    - name: Use autodevops to deploy production
       uses: SocialGouv/actions/autodevops@autodevops-app
       with:
         environment: prod

@@ -23,7 +23,7 @@ jobs:
       run: |
         echo "project=${GITHUB_REPOSITORY#*/}" >> $GITHUB_ENV
 
-    - name: Use autodevops-review to deploy preproduction
+    - name: Use autodevops to deploy preproduction
       uses: SocialGouv/actions/autodevops@autodevops-app
       with:
         environment: preprod
