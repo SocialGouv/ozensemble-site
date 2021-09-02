@@ -16,7 +16,7 @@ jobs:
     runs-on: ubuntu-latest
     environment:
       name: production
-      url: https://ozensemble-site.fabrique.social.gouv.fr
+      url: https://ozensemble.fabrique.social.gouv.fr
     steps:
 
     - name: Get project name
@@ -28,6 +28,7 @@ jobs:
       with:
         environment: prod
         project: ${{ env.project }}
+        productionNamespace: ozensemble
         token: ${{ secrets.GITHUB_TOKEN }}
         imageName: ozensemble/ozensemble-site
-        kubeconfig: ${{ secrets.SOCIALGOUV_KUBE_CONFIG_DEV }}
+        kubeconfig: ${{ secrets.SOCIALGOUV_KUBE_CONFIG_PROD }}

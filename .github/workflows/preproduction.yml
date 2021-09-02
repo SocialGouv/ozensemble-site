@@ -16,7 +16,7 @@ jobs:
     runs-on: ubuntu-latest
     environment:
       name: preproduction
-      url: https://preprod-ozensemble-site.fabrique.social.gouv.fr
+      url: https://ozensemble-site-preprod.dev.fabrique.social.gouv.fr/
     steps:
 
     - name: Get project name
