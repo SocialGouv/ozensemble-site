@@ -1,0 +1,32 @@
+name: Review Branch
+
+on:
+  push:
+    branches:
+      - '**'
+    tags-ignore:
+      - v*
+
+concurrency:
+  group: ${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+
+  deploy:
+    name: Deploy
+    runs-on: ubuntu-latest
+    steps:
+
+    - name: Get project name
+      run: |
+        echo "project=${GITHUB_REPOSITORY#*/}" >> $GITHUB_ENV
+
+    - name: Use autodevops to deploy review branch
+      uses: SocialGouv/actions/autodevops@autodevops-app
+      with:
+        environment: dev
+        project: ${{ env.project }}
+        token: ${{ secrets.GITHUB_TOKEN }}
+        imageName: ozensemble/ozensemble-site
+        kubeconfig: ${{ secrets.SOCIALGOUV_KUBE_CONFIG_DEV }}

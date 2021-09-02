@@ -1,0 +1,33 @@
+name: Preproduction
+
+on:
+  push:
+    tags:
+      - v*
+
+concurrency:
+  group: preproduction
+  cancel-in-progress: true
+
+jobs:
+
+  deploy:
+    name: Deploy
+    runs-on: ubuntu-latest
+    environment:
+      name: preproduction
+      url: https://ozensemble-site-preprod.dev.fabrique.social.gouv.fr/
+    steps:
+
+    - name: Get project name
+      run: |
+        echo "project=${GITHUB_REPOSITORY#*/}" >> $GITHUB_ENV
+
+    - name: Use autodevops to deploy preproduction
+      uses: SocialGouv/actions/autodevops@autodevops-app
+      with:
+        environment: preprod
+        project: ${{ env.project }}
+        token: ${{ secrets.GITHUB_TOKEN }}
+        imageName: ozensemble/ozensemble-site
+        kubeconfig: ${{ secrets.SOCIALGOUV_KUBE_CONFIG_DEV }}
