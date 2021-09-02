@@ -10,7 +10,7 @@ metadata:
     app.kubernetes.io/component: redirect
     app.kubernetes.io/name: www
   name: www-redirect
-  namespace: ozensemble-site
+  namespace: ozensemble
 spec:
   rules:
     - host: www.ozensemble.fr
