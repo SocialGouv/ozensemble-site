@@ -1,4 +1,4 @@
-name: Preproduction
+name: Production
 
 on:
   push:
@@ -6,7 +6,7 @@ on:
       - v*
 
 concurrency:
-  group: preproduction
+  group: production
   cancel-in-progress: true
 
 jobs:
@@ -15,18 +15,18 @@ jobs:
     name: Deploy
     runs-on: ubuntu-latest
     environment:
-      name: preproduction
-      url: https://preprod-ozensemble-site.fabrique.social.gouv.fr
+      name: production
+      url: https://ozensemble-site.fabrique.social.gouv.fr
     steps:
 
     - name: Get project name
       run: |
         echo "project=${GITHUB_REPOSITORY#*/}" >> $GITHUB_ENV
 
-    - name: Use autodevops-review to deploy preproduction
+    - name: Use autodevops-review to deploy production
       uses: SocialGouv/actions/autodevops@autodevops-app
       with:
-        environment: preprod
+        environment: prod
         project: ${{ env.project }}
         token: ${{ secrets.GITHUB_TOKEN }}
         imageName: ozensemble/ozensemble-site
