@@ -1,14 +1,12 @@
-name: Review Branch
+name: Preproduction
 
 on:
   push:
-    branches:
-      - '**'
-    tags-ignore:
+    tags:
       - v*
 
 concurrency:
-  group: ${{ github.ref }}
+  group: preproduction
   cancel-in-progress: true
 
 jobs:
@@ -25,7 +23,7 @@ jobs:
     - name: Use autodevops-review to deploy review branch
       uses: SocialGouv/actions/autodevops@autodevops-app
       with:
-        environment: dev
+        environment: preprod
         project: ${{ env.project }}
         token: ${{ secrets.GITHUB_TOKEN }}
         imageName: ozensemble/ozensemble-site
