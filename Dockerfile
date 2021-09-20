@@ -4,6 +4,9 @@ COPY . .
 
 RUN yarn --production --frozen-lockfile --prefer-offline && yarn cache clean
 
+ENV NEXT_PUBLIC_MATOMO_SITE_ID="34"
+ENV NEXT_PUBLIC_MATOMO_URL="https://matomo.fabrique.social.gouv.fr/"
+
 RUN yarn build
 RUN yarn export
 
