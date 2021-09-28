@@ -10,6 +10,6 @@ ENV NEXT_PUBLIC_MATOMO_URL="https://matomo.fabrique.social.gouv.fr/"
 RUN yarn build
 RUN yarn export
 
-FROM ghcr.io/socialgouv/docker/nginx4spa:6.24.0
+FROM ghcr.io/socialgouv/docker/nginx:6.52.0
 
 COPY --from=builder /out /usr/share/nginx/html
