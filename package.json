@@ -6,7 +6,7 @@
   "private": true,
   "dependencies": {
     "@socialgouv/matomo-next": "^1.2.2",
-    "bootstrap": "^4.6.0",
+    "bootstrap": "^4.6.1",
     "leaflet": "^1.7.1",
     "next": "^10.2.3",
     "react": "^17.0.2",
