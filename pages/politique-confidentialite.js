@@ -47,8 +47,9 @@ export default function Confiendialite() {
             circulation de ces données.
             <br />
             <br />
-            Cette obligation légale repose sur l’article 3 du décret n°2011-219
-            du 25 février 2011 et la loi pour la confiance dans l’économie
+            Cette obligation légale repose sur l’article 1 du décret n°2021-1363 du 20 octobre 2021 portant 
+            injonction au regard de la menace grave et actuelle contre la sécurité nationale, de conservation pour une durée d’un an
+            de certaines catégories de données de connexion et la loi pour la confiance dans l’économie
             numérique n°2004-575 du 21 juin 2004.
             <br />
             <br />
