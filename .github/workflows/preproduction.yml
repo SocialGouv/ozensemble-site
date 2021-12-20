@@ -2,32 +2,69 @@ name: Preproduction
 
 on:
   push:
-    tags:
+    branches:
+      - master
+    tags-ignore:
       - v*
 
 concurrency:
-  group: preproduction
   cancel-in-progress: true
+  group: preproduction
 
 jobs:
 
-  deploy:
-    name: Deploy
+  ##############################################################################
+  ## BUILD AND REGISTER DOCKER IMAGES
+  ##############################################################################
+  register:
+    name: Build & Register application
     runs-on: ubuntu-latest
-    environment:
-      name: preproduction
-      url: https://ozensemble-site-preprod.dev.fabrique.social.gouv.fr/
     steps:
 
     - name: Get project name
       run: |
         echo "project=${GITHUB_REPOSITORY#*/}" >> $GITHUB_ENV
 
-    - name: Use autodevops to deploy preproduction
-      uses: SocialGouv/actions/autodevops@master
+    - name: Use autodevops build and register
+      uses: SocialGouv/actions/autodevops-build-register@v1
       with:
         environment: preprod
+        imageName: ozensemble/ozensemble-site
         project: ${{ env.project }}
         token: ${{ secrets.GITHUB_TOKEN }}
-        imageName: ozensemble/ozensemble-site
-        kubeconfig: ${{ secrets.SOCIALGOUV_KUBE_CONFIG_DEV }}
+
+  ##############################################################################
+  ## GENERATE KUBERNETES MANIFESTS
+  ##############################################################################
+  manifests:
+    name: Generate k8s manifests
+    runs-on: ubuntu-latest
+    steps:
+
+    - name: Use autodevops manifests generation
+      uses: SocialGouv/actions/autodevops-manifests@v1
+      with:
+        environment: preprod
+        rancherId: ${{ secrets.RANCHER_PROJECT_ID }}
+        socialgouvBaseDomain: ${{ secrets.SOCIALGOUV_BASE_DOMAIN }}
+
+  ##############################################################################
+  ## DEPLOY APPLICATION OVER KUBERNETES
+  ##############################################################################
+  deploy:
+    name: Deploy application
+    runs-on: ubuntu-latest
+    needs: [register, manifests]
+    environment:
+      name: preproduction
+      url: https://ozensemble-site-preprod.dev.fabrique.social.gouv.fr
+    steps:
+    - name: Use autodevops deployment
+      uses: SocialGouv/actions/autodevops-deploy@v1
+      with:
+        environment: preprod
+        token: ${{ secrets.GITHUB_TOKEN }}
+        kubeconfig: ${{ secrets.KUBECONFIG }}
+        rancherId: ${{ secrets.RANCHER_PROJECT_ID }}
+
+
