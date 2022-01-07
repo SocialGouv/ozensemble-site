@@ -38,6 +38,19 @@ export function Footer() {
               </a>
             </Link>
           </li>
+
+          <li className="list-inline-item">
+            <Link href="#" passHref>
+              <a
+                style={{
+                  color: "var(--white)",
+                  fontSize: "0.8em",
+                }}
+              >
+                Accessibilité : non conforme
+              </a>
+            </Link>
+          </li>
         </ul>
       </div>
     </footer>
