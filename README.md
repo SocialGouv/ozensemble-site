@@ -1,5 +1,7 @@
 # ozensemble-site
 
+https://ozensemble.fr
+
 ## Env vars
 
 needed at build time :
