@@ -1,5 +1,5 @@
 app:
   host: ozensemble.fr
   redirectFrom:
-    - "{{ .Values.global.host }}"
+    - "ozensemble.{{ .Values.global.domain }}"
     - www.ozensemble.fr
