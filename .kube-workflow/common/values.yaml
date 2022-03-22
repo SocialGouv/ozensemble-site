@@ -1,3 +1,2 @@
 app:
   enabled: true
-  containerPort: 3000

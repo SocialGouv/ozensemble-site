@@ -12,24 +12,27 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-
-  deploy:
-    name: Deploy
+  register:
+    name: Build & Register application
     runs-on: ubuntu-latest
     steps:
+      - name: Use autodevops build and register
+        uses: SocialGouv/actions/autodevops-build-register@v1
+        with:
+          environment: dev
+          imagePackage: app
+          token: ${{ secrets.GITHUB_TOKEN }}
 
-    - name: Get project name
-      run: |
-        echo "project=${GITHUB_REPOSITORY#*/}" >> $GITHUB_ENV
-
-    - name: Use autodevops to deploy review branch
-      uses: SocialGouv/actions/autodevops-helm@v1
-      with:
-        environment: dev
-        project: ${{ env.project }}
-        token: ${{ secrets.GITHUB_TOKEN }}
-        imageName: ozensemble/ozensemble-site
-        kubeconfig: ${{ secrets.SOCIALGOUV_KUBE_CONFIG_DEV }}
-        rancherId: ${{ secrets.RANCHER_PROJECT_ID }}
-        rancherProjectName: ${{ secrets.RANCHER_PROJECT_NAME }}
-        socialgouvBaseDomain: ${{ secrets.SOCIALGOUV_BASE_DOMAIN }}
+  deploy:
+    name: Deploy application
+    runs-on: ubuntu-latest
+    needs: [register]
+    steps:
+      - name: Use kube-workflow deployment
+        uses: SocialGouv/kube-workflow@master
+        with:
+          environment: dev
+          token: ${{ secrets.GITHUB_TOKEN }}
+          kubeconfig: ${{ secrets.KUBECONFIG }}
+          rancherProjectId: ${{ secrets.RANCHER_PROJECT_ID }}
+          rancherProjectName: ${{ secrets.RANCHER_PROJECT_NAME }}
