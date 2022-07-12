@@ -6,6 +6,7 @@
   "private": true,
   "dependencies": {
     "@socialgouv/matomo-next": "^1.2.2",
+    "babel-plugin-styled-components": "^2.0.7",
     "bootstrap": "^4.6.1",
     "leaflet": "^1.7.1",
     "next": "^10.2.3",
