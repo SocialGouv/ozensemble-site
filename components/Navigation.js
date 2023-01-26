@@ -5,7 +5,7 @@ import Fade from "@mui/material/Fade"
 
 import { ANDROID_URL, IOS_URL } from "constants"
 
-export default function Navigation({}) {
+export default function Navigation() {
   return (
     <nav className="flex items-center justify-between px-5 bg-white fixed w-full h-[70px] top-0 z-10">
       <div>
