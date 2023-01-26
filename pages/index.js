@@ -1,454 +1,275 @@
-import React from "react"
-import styled from "styled-components"
-import dynamic from "next/dynamic"
+import Navigation from "components/Navigation"
+import Footer from "components/Footer"
 
-import { Button, Row, Col } from "react-bootstrap"
+import { ANDROID_URL, IOS_URL } from "constants"
 
-import { Layout } from "../src/components/Layout"
-import { FeatureRow } from "../src/components/FeatureRow"
-import Kpi from "../src/components/Kpi"
+export default function Index() {
+  return (
+    <div className="">
+      <header className="oz-header-gradient">
+        <Navigation />
+        <div className="flex pt-20 pb-32 auto-cols-fr md:w-5/6 xl:w-[1100px] mx-[10%] md:m-auto">
+          <div className="w-full md:w-1/2 text-center md:text-left flex items-center">
+            <div>
+              <h1 className="mb-2 text-3xl font-bold lg:text-6xl text-oz-blue">
+                Oz Ensemble
+              </h1>
+              <p className="mb-5 text-lg  leading-normal lg:leading-9 lg:text-2xl">
+                L'application mobile pour maitriser sa consommation d'alcool
+              </p>
+              <div className="flex justify-center mb-10 space-x-3 md:justify-start md:space-x-6">
+                <a
+                  href={ANDROID_URL}
+                  // onClick={() =>
+                  //   window.lumiere("sendEvent", "home", "click_android")
+                  // }
+                >
+                  <img
+                    className="h-10 md:h-14"
+                    src="images/other/google-play-fr.png"
+                    alt=""
+                  />
+                </a>
+                <a
+                  href={IOS_URL}
+                  // onClick={() =>
+                  //   window.lumiere("sendEvent", "home", "click_apple")
+                  // }
+                >
+                  <img
+                    className="h-10 md:h-14"
+                    src="images/other/app-store-fr.png"
+                    alt=""
+                  />
+                </a>
+              </div>
+              <div className="flex flex-col space-y-6 lg:pb-10">
+                <Checklist
+                  title="100% gratuit, 100 % anonyme et sans création de compte"
+                  subtitle="Si vous souhaitez supprimer toutes vos données d’un coup, il vous suffit de désinstaller l’application."
+                />
+                <Checklist
+                  title="Sécurité des données"
+                  subtitle="Je reste propriétaire des données saisies, je les partage uniquement si je le souhaite"
+                />
+                <Checklist
+                  title="Simple, rapide et intuitive"
+                  subtitle="En quelques secondes par jour, je remplis mon agenda de consommation"
+                />
+              </div>
+            </div>
+          </div>
+          <div className="items-center justify-center hidden md:w-1/2 md:flex pl-[5%]">
+            <img
+              src="images/other/hero.png"
+              alt=""
+              className="max-w-1/2 md:max-h-[450px] lg:max-h-[600px]"
+            />
+          </div>
+        </div>
+      </header>
+      <main>
+        <div className="py-16 mx-[10%] sm:mx-20">
+          <div className="w-full mx-auto xl:w-[1100px]">
+            <h3 className="mb-16 text-2xl font-bold text-center lg:text-4xl text-oz-blue">
+              L'alcool : un problème de santé publique
+            </h3>
+            <div className="grid grid-cols-1 gap-6 lg:grid-cols-3 text-center">
+              <div className="px-10 py-8 rounded-3xl bg-oz-gray oz-box-shadow">
+                <h4 className="text-oz-green text-4xl font-bold mb-4">
+                  5 millions
+                </h4>
+                <p className="text-black leading-relaxed">
+                  de personnes souffrent de dépendance à l’alcool en France.
+                </p>
+              </div>
+              <div className="px-10 py-8 rounded-3xl bg-oz-gray oz-box-shadow">
+                <h4 className="text-oz-green text-4xl font-bold mb-4">
+                  120 milliards
+                </h4>
+                <p className="text-base text-black">
+                  Le coût social de l’alcool en France chaque année.
+                </p>
+              </div>
+              <div className="px-10 py-8 rounded-3xl bg-oz-gray oz-box-shadow">
+                <h4 className="text-oz-green text-4xl font-bold mb-4">2ème</h4>
+                <p className="text-base text-black">
+                  cause de mortalité prématurée évitable après le tabac.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
 
-const LeafletMap = dynamic(
-  () => import("../src/components/Map").then((mod) => mod.Map),
-  {
-    ssr: false,
-  }
+        <div
+          className="flex flex-col justify-between py-20 mx-[10%] sm:mx-20 xl:mx-auto xl:w-[1100px] lg:py-28 lg:flex-row "
+          id="how-it-works"
+        >
+          <div className="w-full mb-6 lg:mb-0 lg:w-5/12">
+            <h3 className="mb-8 text-2xl font-bold leading-normal lg:text-4xl text-oz-blue">
+              Oz Ensemble, comment ça marche ?
+            </h3>
+            <p className="text-base text-black">
+              Chez Oz Ensemble, l’objectif est de vous redonner la maîtrise de
+              votre consommation d’alcool, tout au long de l’année,{" "}
+              <span className="text-oz-pink">
+                sans nécessairement promouvoir l’abstinence totale et
+                définitive.
+              </span>
+              <br />
+              <br />
+              Oz Ensemble s’appuie sur les dernières recommandations de la HAS
+              (Haute Autorité de Santé) qui promeut la{" "}
+              <span className="text-oz-pink">
+                réduction des risques alcool
+              </span>{" "}
+              par les acteurs de la prévention et du soin en addictologie.
+              <br />
+              <br />
+              Oz Ensemble enrichie également le{" "}
+              <span className="text-oz-pink">
+                travail de suivi des professionnels
+              </span>{" "}
+              de santé grâce à l’agenda de consommation que le patient pourra
+              vous partager.
+            </p>
+          </div>
+          <div className="w-full space-y-6 lg:w-6/12">
+            <Checklist2 content="Évaluez votre situation et le niveau de risque de votre consommation grâce aux tests et bilans." />
+            <Checklist2 content="Ajoutez votre consommation et fixez-vous un objectif ainsi vous pourrez suivre vos économies en euros et calories." />
+            <Checklist2 content="Réalisez des exercices et découvrez des articles de santé afin d’accroître votre motivation à changer vos habitudes de consommation." />
+            <Checklist2 content="Si besoin, vous pouvez prendre un rendez-vous sur Doctolib avec un professionnel de l’addiction de l’équipe Oz Ensemble." />
+          </div>
+        </div>
+
+        <div className="p-10 lg:pt-16 sm:rounded-xl md:rounded-3xl bg-oz-gray sm:mx-20 xl:mx-auto xl:w-[1100px]">
+          <h3 className="text-2xl font-bold text-center lg:text-4xl text-oz-blue mb-14">
+            À qui s'adresse Oz Ensemble ?
+          </h3>
+          <div className="grid grid-cols-1 gap-9 lg:grid-cols-3 text-center">
+            <div className="p-5 bg-white rounded-2xl">
+              <h4 className="text-oz-pink text-2xl mb-4">Aux usagers</h4>
+              <p>
+                Vous buvez plus de 2 verres par jour ? Vous désirez apprendre à
+                maitriser votre consommation d’alcool ?
+              </p>
+            </div>
+            <div className="p-6 bg-white rounded-2xl">
+              <h4 className="text-oz-pink text-2xl mb-4">
+                Aux professionnel de santé
+              </h4>
+              <p className="text-base text-black">
+                Vous souhaitez un outil complémentaire pour orienter une
+                personne dépendante à l’alcool ? Ainsi qu’accompagner vos
+                patients vers une maitrise de leur consommation ?
+              </p>
+            </div>
+            <div className="p-6 bg-white rounded-2xl">
+              <h4 className="text-oz-pink text-2xl mb-4">
+                Aux acteurs sociaux
+              </h4>
+              <p className="text-base text-black">
+                Vous souhaitez aider une personne dépendante à l’alcool et
+                sensibiliser vos bénéficiaires à maitriser leur consommation ?
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div className="py-20 lg:py-32" id="who-are-we">
+          <div className="mx-[10%] sm:mx-20 md:mx-auto md:w-7/12 lg:w-[750px]">
+            <div className="bottom-9 bg-grey-600">
+              <h3 className="text-2xl font-bold text-center lg:text-4xl text-oz-blue">
+                Qui sommes nous ?
+              </h3>
+              <p className="text-center my-7">
+                OZ Ensemble est un dispositif expérimental créé par le Dr
+                Géraldine Talbot, médecin addictologue de l'association{" "}
+                <a href="https://capasscite.fr/" className="text-link-style">
+                  CaPASSCité
+                </a>
+                , financé par l’
+                <a href="https://www.ars.sante.fr/" className="text-link-style">
+                  ARS
+                </a>
+                , la{" "}
+                <a
+                  href="https://www.drogues.gouv.fr/"
+                  className="text-link-style"
+                >
+                  MILDECA
+                </a>{" "}
+                et la{" "}
+                <a
+                  href="https://www.numerique.gouv.fr/dinum/"
+                  className="text-link-style"
+                >
+                  DINUM
+                </a>
+                , en collaboration avec la{" "}
+                <a
+                  href="https://www.fabrique.social.gouv.fr/"
+                  className="text-link-style"
+                >
+                  Fabrique du numérique des ministères sociaux
+                </a>
+                .
+              </p>
+            </div>
+            <div className="flex flex-wrap justify-center gap-6 top-9">
+              <div className="transition duration-500 hover:scale-110 basis-1/4 lg:basis-1/6">
+                <a href="https://solidarites-sante.gouv.fr/">
+                  <img
+                    className=""
+                    src="images/logo_ministeres_sociaux.png"
+                    alt=""
+                  />
+                </a>
+              </div>
+              <div className="transition duration-500 hover:scale-110 basis-1/4 lg:basis-1/6">
+                <a href="https://www.ars.sante.fr/">
+                  <img className="" src="images/logo_ars.png" alt="" />
+                </a>
+              </div>
+              <div className="transition duration-500 hover:scale-110 basis-1/4 lg:basis-1/6">
+                <a href="https://www.drogues.gouv.fr/">
+                  <img className="" src="images/logo_MILDECA.png" alt="" />
+                </a>
+              </div>
+              <div className="transition duration-500 hover:scale-110 basis-1/4 lg:basis-1/6">
+                <a href="https://capasscite.fr/association/">
+                  <img className="" src="images/logo_CaPASSCite.png" alt="" />
+                </a>
+              </div>
+              <div className="transition duration-500 hover:scale-110 basis-1/4 lg:basis-1/6">
+                <a href="https://www.numerique.gouv.fr/dinum/">
+                  <img className="" src="images/logo_DINUM.png" alt="" />
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <Footer />
+    </div>
+  )
+}
+
+const Checklist = ({ title, subtitle }) => (
+  <div>
+    <h6 className="text-base font-bold text-oz-pink">✓ {title}</h6>
+    <p className="text-sm text-black">{subtitle}</p>
+  </div>
 )
 
-export default function index() {
-  return (
-    <Layout showHeader>
-      <br />
-      <br />
-      <Pourquoi />
-      <br />
-      <br />
-      <Info />
-      <br />
-      <br />
-      <Comment />
-      <br />
-      <br />
-      <EnFrance />
-      <br />
-      <br />
-      <Speech />
-      <br />
-      <br />
-      <Aide />
-      <br />
-      <br />
-      <Qui />
-      <br />
-      <br />
-      <Contact />
-    </Layout>
-  )
-}
-
-const SectionTitle = styled.h2`
-  font-size: 3rem;
-  margin-top: 1rem;
-  color: var(--primary);
-`
-
-const Video = styled.video`
-  &:focus {
-    outline: none;
-  }
-`
-
-function Pourquoi() {
-  return (
-    <section id="pourquoi">
-      <div className="container">
-        <div className="section-heading text-center">
-          <SectionTitle>Apprenez à réagir</SectionTitle>
-        </div>
-        <br />
-        <br />
-        <Row style={{ marginBottom: 40 }}>
-          <Col xs={{ offset: 1, span: 10 }}>
-            <FeatureRow
-              title="Vous êtes un professionnel de santé"
-              image="/img/icon-doctor.png"
-            >
-              Vous désirez :
-              <ul>
-                <li>
-                  Apprendre à détecter et orienter une personne dépendante à
-                  l&apos;alcool
-                </li>
-                <li>
-                  Accompagner vos patients vers une maitrise de leur
-                  consommation d&apos;alcool
-                </li>
-              </ul>
-              <Button
-                href="https://play.google.com/store/apps/details?id=com.addicto"
-                size="lg"
-                target="_blank"
-                style={{
-                  backgroundColor: "#6acb9a",
-                  border: "none",
-                  "box-shadow": "0 2px 0 #54a27b",
-                }}
-              >
-                Téléchargez l&apos;app
-              </Button>
-            </FeatureRow>
-          </Col>
-        </Row>
-        <Row style={{ marginBottom: 40 }}>
-          <Col xs={{ offset: 1, span: 10 }}>
-            <FeatureRow
-              title="Vous êtes un acteur social"
-              image="/img/icon-help.png"
-            >
-              Vous désirez :
-              <ul>
-                <li>
-                  Apprendre à aider une personne dépendante à l&apos;alcool
-                </li>
-                <li>
-                  Sensibiliser vos bénéficiaires à maitrise leur consommation
-                  d&apos;alcool
-                </li>
-              </ul>
-              <Button
-                href="https://play.google.com/store/apps/details?id=com.addicto"
-                size="lg"
-                target="_blank"
-                style={{
-                  backgroundColor: "#6acb9a",
-                  border: "none",
-                  "box-shadow": "0 2px 0 #54a27b",
-                }}
-              >
-                Téléchargez l&apos;app
-              </Button>
-            </FeatureRow>
-          </Col>
-        </Row>
-        <Row style={{ marginBottom: 40 }}>
-          <Col xs={{ offset: 1, span: 10 }}>
-            <FeatureRow
-              title="Vous êtes un proche"
-              image="/img/icon-family.png"
-            >
-              Vous désirez aider un proche dépendant à l&apos;alcool mais vous
-              ne savez pas comment vous y prendre ?
-              <br />
-              <br />
-              <Button
-                href="https://play.google.com/store/apps/details?id=com.addicto"
-                size="lg"
-                target="_blank"
-                style={{
-                  backgroundColor: "#6acb9a",
-                  border: "none",
-                  "box-shadow": "0 2px 0 #54a27b",
-                }}
-              >
-                Téléchargez l&apos;app
-              </Button>
-            </FeatureRow>
-          </Col>
-        </Row>
-        <Row style={{ marginBottom: 40 }}>
-          <Col xs={{ offset: 1, span: 10 }}>
-            <FeatureRow title="Vous ?" image="/img/icon-finger.png">
-              Vous buvez plus de 2 verres par jour ? Vous désirez apprendre à
-              maitriser votre consommation d&apos;alcool ?
-              <br />
-              <br />
-              <Button
-                href="https://play.google.com/store/apps/details?id=com.addicto"
-                size="lg"
-                target="_blank"
-                style={{
-                  backgroundColor: "#6acb9a",
-                  border: "none",
-                  "box-shadow": "0 2px 0 #54a27b",
-                }}
-              >
-                Téléchargez l&apos;app
-              </Button>
-            </FeatureRow>
-          </Col>
-        </Row>
-      </div>
-    </section>
-  )
-}
-
-function Info() {
-  return (
-    <section id="info">
-      <div className="container">
-        <hr />
-        <br />
-        <br />
-        <div className="section-heading text-center">
-          <SectionTitle>S&apos;informer pour mieux agir</SectionTitle>
-        </div>
-        <br />
-        <br />
-        <Row style={{ marginBottom: 40 }}>
-          <Col xs={{ offset: 1, span: 10 }}>
-            <FeatureRow title="" image="/img/icon-info.png" imageSpan={6}>
-              <p>
-                <b>
-                  L&apos;alcool en France représente la 2ᵉ cause de mortalité
-                  évitable après le tabac et c&apos;est malheureusement plus de
-                  50 000 personnes qui en meurt chaque année.
-                </b>
-              </p>
-              <p>
-                Découvrez le combat de l&apos;association CaPASSCité, fondatrice
-                de l&apos;application mobile Oz Ensemble.
-              </p>
-              <Button
-                href="https://capasscite.fr/association/"
-                size="lg"
-                target="_blank"
-                style={{
-                  backgroundColor: "#6acb9a",
-                  border: "none",
-                  "box-shadow": "0 2px 0 #54a27b",
-                }}
-              >
-                En savoir plus
-              </Button>
-            </FeatureRow>
-          </Col>
-        </Row>
-      </div>
-    </section>
-  )
-}
-
-function Comment() {
-  return (
-    <section id="comment">
-      <div className="container">
-        <hr />
-        <br />
-        <br />
-        <div className="section-heading text-center">
-          <SectionTitle>Comment ça marche ?</SectionTitle>
-        </div>
-        <br />
-        <br />
-        <Row>
-          <Col xs={{ offset: 1, span: 10 }}>
-            <FeatureRow
-              title="Comprendre sa consommation"
-              image="/img/demo-eval.png"
-              imageSpan={4}
-            >
-              <b>
-                À l&apos;issu d&apos;un questionnaire d&apos;1 minute,
-                l&apos;usager obtient un aperçu de ses potentiels comportements
-                à risques vis-à-vis de sa consommation d&apos;alcool.
-              </b>
-            </FeatureRow>
-            <FeatureRow
-              title="Suivre sa conso"
-              image="/img/demo-followup.png"
-              imageSpan={4}
-              reverse
-            >
-              <b>
-                Grâce à l&apos;agenda de conso, l&apos;usager apprend à suivre
-                régulièrement sa consommation.
-              </b>
-            </FeatureRow>
-            <FeatureRow
-              title="Se faire aider"
-              image="/img/demo-assist.png"
-              imageSpan={4}
-            >
-              <b>
-                Des professionnels en addictologie se tiennent à disposition
-                pour répondre gratuitement et de manière anonyme aux questions
-                de l&apos;usager.
-              </b>
-            </FeatureRow>
-          </Col>
-        </Row>
-      </div>
-    </section>
-  )
-}
-
-function EnFrance() {
-  return (
-    <section id="enfrance">
-      <div className="container">
-        <hr />
-        <br />
-        <br />
-        <div className="section-heading text-center">
-          <SectionTitle>L&apos;alcool en France ...</SectionTitle>
-        </div>
-        <br />
-        <br />
-        <Row style={{ marginBottom: 40 }}>
-          <Col
-            xs={{ offset: 1, span: 10 }}
-            style={{ display: "flex", "flex-wrap": "wrap" }}
-          >
-            <Kpi
-              text="Coût social de l'alcool en France"
-              value="160 millions d'€"
-            />
-            <Kpi text="décès en France" value="50 000" />
-            <Kpi text="cause de mortalité évitable" value="2ème" />
-            <Kpi
-              text="de personnes dépendantes à l'alcool en France"
-              value="5 millions"
-            />
-          </Col>
-        </Row>
-      </div>
-    </section>
-  )
-}
-
-function Speech() {
-  return (
-    <section id="speech">
-      <div className="container">
-        <hr />
-        <br />
-        <br />
-        <div className="section-heading text-center">
-          <SectionTitle>
-            Dr Géraldine Talbot, fondatrice d&apos;Oz Ensemble
-          </SectionTitle>
-        </div>
-        <br />
-        <br />
-        <Row style={{ marginBottom: 40 }}>
-          <Col xs={{ offset: 1, span: 10 }}>
-            <Row
-              style={{
-                alignItems: "center",
-              }}
-            >
-              <Col xs={12} md={5} className="mb-3 mb-md-0">
-                <Video width="100%" height="240" controls>
-                  <track kind="captions" />
-                  <source src="/presentation.mp4" type="video/mp4" />
-                  Your browser does not support the video tag.
-                </Video>
-              </Col>
-              <Col xs={12} md={7}>
-                <b>
-                  Le Dr Géraldine Talbot, directrice de l&apos;association
-                  CaPASSCité nous explique pourquoi elle a décidé de lancer
-                  l&apos;application mobile Oz Ensemble.
-                </b>
-              </Col>
-            </Row>
-          </Col>
-        </Row>
-      </div>
-    </section>
-  )
-}
-
-function Aide() {
-  return (
-    <section id="aide">
-      <div className="container">
-        <hr />
-        <br />
-        <br />
-        <div className="section-heading text-center">
-          <SectionTitle>Aidez-nous à en parler</SectionTitle>
-        </div>
-        <br />
-        <br />
-        <Row style={{ marginBottom: 40 }}>
-          <Col xs={{ offset: 1, span: 10 }} className="text-center">
-            <p>
-              Rejoignez le mouvement Oz Ensemble et aidez-nous à former un
-              maximum de personnes à réagir face à l&apos;addiction à
-              l&apos;alcool. Partagez l&apos;app Oz Ensemble sur les réseaux
-              sociaux :
-            </p>
-            <br />
-            <br />
-            <a
-              href="https://twitter.com/OzEnsemble"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <img
-                width="124px"
-                height="124px"
-                src="/img/twitter.png"
-                alt="twitter logo"
-              />
-            </a>
-          </Col>
-        </Row>
-      </div>
-    </section>
-  )
-}
-
-function Qui() {
-  return (
-    <section id="qui">
-      <div className="container">
-        <hr />
-        <br />
-        <br />
-        <div className="section-heading text-center">
-          <SectionTitle>Qui sommes-nous ?</SectionTitle>
-          <br />
-          <Col xs={{ offset: 1, span: 10 }}>
-            <p>
-              <strong>
-                Ce service, créé par le Dr Géraldine TALBOT, est développé par
-                la Fabrique Numérique des Ministères Sociaux et
-                l&apos;association CaPASSCité.
-              </strong>
-            </p>
-          </Col>
-        </div>
-      </div>
-      <div className="text-center">
-        <img
-          src="/img/logo-ministere.png"
-          alt="Logo Minisères des solidarités et de la Santé"
-        />
-        <img src="/img/logo-capasscite.png" alt="Logo CaPassCite" />
-      </div>
-    </section>
-  )
-}
-
-function Contact() {
-  return (
-    <section id="contact">
-      <div className="container text-center">
-        <hr />
-        <br />
-        <div className="section-heading text-center">
-          <SectionTitle>Contactez-nous</SectionTitle>
-        </div>
-        <br />
-        <br />
-        Contactez-nous par email{" "}
-        <a href="mailto:ozensemble@fabrique.social.gouv.fr&subject=OzEnsemble">
-          ozensemble@fabrique.social.gouv.fr
-        </a>
-        {/* <LeafletMap /> */}
-      </div>
-    </section>
-  )
-}
+const Checklist2 = ({ content }) => (
+  <div className="flex p-5 rounded-xl bg-oz-gray">
+    <img
+      className="mr-3 md:mx-7"
+      src="images/icon/check-circle-turqoise-500.svg"
+      alt=""
+    />
+    <p className="text-base text-black">{content}</p>
+  </div>
+)
