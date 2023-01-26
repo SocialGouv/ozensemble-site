@@ -6,16 +6,16 @@ WORKDIR /app
 
 RUN chown node:node /app
 
-COPY website/package.json .
-COPY website/yarn.lock .
+COPY ./package.json .
+COPY ./yarn.lock .
 
 RUN yarn --frozen-lockfile --ignore-engines
 
+
+COPY . .
+
 ENV NEXT_PUBLIC_MATOMO_SITE_ID="34"
 ENV NEXT_PUBLIC_MATOMO_URL="https://matomo.fabrique.social.gouv.fr/"
-
-COPY website/. .
-
 ENV NODE_ENV=production
 
 RUN yarn --ignore-engines build-static
