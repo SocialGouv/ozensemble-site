@@ -50,6 +50,9 @@ export default function Footer() {
             link="/politique-confidentialite"
           />
           <ArrowList text="Statistiques" link="/stats" />
+          <p className="mt-5 text-sm font-light">
+            Accessibilité : non conforme
+          </p>
         </div>
         <div className="max-w-md col-span-4 mb-8 lg:col-span-3">
           <div className="inline-block">
