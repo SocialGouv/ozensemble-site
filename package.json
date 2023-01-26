@@ -10,7 +10,6 @@
     "@mui/material": "^5.11.6",
     "@next/font": "13.1.5",
     "@socialgouv/matomo-next": "^1.2.2",
-    "babel-plugin-styled-components": "^2.0.7",
     "next": "13.1.5",
     "react": "18.2.0",
     "react-dom": "18.2.0",
