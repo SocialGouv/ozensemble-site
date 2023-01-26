@@ -18,24 +18,14 @@ export default function Index() {
                 L'application mobile pour maitriser sa consommation d'alcool
               </p>
               <div className="flex justify-center mb-10 space-x-3 md:justify-start md:space-x-6">
-                <a
-                  href={ANDROID_URL}
-                  // onClick={() =>
-                  //   window.lumiere("sendEvent", "home", "click_android")
-                  // }
-                >
+                <a href={ANDROID_URL}>
                   <img
                     className="h-10 md:h-14"
                     src="images/other/google-play-fr.png"
                     alt=""
                   />
                 </a>
-                <a
-                  href={IOS_URL}
-                  // onClick={() =>
-                  //   window.lumiere("sendEvent", "home", "click_apple")
-                  // }
-                >
+                <a href={IOS_URL}>
                   <img
                     className="h-10 md:h-14"
                     src="images/other/app-store-fr.png"

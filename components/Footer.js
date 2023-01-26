@@ -57,20 +57,14 @@ export default function Footer() {
             <div className="w-1/4 mt-3 mb-5 border-b border-green-300"></div>
           </div>
           <div className="grid grid-flow-col gap-6 max-w-md">
-            <a
-              href={ANDROID_URL}
-              // onClick={() => window.lumiere("sendEvent", "home", "click_android")}
-            >
+            <a href={ANDROID_URL}>
               <img
                 className="object-contain"
                 src="images/other/google-play-fr.png"
                 alt=""
               />
             </a>
-            <a
-              href={IOS_URL}
-              // onClick={() => window.lumiere("sendEvent", "home", "click_apple")}
-            >
+            <a href={IOS_URL}>
               <img
                 className="object-contain"
                 src="images/other/app-store-fr.png"

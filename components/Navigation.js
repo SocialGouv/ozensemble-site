@@ -72,24 +72,14 @@ const DownloadPopup = () => {
             <div className="w-1/5 h-1 bg-oz-pink m-auto my-8"></div>
             <p className="text-xl mb-10">Elle est 100% gratuite et anonyme.</p>
             <div className="grid max-w-[250px] sm:max-w-none sm:grid-flow-col gap-6 auto-cols-fr md:w-5/6 m-auto">
-              <a
-                href={ANDROID_URL}
-                // onClick={() =>
-                //   window.lumiere("sendEvent", "home", "click_android")
-                // }
-              >
+              <a href={ANDROID_URL}>
                 <img
                   className="object-contain w-full"
                   src="images/other/google-play-fr.png"
                   alt=""
                 />
               </a>
-              <a
-                href={IOS_URL}
-                // onClick={() =>
-                //   window.lumiere("sendEvent", "home", "click_apple")
-                // }
-              >
+              <a href={IOS_URL}>
                 <img
                   className="object-contain w-full"
                   src="images/other/app-store-fr.png"
