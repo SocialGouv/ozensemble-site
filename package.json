@@ -20,6 +20,7 @@
     "start": "next start",
     "build": "next build",
     "export": "next export",
+    "build-static": "next build && next export",
     "lint": "eslint pages/*.js",
     "k8s": "yarn --silent --cwd .k8s"
   },
