@@ -3,7 +3,7 @@ import { ANDROID_URL, IOS_URL } from "constants"
 
 export default function Footer() {
   return (
-    <footer className="py-10 text-white bg-blue-800">
+    <footer className="py-10 text-white bg-oz-blue">
       <div className="grid-flow-col gap-5 mx-10 md:mx-15 xl:mx-40 md:grid auto-cols-fr">
         <div className="col-span-4 mb-8">
           <p>
@@ -76,6 +76,9 @@ export default function Footer() {
             </a>
           </div>
         </div>
+      </div>
+      <div className="text-center mb-1 mx-[10%]">
+        <p>La Fabrique Numérique des Ministères Sociaux © 2023</p>
       </div>
     </footer>
   )

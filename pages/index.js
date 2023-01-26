@@ -16,17 +16,17 @@ export default function Index() {
               <p className="mb-5 text-lg  leading-normal lg:leading-9 lg:text-2xl">
                 L'application mobile pour maitriser sa consommation d'alcool
               </p>
-              <div className="flex justify-center mb-10 space-x-3 md:justify-start md:space-x-6">
+              <div className="grid grid-flow-col gap-3 sm:gap-6 max-w-sm mb-7 mx-auto md:mx-0">
                 <a href={ANDROID_URL}>
                   <img
-                    className="h-10 md:h-14"
+                    className="object-contain w-full"
                     src="images/other/google-play-fr.png"
                     alt=""
                   />
                 </a>
                 <a href={IOS_URL}>
                   <img
-                    className="h-10 md:h-14"
+                    className="object-contain w-full"
                     src="images/other/app-store-fr.png"
                     alt=""
                   />
