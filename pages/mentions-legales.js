@@ -1,8 +1,8 @@
-import Footer from "components/Footer"
-import Navigation from "components/Navigation"
-import Title from "components/Title"
+import Footer from "../components/Footer"
+import Navigation from "../components/Navigation"
+import Title from "../components/Title"
 
-export default () => {
+const Mentions = () => {
   return (
     <div className="">
       <Navigation />
@@ -76,3 +76,5 @@ export default () => {
     </div>
   )
 }
+
+export default Mentions

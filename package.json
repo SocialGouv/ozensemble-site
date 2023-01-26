@@ -37,7 +37,20 @@
     "rules": {
       "react/prop-types": "warn",
       "simple-import-sort/sort": "off",
-      "jsx-a11y/anchor-is-valid": "warn"
+      "jsx-a11y/anchor-is-valid": "warn",
+      "simple-import-sort/imports": "warn",
+      "jsx-a11y/no-static-element-interactions": "off",
+      "jsx-a11y/click-events-have-key-events": "off",
+      "react/react-in-jsx-scope": "off",
+      "react/no-unescaped-entities": [
+        "error",
+        {
+          "forbid": [
+            ">",
+            "}"
+          ]
+        }
+      ]
     },
     "extends": [
       "@socialgouv/eslint-config-react"

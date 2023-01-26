@@ -1,8 +1,8 @@
-import Footer from "components/Footer"
-import Navigation from "components/Navigation"
-import Title from "components/Title"
+import Footer from "../components/Footer"
+import Navigation from "../components/Navigation"
+import Title from "../components/Title"
 
-export default () => {
+const confidentialite = () => {
   return (
     <div className="">
       <Navigation />
@@ -243,3 +243,5 @@ export default () => {
     </div>
   )
 }
+
+export default confidentialite

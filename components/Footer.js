@@ -26,7 +26,7 @@ export default function Footer() {
         <div className="col-span-2 mb-8">
           <div className="inline-block">
             <p>Accès rapide</p>
-            <div className="w-2/5 mt-3 mb-5 border-b border-green-300"></div>
+            <div className="w-2/5 mt-3 mb-5 border-b border-green-300" />
           </div>
           <ArrowList
             text="Donnez votre avis"
@@ -42,7 +42,7 @@ export default function Footer() {
         <div className="col-span-2 mb-8">
           <div className="inline-block">
             <p>Utilités</p>
-            <div className="w-4/5 mt-3 mb-5 border-b border-green-300"></div>
+            <div className="w-4/5 mt-3 mb-5 border-b border-green-300" />
           </div>
           <ArrowList text="Mentions légales" link="/mentions-legales" />
           <ArrowList
@@ -57,7 +57,7 @@ export default function Footer() {
         <div className="max-w-md col-span-4 mb-8 lg:col-span-3">
           <div className="inline-block">
             <p>Téléchargez l'application Oz Ensemble</p>
-            <div className="w-1/4 mt-3 mb-5 border-b border-green-300"></div>
+            <div className="w-1/4 mt-3 mb-5 border-b border-green-300" />
           </div>
           <div className="grid grid-flow-col gap-6 max-w-md">
             <a href={ANDROID_URL}>

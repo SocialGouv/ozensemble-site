@@ -2,7 +2,6 @@ import { useState } from "react"
 import { FiSmartphone } from "react-icons/fi"
 import { AiOutlineClose } from "react-icons/ai"
 import Fade from "@mui/material/Fade"
-
 import { ANDROID_URL, IOS_URL } from "constants"
 
 export default function Navigation() {
@@ -52,10 +51,12 @@ const DownloadPopup = () => {
       <Fade in={!!isOpen} timeout={200}>
         <div
           className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 transition-all flex justify-center items-center"
+          // eslint-disable-next-line
           onClick={() => setIsOpen(!isOpen)}
         >
           <div
             className="rounded-3xl bg-white text-center p-4 sm:p-10 mx-[10%] max-w-[800px] relative"
+            // eslint-disable-next-line
             onClick={(e) => e.stopPropagation()}
           >
             <div className="absolute top-0 right-0">
@@ -69,7 +70,7 @@ const DownloadPopup = () => {
             <h6 className="text-oz-blue text-3xl font-bold">
               Télécharger l’application Oz Ensemble
             </h6>
-            <div className="w-1/5 h-1 bg-oz-pink m-auto my-8"></div>
+            <div className="w-1/5 h-1 bg-oz-pink m-auto my-8" />
             <p className="text-xl mb-10">Elle est 100% gratuite et anonyme.</p>
             <div className="grid max-w-[250px] sm:max-w-none sm:grid-flow-col gap-6 auto-cols-fr md:w-5/6 m-auto">
               <a href={ANDROID_URL}>

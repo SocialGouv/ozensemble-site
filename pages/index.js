@@ -1,6 +1,5 @@
-import Navigation from "components/Navigation"
-import Footer from "components/Footer"
-
+import Footer from "../components/Footer"
+import Navigation from "../components/Navigation"
 import { ANDROID_URL, IOS_URL } from "constants"
 
 export default function Index() {
