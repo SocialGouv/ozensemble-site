@@ -1,4 +1,3 @@
-import "tailwindcss/tailwind.css"
 import "../style/default.css"
 
 import { init } from "@socialgouv/matomo-next"
