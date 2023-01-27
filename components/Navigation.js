@@ -4,7 +4,7 @@ import { AiOutlineClose } from "react-icons/ai"
 import Fade from "@mui/material/Fade"
 import { HiMenu } from "react-icons/hi"
 
-import { ANDROID_URL, IOS_URL } from "constants"
+import { ANDROID_URL, IOS_URL } from "../constants"
 
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false)

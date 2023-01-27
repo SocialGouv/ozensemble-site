@@ -1,5 +1,5 @@
 import { FaPhoneAlt } from "react-icons/fa"
-import { ANDROID_URL, IOS_URL } from "constants"
+import { ANDROID_URL, IOS_URL } from "../constants"
 
 export default function Footer() {
   return (
