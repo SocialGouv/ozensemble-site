@@ -36,6 +36,8 @@ const ContactPopup = ({ showPopup, setShowPopup }) => {
           <h6 className="text-oz-blue text-3xl font-bold">Nous contacter</h6>
           <div className="w-1/5 h-1 bg-oz-pink m-auto my-7" />
           <p className="break-words md:text-xl mb-7">
+            {" "}
+            Envoyez-nous un mail à{" "}
             {
               "\u006f\u007a\u0065\u006e\u0073\u0065\u006d\u0062\u006c\u0065\u0040\u0066\u0061\u0062\u0072\u0069\u0071\u0075\u0065\u002e\u0073\u006f\u0063\u0069\u0061\u006c\u002e\u0067\u006f\u0075\u0076\u002e\u0066\u0072"
             }
