@@ -7,7 +7,7 @@ export default function Index() {
     <div className="">
       <header className="oz-header-gradient">
         <Navigation />
-        <div className="flex pt-20 pb-32 auto-cols-fr md:w-5/6 xl:w-[1100px] mx-[10%] md:m-auto">
+        <div className="md:flex pt-20 pb-14 md:pb-32 auto-cols-fr md:w-5/6 xl:w-[1100px] mx-[10%] md:m-auto">
           <div className="w-full md:w-1/2 text-center md:text-left flex items-center">
             <div>
               <h1 className="mb-2 text-3xl font-bold lg:text-6xl text-oz-blue">
@@ -48,7 +48,7 @@ export default function Index() {
               </div>
             </div>
           </div>
-          <div className="items-center justify-center hidden md:w-1/2 md:flex pl-[5%]">
+          <div className="items-center justify-center w-2/3 m-auto md:w-1/2 md:flex pl-[5%] mt-14 md:mt-0">
             <img
               src="images/other/hero.png"
               alt=""
