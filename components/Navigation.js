@@ -95,7 +95,7 @@ const DownloadPopup = ({ showPopup, setShowPopup }) => (
       onClick={() => setShowPopup(false)}
     >
       <div
-        className="rounded-3xl bg-white text-center p-4 sm:p-10 mx-[10%] max-w-[800px] relative"
+        className="rounded-3xl bg-white text-center py-6 px-4 sm:p-10 mx-[10%] max-w-[800px] relative"
         // eslint-disable-next-line
         onClick={(e) => e.stopPropagation()}
       >
@@ -110,9 +110,9 @@ const DownloadPopup = ({ showPopup, setShowPopup }) => (
         <h6 className="text-oz-blue text-3xl font-bold">
           Télécharger l’application Oz Ensemble
         </h6>
-        <div className="w-1/5 h-1 bg-oz-pink m-auto my-8" />
-        <p className="text-xl mb-10">Elle est 100% gratuite et anonyme.</p>
-        <div className="grid max-w-[250px] sm:max-w-none sm:grid-flow-col gap-6 auto-cols-fr md:w-5/6 m-auto">
+        <div className="w-1/5 h-1 bg-oz-pink m-auto my-7" />
+        <p className="text-xl mb-7">Elle est 100% gratuite et anonyme.</p>
+        <div className="mb-1 grid max-w-[200px] sm:max-w-[400px] sm:grid-flow-col gap-6 auto-cols-fr md:w-5/6 m-auto">
           <a href={ANDROID_URL}>
             <img
               className="object-contain w-full"

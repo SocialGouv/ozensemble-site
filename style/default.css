@@ -20,12 +20,12 @@
   #4030a5 = oz-blue */
   @media screen and (max-width: 767px) {
     .oz-header-gradient {
-      background: linear-gradient(
+      /* background: linear-gradient(
         to right,
         rgba(255, 255, 255, 1) 20%,
         rgba(64, 48, 165, 0.5) 60%,
         rgba(64, 48, 165, 1)
-      );
+      ); */
     }
   }
 
