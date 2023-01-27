@@ -1,21 +1,20 @@
-import React from "react"
-import Head from "next/head"
-import { Layout } from "../src/components/Layout"
-import { Container, Row, Col } from "react-bootstrap"
+import Footer from "../components/Footer"
+import Navigation from "../components/Navigation"
+import Title from "../components/Title"
 
-export default function Confiendialite() {
+const confidentialite = () => {
   return (
-    <Layout>
-      <Head>
-        <title>Politique de confidentialité Site Oz Ensemble</title>
-      </Head>
-      <Container>
-        <Row>
-          <Col style={{ marginTop: 30 }}>
-            <h1>Politique de confidentialité Site Oz Ensemble</h1>
-            <br />
-            <br />
-            <h2>Traitement des données à caractère personnel</h2>
+    <div className="">
+      <Navigation />
+
+      <div className="py-14">
+        <h1 className="mb-6 text-2xl font-bold text-center lg:text-4xl text-oz-blue lg:mb-10">
+          Politique de confidentialité Site Oz Ensemble
+        </h1>
+
+        <div className="mx-[10%] max-w-[900px] md:m-auto">
+          <Title>Traitement des données à caractère personnel</Title>
+          <p>
             Le présent site « Oz-Ensemble » est un service développé et opéré
             par l’association CaPASSCité avec le soutien de la Fabrique des
             Ministères Sociaux.
@@ -25,19 +24,28 @@ export default function Confiendialite() {
             l’Association CaPASSCité, le docteur Géraldine TALBOT.
             <br />
             <br />
-            <h2>Finalités</h2>
+          </p>
+          <Title>Finalités</Title>
+          <p>
             Le site vise à présenter l’application OzEnsemble et ses
             fonctionnalités pour les différents acteurs.
             <br />
             <br />
-            <h2>Données à caractère personnel traitées</h2>
+          </p>
+          <Title>Données à caractère personnel traitées</Title>
+          <p>
             Le site peut collecter les données à caractère personnel suivantes :
-            <ul>
-              <li>Données de connexion</li>
-              <li>Cookies</li>
-            </ul>
+          </p>
+          <ul className="list-disc list-inside">
+            <li>Données de connexion</li>
+            <li>Cookies</li>
+          </ul>
+          <p>
             <br />
-            <h2>Bases juridiques des traitements de données</h2>
+            <br />
+          </p>
+          <Title>Bases juridiques des traitements de données</Title>
+          <p>
             Le traitement de données à caractère personnel est nécessaire au
             respect d’une obligation légale pesant sur le responsable de
             traitement telle qu’entendue par l’article 6-c du règlement (UE)
@@ -47,10 +55,12 @@ export default function Confiendialite() {
             circulation de ces données.
             <br />
             <br />
-            Cette obligation légale repose sur l’article 1 du décret n°2021-1363 du 20 octobre 2021 portant 
-            injonction au regard de la menace grave et actuelle contre la sécurité nationale, de conservation pour une durée d’un an
-            de certaines catégories de données de connexion et la loi pour la confiance dans l’économie
-            numérique n°2004-575 du 21 juin 2004.
+            Cette obligation légale repose sur l’article 1 du décret n°2021-1363
+            du 20 octobre 2021 portant injonction au regard de la menace grave
+            et actuelle contre la sécurité nationale, de conservation pour une
+            durée d’un an de certaines catégories de données de connexion et la
+            loi pour la confiance dans l’économie numérique n°2004-575 du 21
+            juin 2004.
             <br />
             <br />
             En application de l’article 5(3) de la directive 2002/58/CE modifiée
@@ -81,7 +91,9 @@ export default function Confiendialite() {
             circulation de ces données.
             <br />
             <br />
-            <h2>Durée de conservation</h2>
+          </p>
+          <Title>Durée de conservation</Title>
+          <p>
             Les données de connexion sont conservées par l’hébergeur pour une
             durée de 12 mois.
             <br />
@@ -89,18 +101,22 @@ export default function Confiendialite() {
             Les cookies sont conservés pour une durée de 13 mois.
             <br />
             <br />
-            <h2>Droit des personnes concernées</h2>
+          </p>
+          <Title>Droit des personnes concernées</Title>
+          <p>
             Vous disposez des droits suivants concernant vos données à caractère
             personnel :
-            <ul>
-              <li>Droit d’information et droit d’accès aux données</li>
-              <li>
-                Droit de rectification et le cas échéant de suppression des
-                données
-              </li>
-              <li>Droit à la limitation du traitement de données</li>
-              <li>Droit au retrait du consentement </li>
-            </ul>
+          </p>
+          <ul className="list-disc list-inside">
+            <li>Droit d’information et droit d’accès aux données</li>
+            <li>
+              Droit de rectification et le cas échéant de suppression des
+              données
+            </li>
+            <li>Droit à la limitation du traitement de données</li>
+            <li>Droit au retrait du consentement </li>
+          </ul>
+          <p>
             <br />
             Pour les exercer, faites-nous parvenir une demande en précisant la
             date et l’heure précise de la requête – ces éléments sont
@@ -108,7 +124,9 @@ export default function Confiendialite() {
             par voie électronique à l’adresse suivante :
             <br />
             <br />
-            <a href="mailto:ozensemble@fabrique.social.gouv.fr">ozensemble@fabrique.social.gouv.fr</a>
+            <a href="mailto:ozensemble@fabrique.social.gouv.fr">
+              ozensemble@fabrique.social.gouv.fr
+            </a>
             <br />
             <br />
             En raison de l’obligation de sécurité et de confidentialité dans le
@@ -129,41 +147,47 @@ export default function Confiendialite() {
             de votre demande.
             <br />
             <br />
-            <h2>Destinataires des données</h2>
+          </p>
+          <Title>Destinataires des données</Title>
+          <p>
             Le responsable de traitement s’engage à ce que les données à
             caractère personnel soient traitées par les seules personnes
             autorisées : les acteurs partenaires dans le cadre de l’utilisation
             de « OzEnsemble » et l’équipe de la plateforme OzEnsemble.
             <br />
             <br />
-            <h2>Sécurité et confidentialité des données</h2>
+          </p>
+          <Title>Sécurité et confidentialité des données</Title>
+          <p>
             Les mesures techniques et organisationnelles de sécurité adoptées
             pour assurer la confidentialité, l’intégrité et protéger l’accès des
             données sont notamment :
             <br />
             <br />
-            <ul>
-              <li>Chiffrement des données</li>
-              <li>Journalisation</li>
-              <li>Gestion des identités et des accès</li>
-              <li>Stockage des données en base de données</li>
-              <li>Stockage des mots de passe en base sont hâchés</li>
-              <li>Cloisonnement des données</li>
-              <li>Configuration et analyse des failles</li>
-              <li>Surveillance</li>
-              <li>
-                Protection contre les virus, malwares et logiciels espions
-              </li>
-              <li>Protection des réseaux</li>
-              <li>Sauvegarde</li>
-              <li>
-                Mesures restrictives limitant l’accès physiques aux données à
-                caractère personnel
-              </li>
-            </ul>
+          </p>
+          <ul className="list-disc list-inside">
+            <li>Chiffrement des données</li>
+            <li>Journalisation</li>
+            <li>Gestion des identités et des accès</li>
+            <li>Stockage des données en base de données</li>
+            <li>Stockage des mots de passe en base sont hâchés</li>
+            <li>Cloisonnement des données</li>
+            <li>Configuration et analyse des failles</li>
+            <li>Surveillance</li>
+            <li>Protection contre les virus, malwares et logiciels espions</li>
+            <li>Protection des réseaux</li>
+            <li>Sauvegarde</li>
+            <li>
+              Mesures restrictives limitant l’accès physiques aux données à
+              caractère personnel
+            </li>
+          </ul>
+          <p>
             <br />
             <br />
-            <h3>Sous-traitants</h3>
+          </p>
+          <Title>Sous-traitants</Title>
+          <p>
             Certaines données sont envoyées à de sous-traitants pour réaliser
             certaines missions.
             <br />
@@ -172,7 +196,9 @@ export default function Confiendialite() {
             : https://privacy.microsoft.com/fr-fr/privacystatement
             <br />
             <br />
-            <h2>Cookies</h2>
+          </p>
+          <Title>Cookies</Title>
+          <p>
             Un cookie est un fichier déposé sur votre terminal lors de la visite
             d’un site. Il a pour but de collecter des informations relatives à
             votre navigation et de vous adresser des services adaptés à votre
@@ -200,19 +226,22 @@ export default function Confiendialite() {
             <br />
             <br />
             Il convient d’indiquer que :
-            <ul>
-              <li>
-                Les données collectées ne sont pas recoupées avec d’autres
-                traitements.
-              </li>
-              <li>
-                Les cookies ne permettent pas de suivre la navigation de
-                l’internaute sur d’autres sites.
-              </li>
-            </ul>
-          </Col>
-        </Row>
-      </Container>
-    </Layout>
+          </p>
+          <ul className="list-disc list-inside">
+            <li>
+              Les données collectées ne sont pas recoupées avec d’autres
+              traitements.
+            </li>
+            <li>
+              Les cookies ne permettent pas de suivre la navigation de
+              l’internaute sur d’autres sites.
+            </li>
+          </ul>
+        </div>
+      </div>
+      <Footer />
+    </div>
   )
 }
+
+export default confidentialite
