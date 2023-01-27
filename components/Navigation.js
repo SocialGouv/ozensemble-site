@@ -3,12 +3,14 @@ import { FiSmartphone } from "react-icons/fi"
 import { AiOutlineClose } from "react-icons/ai"
 import Fade from "@mui/material/Fade"
 import { HiMenu } from "react-icons/hi"
+import ContactPopup from "./ContactPopup"
 
 import { ANDROID_URL, IOS_URL } from "../constants"
 
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false)
   const [showPopup, setShowPopup] = useState(false)
+  const [showContactPopup, setShowContactPopup] = useState(false)
 
   useEffect(() => {
     document.body.addEventListener("click", () => setIsOpen(false))
@@ -16,8 +18,12 @@ export default function Navigation() {
 
   return (
     <>
-      {/* Popup and overlay on top of the page */}
+      {/* Popups and overlays on top of the page */}
       <DownloadPopup showPopup={showPopup} setShowPopup={setShowPopup} />
+      <ContactPopup
+        showPopup={showContactPopup}
+        setShowPopup={setShowContactPopup}
+      />
 
       <nav className="flex items-center justify-between px-5 bg-white fixed w-full h-[70px] top-0 z-0">
         <div>
@@ -50,11 +56,13 @@ export default function Navigation() {
               target="#how-it-works"
               setIsOpen={setIsOpen}
             />
-            <Link
+            {/* <Link
               name="Nous contacter"
               target="mailto:ozensemble@fabrique.social.gouv.fr"
               setIsOpen={setIsOpen}
-            />
+              onClick={() => setShowContactPopup(true)}
+            /> */}
+            <ContactPopupTrigger setShowPopup={setShowContactPopup} />
             <DownloadPopupTrigger setShowPopup={setShowPopup} />
           </div>
         </div>
@@ -63,7 +71,7 @@ export default function Navigation() {
   )
 }
 
-const Link = ({ name, target, setIsOpen }) => (
+const Link = ({ name, target = null, setIsOpen }) => (
   <a
     className="text-sm font-bold transition-all text-oz-blue hover:text-oz-green mr-6"
     href={target}
@@ -141,5 +149,18 @@ const DownloadPopup = ({ showPopup, setShowPopup }) => {
         </div>
       </div>
     </Fade>
+  )
+}
+
+const ContactPopupTrigger = ({ setShowPopup }) => {
+  return (
+    <>
+      <button
+        className="text-sm font-bold transition-all text-oz-blue hover:text-oz-green mr-6 cursor-pointer"
+        onClick={() => setShowPopup(true)}
+      >
+        Nous contacter
+      </button>
+    </>
   )
 }
