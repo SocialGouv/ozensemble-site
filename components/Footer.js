@@ -43,12 +43,12 @@ export default function Footer() {
               text="Donnez votre avis"
               link="mailto:ozensemble@fabrique.social.gouv.fr"
             /> */}
-            <button
+            {/* <button
               className="block text-sm font-light mb-2 cursor-pointer"
               onClick={() => setShowContactPopup(true)}
             >
               → Donnez votre avis
-            </button>
+            </button> */}
             <ArrowList text="Comment ça marche ?" link="/#how-it-works" />
             <ArrowList text="Qui sommes-nous ?" link="/#who-are-we" />
             {/* <ArrowList
