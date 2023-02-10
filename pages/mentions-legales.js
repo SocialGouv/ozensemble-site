@@ -15,20 +15,19 @@ const Mentions = () => {
         <div className="mx-[10%] max-w-[900px] md:m-auto">
           <Title>Éditeur du site</Title>
           <p>
-            Association CaPASSCité
-            <br />
-            Madame Géraldine TALBOT, Directrice
-            <br />
-            70, rue Douy Delcupe
-            <br />
-            93100 Montreuil
-            <br />
+            La Plateforme est éditée par l’Agence régionale de santé
+            Île-de-France située : <br /> <br />
+            Immeuble Le Curve <br />
+            13 Rue du Landy <br />
+            93200 Saint-Denis <br />
+            Téléphone : 01 44 02 00 00 <br />
             <br />
             <br />
           </p>
-          <Title>Directeur de la publication</Title>
+          <Title>Directrice de la publication</Title>
           <p>
-            Madame Géraldine TALBOT, Directrice de l’Association CaPASSCité
+            Madame Amélie Verdier, Directrice générale de l’Agence régionale de
+            santé (ARS) Île-de-France.
             <br />
             <br />
             <br />
@@ -57,11 +56,19 @@ const Mentions = () => {
             <br />
             <br />
           </p>
+          <Title>En savoir plus</Title>
+          <p>
+            Pour en savoir plus sur la politique d’accessibilité numérique de
+            l’État
+            : http://references.modernisation.gouv.fr/accessibilite-numerique
+            <br />
+            <br />
+          </p>
           <Title>Signaler un dysfonctionnement</Title>
           <p>
             Si vous rencontrez un défaut d’accessibilité vous empêchant
             d’accéder à un contenu ou une fonctionnalité du site, merci de nous
-            en faire part.
+            en faire part ici : ozensemble@fabrique.social.gouv.fr
             <br />
             <br />
             Si vous n’obtenez pas de réponse rapide de notre part, vous êtes en
@@ -69,7 +76,22 @@ const Mentions = () => {
             Défenseur des droits.
             <br />
             <br />
+            Pour le joindre, vous pouvez :
+            <br />
           </p>
+          <ul className="list-disc list-inside">
+            <li>
+              Utiliser le formulaire de contact en ligne ici :
+              https://formulaire.defenseurdesdroits.fr/code/afficher.php?ETAPE=accueil_2016
+            </li>
+            <li>
+              Composer le 09 69 39 00 00 (du lundi au vendredi de 8h à 20h)
+            </li>
+            <li>
+              Envoyer un courrier (sans timbre) à l’adresse suivante : Défenseur
+              des droits, Libre réponse 71120, 75342 Paris CEDEX 07.
+            </li>
+          </ul>
         </div>
       </div>
       <Footer />
