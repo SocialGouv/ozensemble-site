@@ -20,8 +20,8 @@ const confidentialite = () => {
             Ministères Sociaux.
             <br />
             <br />
-            Le Responsable de traitement est madame la directrice de
-            l’Association CaPASSCité, le docteur Géraldine TALBOT.
+            Le Responsable de traitement est Madame Amélie Verdier, Directrice
+            générale de l’Agence régionale de santé Île-de-France.
             <br />
             <br />
           </p>
@@ -55,40 +55,12 @@ const confidentialite = () => {
             circulation de ces données.
             <br />
             <br />
-            Cette obligation légale repose sur l’article 1 du décret n°2021-1363
-            du 20 octobre 2021 portant injonction au regard de la menace grave
-            et actuelle contre la sécurité nationale, de conservation pour une
-            durée d’un an de certaines catégories de données de connexion et la
-            loi pour la confiance dans l’économie numérique n°2004-575 du 21
-            juin 2004.
-            <br />
-            <br />
-            En application de l’article 5(3) de la directive 2002/58/CE modifiée
-            concernant le traitement des données à caractère personnel et la
-            protection de la vie privée dans le secteur des communications
-            électroniques, transposée à l’article 82 de la loi n°78-17 du 6
-            janvier 1978 relative à l’informatique, aux fichiers et aux
-            libertés, les traceurs ou cookies suivent deux régimes distincts.
-            <br />
-            <br />
-            Les cookies strictement nécessaires au service ou ayant pour
-            finalité exclusive de faciliter la communication par voie
-            électronique sont dispensés de consentement préalable au titre de
-            l’article 82 de la loi n°78-17 du 6 janvier 1978.
-            <br />
-            <br />
-            Les cookies n’étant pas strictement nécessaires au service ou
-            n’ayant pas pour finalité exclusive de faciliter la communication
-            par voie électronique doivent être consenti par l’utilisateur.
-            <br />
-            <br />
-            Ce consentement de la personne concernée pour une ou plusieurs
-            finalités spécifiques constitue une base légale au sens du RGPD et
-            doit être entendu au sens de l'article 6-a du Règlement (UE)
-            2016/679 du Parlement européen et du Conseil du 27 avril 2016
-            relatif à la protection des personnes physiques à l'égard du
-            traitement des données à caractère personnel et à la libre
-            circulation de ces données.
+            Cette obligation légale est posée par la loi LCEN n° 2004-575 du 21
+            juin 2004 pour la confiance dans l'économie numérique et par
+            l’article 1 du décret n°2021-1363 portant injonction, au regard de
+            la menace grave et actuelle contre la sécurité nationale, de
+            conservation pour une durée d'un an de certaines catégories de
+            données de connexion.
             <br />
             <br />
           </p>
@@ -96,9 +68,6 @@ const confidentialite = () => {
           <p>
             Les données de connexion sont conservées par l’hébergeur pour une
             durée de 12 mois.
-            <br />
-            <br />
-            Les cookies sont conservés pour une durée de 13 mois.
             <br />
             <br />
           </p>
@@ -192,17 +161,63 @@ const confidentialite = () => {
             certaines missions.
             <br />
             <br />
-            <b>Microsoft Azure (Union Européenne)</b> : Hébergement des données
-            : https://privacy.microsoft.com/fr-fr/privacystatement
-            <br />
-            <br />
           </p>
+          <div>
+            <table>
+              <tbody>
+                <tr>
+                  <th className="border p-2">Partenaire</th>
+                  <th className="border p-2">Pays destinataire</th>
+                  <th className="border p-2">Traitement réalisé</th>
+                  <th className="border p-2">Garanties</th>
+                </tr>
+                <tr>
+                  <td className="border p-2">Microsoft Azure</td>
+                  <td className="border p-2">Union européenne</td>
+                  <td className="border p-2">Hébergement des données </td>
+                  <td className="border p-2">
+                    https://privacy.microsoft.com/fr-fr/privacystatement{" "}
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <p>
+              <br />
+              <br />
+            </p>
+          </div>
           <Title>Cookies</Title>
           <p>
             Un cookie est un fichier déposé sur votre terminal lors de la visite
             d’un site. Il a pour but de collecter des informations relatives à
             votre navigation et de vous adresser des services adaptés à votre
             terminal (ordinateur, mobile ou tablette).
+            <br />
+            <br />
+            En application de l’article 5(3) de la directive 2002/58/CE modifiée
+            concernant le traitement des données à caractère personnel et la
+            protection de la vie privée dans le secteur des communications
+            électroniques, transposée à l’article 82 de la loi n°78-17 du 6
+            janvier 1978 relative à l’informatique, aux fichiers et aux
+            libertés, les traceurs ou cookies suivent deux régimes distincts.
+            <br />
+            <br />
+            Les cookies strictement nécessaires au service ou ayant pour
+            finalité exclusive de faciliter la communication par voie
+            électronique sont dispensés de consentement préalable au titre de
+            l’article 82 de la loi n°78-17 du 6 janvier 1978. Les cookies
+            n’étant pas strictement nécessaires au service ou n’ayant pas pour
+            finalité exclusive de faciliter la communication par voie
+            électronique doivent être consenti par l’utilisateur.
+            <br />
+            <br />
+            Ce consentement de la personne concernée pour une ou plusieurs
+            finalités spécifiques constitue une base légale au sens du RGPD et
+            doit être entendu au sens de l'article 6-a du Règlement (UE)
+            2016/679 du Parlement européen et du Conseil du 27 avril 2016
+            relatif à la protection des personnes physiques à l'égard du
+            traitement des données à caractère personnel et à la libre
+            circulation de ces données.
             <br />
             <br />
             Le site dépose des cookies de mesure d’audience (nombre de visites,
