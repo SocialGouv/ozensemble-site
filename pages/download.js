@@ -1,5 +1,4 @@
 import Head from "next/head"
-import Script from "next/script"
 
 import {
   ANDROID_APP_ID,
@@ -43,8 +42,7 @@ const download = () => {
       <meta property="al:android:package" content={ANDROID_APP_ID} />
       <meta property="al:web:url" content={ROOT_URL} />
       <meta property="al:web:should_fallback" content="false" />
-      <Script
-        strategy="beforeInteractive"
+      <script
         dangerouslySetInnerHTML={{
           __html: `
   function redirect() {
