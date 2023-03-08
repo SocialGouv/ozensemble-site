@@ -33,7 +33,7 @@ const download = () => {
       />
       <meta property="og:image" content="/images/logo_oz.png" />
       <meta property="og:type" content="article" />
-      {/* <meta property="fb:app_id" content="{FACEBOOK_APP_ID}" /> */}
+      <meta property="fb:app_id" content="100089366502471" />
       {/* <meta property="al:ios:url" content="myapp://element/{ELEMENT_ID}" /> */}
       <meta property="al:ios:app_store_id" content={IOS_APP_ID} />
       <meta property="al:ios:app_name" content="Oz Ensemble" />
