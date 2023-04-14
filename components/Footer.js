@@ -67,10 +67,13 @@ export default function Footer() {
               <p>Utilités</p>
               <div className="w-4/5 mt-3 mb-5 border-b border-green-300" />
             </div>
-            <ArrowList text="Mentions légales" link="/mentions-legales" />
+            <ArrowList
+              text="Mentions légales"
+              link="/files/25012023-Oz_Ensemble-Mentions_legales_site_V2.pdf"
+            />
             <ArrowList
               text="Politique de confidentialité"
-              link="/politique-confidentialite"
+              link="/files/25012023-Oz_Ensemble-Politique_de_confidentialite_site_V3.pdf"
             />
             <ArrowList text="Statistiques" link="/stats" />
             <p className="mt-5 text-sm font-light">
