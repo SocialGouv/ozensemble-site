@@ -274,11 +274,11 @@ export default function Index() {
                 </p>
               </div>
               <div className="flex items-center mx-auto md:mx-0">
-                <a href="files/AFFICHE_OZ_-_Defi_de_janvier.pdf">
+                <a href="files/AFFICHE_OZ_-_Defi_de_Janvier.pdf">
                   <img src="images/icon/link.svg" alt="" className="w-[30px]" />
                 </a>
                 <p className="underline font-semibold pl-1">
-                  <a href="files/AFFICHE_OZ_-_Defi_de_janvier.pdf">
+                  <a href="files/AFFICHE_OZ_-_Defi_de_Janvier.pdf">
                     Affiche Oz Ensemble - Défi de janvier
                   </a>
                 </p>
@@ -292,11 +292,11 @@ export default function Index() {
                 </p>
               </div>
               <div className="flex items-center mx-auto md:mx-0">
-                <a href="files/Dossier_de_presse_-_2023_-_Defi_de_janvier.pdf">
+                <a href="files/Dossier_de_presse_-_2023_-_Defi_de_Janvier.pdf">
                   <img src="images/icon/link.svg" alt="" className="w-[30px]" />
                 </a>
                 <p className="underline font-semibold pl-1">
-                  <a href="files/Dossier_de_presse_-_2023_-_Defi_de_janvier.pdf">
+                  <a href="files/Dossier_de_presse_-_2023_-_Defi_de_Janvier.pdf">
                     Dossier de presse Oz Ensemble
                   </a>
                 </p>
