@@ -1,7 +1,6 @@
 import Footer from "../components/Footer"
-import Navigation from "../components/Navigation"
+import Navigation, { DownloadPopup } from "../components/Navigation"
 import { ANDROID_URL, IOS_URL } from "../constants"
-import { DownloadPopup } from "../components/Navigation"
 import { useState } from "react"
 
 export default function Index() {
