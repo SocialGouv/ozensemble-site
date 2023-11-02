@@ -1,13 +1,18 @@
 import Footer from "../components/Footer"
 import Navigation from "../components/Navigation"
 import { ANDROID_URL, IOS_URL } from "../constants"
+import { DownloadPopup } from "../components/Navigation"
+import { useState } from "react"
 
 export default function Index() {
+  const [showPopup, setShowPopup] = useState(false)
+
   return (
     <div className="">
+      <DownloadPopup showPopup={showPopup} setShowPopup={setShowPopup} />
       <header className="oz-header-gradient">
-        <Navigation />
-        <div className="md:flex pt-20 pb-14 md:pb-32 auto-cols-fr md:w-5/6 xl:w-[1100px] mx-[10%] md:m-auto">
+        <Navigation showPopup={showPopup} setShowPopup={setShowPopup} />
+        <div className="md:flex pt-20 pb-8 md:pb-32 auto-cols-fr md:w-5/6 xl:w-[1100px] mx-[10%] md:m-auto">
           <div className="w-full md:w-1/2 text-center md:text-left flex items-center">
             <div>
               <h1 className="mb-2 text-3xl font-bold lg:text-6xl text-oz-blue">
@@ -52,7 +57,7 @@ export default function Index() {
             <img
               src="images/other/hero.png"
               alt=""
-              className="max-w-1/2 md:max-h-[450px] lg:max-h-[600px]"
+              className="max-w-2/3 md:max-w-full md:max-h-[450px] lg:max-h-[600px]"
             />
           </div>
         </div>
@@ -139,13 +144,14 @@ export default function Index() {
             <div className="p-5 bg-white rounded-2xl">
               <h4 className="text-oz-pink text-2xl mb-4">Aux usagers</h4>
               <p>
-                Vous buvez plus de 2 verres par jour ? Vous désirez apprendre à
-                maitriser votre consommation d’alcool ?
+                Vous vous interrogez sur votre consommation ?<br />
+                Vous buvez plus de 2 verres par jour ? <br />
+                Vous désirez apprendre à maitriser votre consommation d’alcool ?
               </p>
             </div>
             <div className="p-6 bg-white rounded-2xl">
               <h4 className="text-oz-pink text-2xl mb-4">
-                Aux professionnel de santé
+                Aux professionnels de santé
               </h4>
               <p className="text-base text-black">
                 Vous souhaitez un outil complémentaire pour orienter une
@@ -163,6 +169,16 @@ export default function Index() {
               </p>
             </div>
           </div>
+        </div>
+
+        <div className="mt-5 md:mx-[5%] lg:mx-[8%] xl:mx-auto xl:max-w-[1200px]">
+          <button onClick={() => setShowPopup(true)}>
+            <img
+              className="w-full"
+              src="images/other/january_challenge.png"
+              alt="Et si on faisait le défi de janvier ? Tous ensemble. Première étape : on télécharge l'appli !"
+            />
+          </button>
         </div>
 
         <div className="py-20 lg:py-32" id="who-are-we">
@@ -200,7 +216,7 @@ export default function Index() {
                   href="https://www.fabrique.social.gouv.fr/"
                   className="text-link-style"
                 >
-                  Fabrique du numérique des ministères sociaux
+                  Fabrique numérique des ministères sociaux
                 </a>
                 .
               </p>
@@ -234,6 +250,57 @@ export default function Index() {
                 <a href="https://www.numerique.gouv.fr/dinum/">
                   <img className="" src="images/logo_DINUM.png" alt="" />
                 </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div
+          className="py-20 mx-[10%] sm:mx-20 md:mx-auto md:w-7/12 lg:w-[750px]"
+          id="kit-media"
+        >
+          <div className="bottom-9 bg-grey-600">
+            <h3 className="text-2xl font-bold text-center lg:text-4xl text-oz-blue mb-10">
+              Kit média à télécharger
+            </h3>
+            <div className="grid gap-5 md:grid-cols-2">
+              <div className="flex items-center mx-auto md:mx-0">
+                <a href="files/Affiche_OZ-Ensemble.pdf">
+                  <img src="images/icon/link.svg" alt="" className="w-[30px]" />
+                </a>
+                <p className="underline font-semibold pl-1">
+                  <a href="files/Affiche_OZ-Ensemble.pdf">
+                    Affiche Oz Ensemble
+                  </a>
+                </p>
+              </div>
+              <div className="flex items-center mx-auto md:mx-0">
+                <a href="files/AFFICHE_OZ_-_Defi_de_janvier.pdf">
+                  <img src="images/icon/link.svg" alt="" className="w-[30px]" />
+                </a>
+                <p className="underline font-semibold pl-1">
+                  <a href="files/AFFICHE_OZ_-_Defi_de_janvier.pdf">
+                    Affiche Oz Ensemble - Défi de janvier
+                  </a>
+                </p>
+              </div>
+              <div className="flex items-center mx-auto md:mx-0">
+                <a href="files/DEPLIANT-OZ.pdf">
+                  <img src="images/icon/link.svg" alt="" className="w-[30px]" />
+                </a>
+                <p className="underline font-semibold pl-1">
+                  <a href="files/DEPLIANT-OZ.pdf">Dépliant Oz Ensemble</a>
+                </p>
+              </div>
+              <div className="flex items-center mx-auto md:mx-0">
+                <a href="files/Dossier_de_presse_-_2023_-_Defi_de_janvier.pdf">
+                  <img src="images/icon/link.svg" alt="" className="w-[30px]" />
+                </a>
+                <p className="underline font-semibold pl-1">
+                  <a href="files/Dossier_de_presse_-_2023_-_Defi_de_janvier.pdf">
+                    Dossier de presse Oz Ensemble
+                  </a>
+                </p>
               </div>
             </div>
           </div>

@@ -1,6 +1,13 @@
 import { useState } from "react"
 import { FaPhoneAlt } from "react-icons/fa"
-import { ANDROID_URL, IOS_URL } from "../constants"
+import {
+  ANDROID_URL,
+  IOS_URL,
+  INSTAGRAM_URL,
+  FACEBOOK_URL,
+  TWITTER_URL,
+  LINKEDIN_URL,
+} from "../constants"
 import ContactPopup from "./ContactPopup"
 
 export default function Footer() {
@@ -61,6 +68,7 @@ export default function Footer() {
             >
               → Nous contacter ?
             </button>
+            <ArrowList text="Kit média" link="/#kit-media" />
           </div>
           <div className="col-span-2 mb-8">
             <div className="inline-block">
@@ -95,6 +103,40 @@ export default function Footer() {
                   className="object-contain"
                   src="images/other/app-store-fr.png"
                   alt=""
+                />
+              </a>
+            </div>
+            <div className="inline-block mt-5">
+              <p>Suivez-nous</p>
+              <div className="w-1/4 mt-3 mb-5 border-b border-green-300" />
+            </div>
+            <div className="flex gap-6">
+              <a href={INSTAGRAM_URL}>
+                <img
+                  className="object-contain w-[40px]"
+                  src="images/icon/instagram.svg"
+                  alt="instagram"
+                />
+              </a>
+              <a href={FACEBOOK_URL}>
+                <img
+                  className="object-contain w-[40px]"
+                  src="images/icon/facebook.svg"
+                  alt="facebook"
+                />
+              </a>
+              <a href={TWITTER_URL}>
+                <img
+                  className="object-contain w-[40px]"
+                  src="images/icon/X.svg"
+                  alt="twitter"
+                />
+              </a>
+              <a href={LINKEDIN_URL}>
+                <img
+                  className="object-contain w-[40px]"
+                  src="images/icon/linkedin.svg"
+                  alt="linkedin"
                 />
               </a>
             </div>

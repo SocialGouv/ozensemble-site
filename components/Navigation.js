@@ -7,9 +7,8 @@ import ContactPopup from "./ContactPopup"
 
 import { ANDROID_URL, IOS_URL } from "../constants"
 
-export default function Navigation() {
+export default function Navigation({ showPopup, setShowPopup }) {
   const [isOpen, setIsOpen] = useState(false)
-  const [showPopup, setShowPopup] = useState(false)
   const [showContactPopup, setShowContactPopup] = useState(false)
 
   useEffect(() => {
@@ -95,7 +94,7 @@ const DownloadPopupTrigger = ({ setShowPopup }) => {
   )
 }
 
-const DownloadPopup = ({ showPopup, setShowPopup }) => {
+export const DownloadPopup = ({ showPopup, setShowPopup }) => {
   const popupFirstFocus = useRef(null)
 
   useEffect(() => {

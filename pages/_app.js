@@ -1,4 +1,3 @@
-import "tailwindcss/tailwind.css"
 import "../style/default.css"
 
 import { init } from "@socialgouv/matomo-next"
@@ -23,12 +22,12 @@ class MyApp extends App {
           <meta property="og:title" content="Oz Ensemble" key="index" />
           <meta
             name="description"
-            content="Oz Ensemble est une application mobile pour maitriser sa consommation d'alcool. Ce dispositif expérimental créé par le Dr Géraldine Talbot, médecin addictologue de l'association CaPASSCité, financé par l'ARS, la MILDECA et la DINUM, en collaboration avec la Fabrique du numérique des ministères sociaux."
+            content="Oz Ensemble est une application mobile pour maitriser sa consommation d'alcool. Ce dispositif expérimental créé par le Dr Géraldine Talbot, médecin addictologue de l'association CaPASSCité, financé par l'ARS, la MILDECA et la DINUM, en collaboration avec la Fabrique numérique des ministères sociaux."
             key="index"
           />
           <meta
             property="og:description"
-            content="Oz Ensemble est une application mobile pour maitriser sa consommation d'alcool. Ce dispositif expérimental créé par le Dr Géraldine Talbot, médecin addictologue de l'association CaPASSCité, financé par l'ARS, la MILDECA et la DINUM, en collaboration avec la Fabrique du numérique des ministères sociaux."
+            content="Oz Ensemble est une application mobile pour maitriser sa consommation d'alcool. Ce dispositif expérimental créé par le Dr Géraldine Talbot, médecin addictologue de l'association CaPASSCité, financé par l'ARS, la MILDECA et la DINUM, en collaboration avec la Fabrique numérique des ministères sociaux."
             key="index"
           />
           <meta charset="UTF-8" />
