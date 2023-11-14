@@ -1,5 +1,5 @@
 app:
-  host: ozensemble.fr
+  host: ozensemble.fabique.social.gouv.fr
   redirectFrom:
-    - "ozensemble.{{ .Values.global.domain }}"
     - www.ozensemble.fr
+    - ozensemble.fr
