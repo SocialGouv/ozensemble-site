@@ -1,5 +1,5 @@
 app:
-  host: ozensemble.fabique.social.gouv.fr
+  host: ozensemble.fabrique.social.gouv.fr
   redirectFrom:
     - www.ozensemble.fr
     - ozensemble.fr
