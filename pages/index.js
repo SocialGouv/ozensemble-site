@@ -2,7 +2,6 @@ import Footer from "../components/Footer"
 import Navigation, { DownloadPopup } from "../components/Navigation"
 import { ANDROID_URL, IOS_URL } from "../constants"
 import { useState } from "react"
-import Head from "next/head"
 
 export default function Index() {
   const [showPopup, setShowPopup] = useState(false)
@@ -200,65 +199,76 @@ export default function Index() {
                 Qui sommes nous ?
               </h3>
               <p className="text-center my-7">
-                OZ Ensemble est un dispositif expérimental créé par le Dr
-                Géraldine Talbot, médecin addictologue de l'association{" "}
+                OZ Ensemble est un dispositif expérimental créé par le{" "}
+                <a
+                  href="https://www.linkedin.com/in/geraldine-talbot-13989b263/"
+                  className=" inline-flex h-4 items-center font-semibold border-b border-black "
+                >
+                  Dr Géraldine Talbot
+                  <img
+                    src="images/icon/external-link.svg"
+                    alt="Icone indiquant une redirection, ici vers le linkedin de Dr Géraldine Talbot"
+                    className="w-4 ml-1"
+                  />
+                </a>
+                , médecin addictologue de l'association{" "}
                 <a
                   href="https://capasscite.fr/"
-                  className=" inline-flex h-4 items-center font-semibold border-b border-black hover:underline"
+                  className=" inline-flex h-4 items-center font-semibold border-b border-black "
                 >
                   CaPASSCité
                   <img
                     src="images/icon/external-link.svg"
-                    alt="Icone chaîne représentant un lien cliquable"
-                    className="w-[16px] ml-1"
+                    alt="Icone indiquant une redirection, ici vers le site de l'association capasscité"
+                    className="w-4 ml-1"
                   />
                 </a>
                 , financé par l’
                 <a
                   href="https://www.ars.sante.fr/"
-                  className="inline-flex h-4 items-center font-semibold border-b border-black hover:underline"
+                  className="inline-flex h-4 items-center font-semibold border-b border-black"
                 >
                   ARS
                   <img
                     src="images/icon/external-link.svg"
-                    alt="Icone chaîne représentant un lien cliquable"
-                    className="w-[16px] ml-1"
+                    alt="Icone indiquant une redirection, ici vers le site de l'ars"
+                    className="w-4 ml-1"
                   />
                 </a>
                 , la{" "}
                 <a
                   href="https://www.drogues.gouv.fr/"
-                  className=" inline-flex h-4 items-center font-semibold border-b border-black hover:underline"
+                  className=" inline-flex h-4 items-center font-semibold border-b border-black"
                 >
                   MILDECA
                   <img
                     src="images/icon/external-link.svg"
-                    alt="Icone chaîne représentant un lien cliquable"
-                    className="w-[16px] ml-1"
+                    alt="Icone indiquant une redirection, ici vers le portail de la mildeca"
+                    className="w-4 ml-1"
                   />
                 </a>{" "}
                 et la{" "}
                 <a
                   href="https://www.numerique.gouv.fr/dinum/"
-                  className=" inline-flex h-4 items-center font-semibold border-b border-black hover:underline"
+                  className=" inline-flex h-4 items-center font-semibold border-b border-black"
                 >
                   DINUM
                   <img
                     src="images/icon/external-link.svg"
-                    alt="Icone chaîne représentant un lien cliquable"
-                    className="w-[16px] ml-1"
+                    alt="Icone indiquant une redirection, ici vers la page de la dinum"
+                    className="w-4 ml-1"
                   />
                 </a>
                 , en collaboration avec la{" "}
                 <a
                   href="https://www.fabrique.social.gouv.fr/"
-                  className=" inline-flex h-4 items-center font-semibold border-b border-black hover:underline"
+                  className=" inline-flex h-4 items-center font-semibold border-b border-black"
                 >
                   Fabrique numérique des ministères sociaux
                   <img
                     src="images/icon/external-link.svg"
-                    alt="Icone chaîne représentant un lien cliquable"
-                    className="w-[16px] ml-1"
+                    alt="Icone indiquant une redirection, ici vers le site de la fabrique numérique des ministères sociaux"
+                    className="w-4 ml-1"
                   />
                 </a>
                 .
@@ -270,7 +280,7 @@ export default function Index() {
                   <img
                     className=""
                     src="images/logo_ministeres_sociaux.png"
-                    alt="Partenaire les ministères sociaux"
+                    alt="Partenaire les ministères sociaux, accédez à leur site en cliquant sur ce logo"
                   />
                 </a>
               </div>
@@ -279,7 +289,7 @@ export default function Index() {
                   <img
                     className=""
                     src="images/logo_ars.png"
-                    alt="Partenaire l'agence régionale de santé Ile-de-France"
+                    alt="Partenaire l'agence régionale de santé Ile-de-France, accédez à leur site en cliquant sur ce logo"
                   />
                 </a>
               </div>
@@ -288,7 +298,7 @@ export default function Index() {
                   <img
                     className=""
                     src="images/logo_MILDECA.png"
-                    alt="Partenaire la MILDECA "
+                    alt="Partenaire la MILDECA, accédez au portail de la mildeca"
                   />
                 </a>
               </div>
@@ -297,7 +307,7 @@ export default function Index() {
                   <img
                     className=""
                     src="images/logo_CaPASSCite.png"
-                    alt="Partenaire l'association Capasscité"
+                    alt="Partenaire l'association Capasscité, accédez à leur site en cliquant sur ce logo"
                   />
                 </a>
               </div>
@@ -306,7 +316,7 @@ export default function Index() {
                   <img
                     className=""
                     src="images/logo_DINUM.png"
-                    alt="Partenaire la direction interministérielle du numérique"
+                    alt="Partenaire la direction interministérielle du numérique, accédez à leur site en cliquant sur ce logo"
                   />
                 </a>
               </div>
@@ -331,8 +341,8 @@ export default function Index() {
                   Affiche Oz Ensemble
                   <img
                     src="images/icon/external-link.svg"
-                    alt="Icone chaîne représentant un lien cliquable"
-                    className="w-[18px] ml-1 mt-1"
+                    alt="Icone indiquant une redirection, ici vers le pdf affiche oz ensemble"
+                    className="w-4 ml-1 mt-1"
                   />
                 </a>
               </div>
@@ -344,8 +354,8 @@ export default function Index() {
                   Affiche Oz Ensemble - Défi de janvier
                   <img
                     src="images/icon/external-link.svg"
-                    alt="Icone chaîne représentant un lien cliquable"
-                    className="w-[18px] ml-1 mt-1"
+                    alt="Icone indiquant une redirection, ici vers le pdf défi de janvier"
+                    className="w-4 ml-1 mt-1"
                   />
                 </a>
               </div>
@@ -357,8 +367,8 @@ export default function Index() {
                   Dépliant Oz Ensemble
                   <img
                     src="images/icon/external-link.svg"
-                    alt="Icone chaîne représentant un lien cliquable"
-                    className="w-[18px] ml-1 mt-1"
+                    alt="Icone indiquant une redirection, ici vers le pdf dépliant d'oz ensemble"
+                    className="w-4 ml-1 mt-1"
                   />
                 </a>
               </div>
@@ -370,8 +380,8 @@ export default function Index() {
                   Dossier de presse Oz Ensemble
                   <img
                     src="images/icon/external-link.svg"
-                    alt="Icone chaîne représentant un lien cliquable"
-                    className="w-[18px] ml-1 mt-1"
+                    alt="Icone indiquant une redirection, ici vers le pdf dossier de presse 2023 du défi de janvier"
+                    className="w-4 ml-1 mt-1"
                   />
                 </a>
               </div>

@@ -1,6 +1,5 @@
 import Footer from "../components/Footer"
 import Navigation from "../components/Navigation"
-import Head from "next/head"
 
 const Stats = () => {
   return (
