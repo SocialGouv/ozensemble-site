@@ -27,7 +27,11 @@ export default function Navigation({ showPopup, setShowPopup }) {
       <nav className="flex items-center justify-between px-5 bg-white fixed w-full h-[70px] top-0 z-0">
         <div>
           <a className="flex-center" href="/">
-            <img className="w-14" src="/images/logo_oz.png" alt="" />
+            <img
+              className="w-14"
+              src="/images/logo_oz.png"
+              alt="Logo principal, cliquez pour accéder à l'accueil"
+            />
           </a>
         </div>
         <div className="items-center justify-center md:flex">

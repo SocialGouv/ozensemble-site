@@ -2,6 +2,7 @@ import Footer from "../components/Footer"
 import Navigation, { DownloadPopup } from "../components/Navigation"
 import { ANDROID_URL, IOS_URL } from "../constants"
 import { useState } from "react"
+import Head from "next/head"
 
 export default function Index() {
   const [showPopup, setShowPopup] = useState(false)
@@ -25,14 +26,14 @@ export default function Index() {
                   <img
                     className="object-contain w-full"
                     src="images/other/google-play-fr.png"
-                    alt=""
+                    alt="disponible sur google play"
                   />
                 </a>
                 <a href={IOS_URL}>
                   <img
                     className="object-contain w-full"
                     src="images/other/app-store-fr.png"
-                    alt=""
+                    alt="télécharger dans l'app store"
                   />
                 </a>
               </div>
@@ -55,7 +56,10 @@ export default function Index() {
           <div className="items-center justify-center w-2/3 m-auto md:w-1/2 md:flex pl-[5%] mt-14 md:mt-0">
             <img
               src="images/other/hero.png"
-              alt=""
+              alt="3 affichages écrans décoratifs : 
+              - l'écran suivi composé de graphiques et du récapitulatif des badges
+              - l'écran calendrier indiquant par des icones la réusite d'objectifs quotidiens
+              - l'écran mes activités regroupant les activités disponibles"
               className="max-w-2/3 md:max-w-full md:max-h-[450px] lg:max-h-[600px]"
             />
           </div>
@@ -105,24 +109,33 @@ export default function Index() {
             <p className="text-base text-black">
               Chez Oz Ensemble, l’objectif est de vous redonner la maîtrise de
               votre consommation d’alcool, tout au long de l’année,{" "}
-              <span className="text-oz-pink">
+              <span className="sr-only">
+                Le texte suivant est en gras et de couleur rouge
+              </span>
+              <strong className="text-oz-pink">
                 sans nécessairement promouvoir l’abstinence totale et
                 définitive.
-              </span>
+              </strong>
               <br />
               <br />
               Oz Ensemble s’appuie sur les dernières recommandations de la HAS
               (Haute Autorité de Santé) qui promeut la{" "}
-              <span className="text-oz-pink">
+              <span className="sr-only">
+                Le texte suivant est en gras et de couleur rouge
+              </span>
+              <strong className="text-oz-pink ">
                 réduction des risques alcool
-              </span>{" "}
+              </strong>{" "}
               par les acteurs de la prévention et du soin en addictologie.
               <br />
               <br />
               Oz Ensemble enrichie également le{" "}
-              <span className="text-oz-pink">
+              <span className="sr-only">
+                Le texte suivant est en gras et de couleur rouge
+              </span>
+              <strong className="text-oz-pink">
                 travail de suivi des professionnels
-              </span>{" "}
+              </strong>{" "}
               de santé grâce à l’agenda de consommation que le patient pourra
               vous partager.
             </p>
@@ -175,7 +188,7 @@ export default function Index() {
             <img
               className="w-full"
               src="images/other/january_challenge.png"
-              alt="Et si on faisait le défi de janvier ? Tous ensemble. Première étape : on télécharge l'appli !"
+              alt="Et si on faisait le défi de janvier ? Tous ensemble. Première étape : on télécharge l'appli ! Lancer le téléchargement en cliquant sur cette image"
             />
           </button>
         </div>
@@ -189,33 +202,64 @@ export default function Index() {
               <p className="text-center my-7">
                 OZ Ensemble est un dispositif expérimental créé par le Dr
                 Géraldine Talbot, médecin addictologue de l'association{" "}
-                <a href="https://capasscite.fr/" className="text-link-style">
+                <a
+                  href="https://capasscite.fr/"
+                  className=" inline-flex h-4 items-center font-semibold border-b border-black hover:underline"
+                >
                   CaPASSCité
+                  <img
+                    src="images/icon/external-link.svg"
+                    alt="Icone chaîne représentant un lien cliquable"
+                    className="w-[16px] ml-1"
+                  />
                 </a>
                 , financé par l’
-                <a href="https://www.ars.sante.fr/" className="text-link-style">
+                <a
+                  href="https://www.ars.sante.fr/"
+                  className="inline-flex h-4 items-center font-semibold border-b border-black hover:underline"
+                >
                   ARS
+                  <img
+                    src="images/icon/external-link.svg"
+                    alt="Icone chaîne représentant un lien cliquable"
+                    className="w-[16px] ml-1"
+                  />
                 </a>
                 , la{" "}
                 <a
                   href="https://www.drogues.gouv.fr/"
-                  className="text-link-style"
+                  className=" inline-flex h-4 items-center font-semibold border-b border-black hover:underline"
                 >
                   MILDECA
+                  <img
+                    src="images/icon/external-link.svg"
+                    alt="Icone chaîne représentant un lien cliquable"
+                    className="w-[16px] ml-1"
+                  />
                 </a>{" "}
                 et la{" "}
                 <a
                   href="https://www.numerique.gouv.fr/dinum/"
-                  className="text-link-style"
+                  className=" inline-flex h-4 items-center font-semibold border-b border-black hover:underline"
                 >
                   DINUM
+                  <img
+                    src="images/icon/external-link.svg"
+                    alt="Icone chaîne représentant un lien cliquable"
+                    className="w-[16px] ml-1"
+                  />
                 </a>
                 , en collaboration avec la{" "}
                 <a
                   href="https://www.fabrique.social.gouv.fr/"
-                  className="text-link-style"
+                  className=" inline-flex h-4 items-center font-semibold border-b border-black hover:underline"
                 >
                   Fabrique numérique des ministères sociaux
+                  <img
+                    src="images/icon/external-link.svg"
+                    alt="Icone chaîne représentant un lien cliquable"
+                    className="w-[16px] ml-1"
+                  />
                 </a>
                 .
               </p>
@@ -226,28 +270,44 @@ export default function Index() {
                   <img
                     className=""
                     src="images/logo_ministeres_sociaux.png"
-                    alt=""
+                    alt="Partenaire les ministères sociaux"
                   />
                 </a>
               </div>
               <div className="transition duration-500 hover:scale-110 basis-1/4 lg:basis-1/6">
                 <a href="https://www.ars.sante.fr/">
-                  <img className="" src="images/logo_ars.png" alt="" />
+                  <img
+                    className=""
+                    src="images/logo_ars.png"
+                    alt="Partenaire l'agence régionale de santé Ile-de-France"
+                  />
                 </a>
               </div>
               <div className="transition duration-500 hover:scale-110 basis-1/4 lg:basis-1/6">
                 <a href="https://www.drogues.gouv.fr/">
-                  <img className="" src="images/logo_MILDECA.png" alt="" />
+                  <img
+                    className=""
+                    src="images/logo_MILDECA.png"
+                    alt="Partenaire la MILDECA "
+                  />
                 </a>
               </div>
               <div className="transition duration-500 hover:scale-110 basis-1/4 lg:basis-1/6">
                 <a href="https://capasscite.fr/association/">
-                  <img className="" src="images/logo_CaPASSCite.png" alt="" />
+                  <img
+                    className=""
+                    src="images/logo_CaPASSCite.png"
+                    alt="Partenaire l'association Capasscité"
+                  />
                 </a>
               </div>
               <div className="transition duration-500 hover:scale-110 basis-1/4 lg:basis-1/6">
                 <a href="https://www.numerique.gouv.fr/dinum/">
-                  <img className="" src="images/logo_DINUM.png" alt="" />
+                  <img
+                    className=""
+                    src="images/logo_DINUM.png"
+                    alt="Partenaire la direction interministérielle du numérique"
+                  />
                 </a>
               </div>
             </div>
@@ -264,42 +324,56 @@ export default function Index() {
             </h3>
             <div className="grid gap-5 md:grid-cols-2">
               <div className="flex items-center mx-auto md:mx-0">
-                <a href="files/Affiche_OZ-Ensemble.pdf">
-                  <img src="images/icon/link.svg" alt="" className="w-[30px]" />
+                <a
+                  href="files/Affiche_OZ-Ensemble.pdf"
+                  className="border-b border-black h-5 flex flex-row font-semibold"
+                >
+                  Affiche Oz Ensemble
+                  <img
+                    src="images/icon/external-link.svg"
+                    alt="Icone chaîne représentant un lien cliquable"
+                    className="w-[18px] ml-1 mt-1"
+                  />
                 </a>
-                <p className="underline font-semibold pl-1">
-                  <a href="files/Affiche_OZ-Ensemble.pdf">
-                    Affiche Oz Ensemble
-                  </a>
-                </p>
               </div>
               <div className="flex items-center mx-auto md:mx-0">
-                <a href="files/AFFICHE_OZ_-_Defi_de_Janvier.pdf">
-                  <img src="images/icon/link.svg" alt="" className="w-[30px]" />
+                <a
+                  href="files/AFFICHE_OZ_-_Defi_de_Janvier.pdf"
+                  className="border-b border-black h-5 flex flex-row font-semibold"
+                >
+                  Affiche Oz Ensemble - Défi de janvier
+                  <img
+                    src="images/icon/external-link.svg"
+                    alt="Icone chaîne représentant un lien cliquable"
+                    className="w-[18px] ml-1 mt-1"
+                  />
                 </a>
-                <p className="underline font-semibold pl-1">
-                  <a href="files/AFFICHE_OZ_-_Defi_de_Janvier.pdf">
-                    Affiche Oz Ensemble - Défi de janvier
-                  </a>
-                </p>
               </div>
               <div className="flex items-center mx-auto md:mx-0">
-                <a href="files/DEPLIANT-OZ.pdf">
-                  <img src="images/icon/link.svg" alt="" className="w-[30px]" />
+                <a
+                  href="files/DEPLIANT-OZ.pdf"
+                  className="border-b border-black h-5 flex flex-row font-semibold"
+                >
+                  Dépliant Oz Ensemble
+                  <img
+                    src="images/icon/external-link.svg"
+                    alt="Icone chaîne représentant un lien cliquable"
+                    className="w-[18px] ml-1 mt-1"
+                  />
                 </a>
-                <p className="underline font-semibold pl-1">
-                  <a href="files/DEPLIANT-OZ.pdf">Dépliant Oz Ensemble</a>
-                </p>
               </div>
               <div className="flex items-center mx-auto md:mx-0">
-                <a href="files/Dossier_de_presse_-_2023_-_Defi_de_Janvier.pdf">
-                  <img src="images/icon/link.svg" alt="" className="w-[30px]" />
+                <a
+                  href="files/Dossier_de_presse_-_2023_-_Defi_de_Janvier.pdf"
+                  className="border-b border-black h-5 flex flex-row font-semibold"
+                >
+                  Dossier de presse Oz Ensemble
+                  <img
+                    src="images/icon/external-link.svg"
+                    alt="Icone chaîne représentant un lien cliquable"
+                    className="w-[18px] ml-1 mt-1"
+                  />
                 </a>
-                <p className="underline font-semibold pl-1">
-                  <a href="files/Dossier_de_presse_-_2023_-_Defi_de_Janvier.pdf">
-                    Dossier de presse Oz Ensemble
-                  </a>
-                </p>
               </div>
             </div>
           </div>
@@ -313,7 +387,9 @@ export default function Index() {
 
 const Checklist = ({ title, subtitle }) => (
   <div>
-    <h6 className="text-base font-bold text-oz-pink">✓ {title}</h6>
+    <h6 className="text-base text-oz-pink">
+      <strong>✓ {title}</strong>
+    </h6>
     <p className="text-sm text-black">{subtitle}</p>
   </div>
 )
@@ -323,7 +399,7 @@ const Checklist2 = ({ content }) => (
     <img
       className="mr-3 md:mx-7"
       src="images/icon/check-circle-turqoise-500.svg"
-      alt=""
+      alt="Icone coche turquoise entourée "
     />
     <p className="text-base text-black">{content}</p>
   </div>
