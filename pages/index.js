@@ -55,7 +55,7 @@ export default function Index() {
           <div className="items-center justify-center w-2/3 m-auto md:w-1/2 md:flex pl-[5%] mt-14 md:mt-0">
             <img
               src="images/other/hero.png"
-              alt="3 affichages écrans décoratifs : 
+              alt="3 affichages écrans décoratifs :
               - l'écran suivi composé de graphiques et du récapitulatif des badges
               - l'écran calendrier indiquant par des icones la réusite d'objectifs quotidiens
               - l'écran mes activités regroupant les activités disponibles"
@@ -187,7 +187,7 @@ export default function Index() {
             <img
               className="w-full"
               src="images/other/january_challenge.png"
-              alt="Et si on faisait le défi de janvier ? Tous ensemble. Première étape : on télécharge l'appli ! Lancer le téléchargement en cliquant sur cette image"
+              alt="Et si on faisait le défi de janvier ? Tous ensemble. Première étape : on télécharge l'appli ! Lancer le téléchargement en cliquant ici"
             />
           </button>
         </div>
