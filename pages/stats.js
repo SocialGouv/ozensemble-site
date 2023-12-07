@@ -16,6 +16,13 @@ const Stats = () => {
           allowTransparency
         />
       </div>
+      <div>
+        <p className="text-center">
+          L'affichage des données auxquelles vous avez accès est géré par
+          Métabase. L'accessibilité non-conforme de cet affichage est sous le
+          contrôle de Métabase.
+        </p>
+      </div>
       <Footer />
     </div>
   )

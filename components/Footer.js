@@ -63,7 +63,7 @@ export default function Footer() {
               link="mailto:ozensemble@fabrique.social.gouv.fr"
             /> */}
             <button
-              className="block text-sm font-light mb-2 cursor-pointer"
+              className="block underline text-sm font-light mb-2 cursor-pointer"
               onClick={() => setShowContactPopup(true)}
             >
               → Nous contacter ?
@@ -98,14 +98,14 @@ export default function Footer() {
                 <img
                   className="object-contain"
                   src="images/other/google-play-fr.png"
-                  alt=""
+                  alt="Disponible sur Google Play"
                 />
               </a>
               <a href={IOS_URL}>
                 <img
                   className="object-contain"
                   src="images/other/app-store-fr.png"
-                  alt=""
+                  alt="Télécharger dans l'App Store"
                 />
               </a>
             </div>
@@ -118,28 +118,28 @@ export default function Footer() {
                 <img
                   className="object-contain w-[40px]"
                   src="images/icon/instagram.svg"
-                  alt="instagram"
+                  alt="Vers profil instagram"
                 />
               </a>
               <a href={FACEBOOK_URL}>
                 <img
                   className="object-contain w-[40px]"
                   src="images/icon/facebook.svg"
-                  alt="facebook"
+                  alt="Vers profil facebook"
                 />
               </a>
               <a href={TWITTER_URL}>
                 <img
                   className="object-contain w-[40px]"
                   src="images/icon/X.svg"
-                  alt="twitter"
+                  alt="Vers profil twitter"
                 />
               </a>
               <a href={LINKEDIN_URL}>
                 <img
                   className="object-contain w-[40px]"
                   src="images/icon/linkedin.svg"
-                  alt="linkedin"
+                  alt="Vers profil linkedin"
                 />
               </a>
             </div>
@@ -156,7 +156,7 @@ export default function Footer() {
 const ArrowList = ({ text, link }) => (
   <div className="mb-2">
     <a href={link}>
-      <p className="text-sm font-light">→ {text}</p>
+      <p className="text-sm font-light underline">→ {text}</p>
     </a>
   </div>
 )
