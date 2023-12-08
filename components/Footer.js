@@ -145,8 +145,13 @@ export default function Footer() {
             </div>
           </div>
         </div>
-        <div className="text-center mb-1 mx-[10%]">
+        <div className="items-center justify-center flex flex-row mb-1">
           <p>La Fabrique Numérique des Ministères Sociaux © 2023</p>
+          <img
+            className="object-contain w-48 ml-4"
+            src="images/logo_fabrique.svg"
+            alt="logo de La Fabrique Numérique des Ministères Sociaux"
+          />
         </div>
       </footer>
     </>
