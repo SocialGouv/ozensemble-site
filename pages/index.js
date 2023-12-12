@@ -276,11 +276,11 @@ export default function Index() {
             </div>
             <div className="flex flex-wrap justify-center gap-6 top-9">
               <div className="transition duration-500 hover:scale-110 basis-1/4 lg:basis-1/6">
-                <a href="https://solidarites-sante.gouv.fr/">
+                <a href="https://www.fabrique.social.gouv.fr/">
                   <img
-                    className=""
-                    src="images/logo_ministeres_sociaux.png"
-                    alt="Partenaire les ministères sociaux, accédez à leur site en cliquant sur ce logo"
+                    className="py-9"
+                    src="images/logo_fabrique.png"
+                    alt="logo de La Fabrique Numérique des Ministères Sociaux, accédez à leur site en cliquant sur ce logo"
                   />
                 </a>
               </div>
