@@ -276,7 +276,7 @@ export default function Index() {
             </div>
             <div className="flex flex-wrap justify-center gap-6 top-9">
               <div className="transition duration-500 hover:scale-110 basis-1/4 lg:basis-1/6">
-                <a href="https://www.fabrique.social.gouv.fr">
+                <a href="https://www.fabrique.social.gouv.fr/">
                   <img
                     className="py-9"
                     src="images/logo_fabrique.png"
