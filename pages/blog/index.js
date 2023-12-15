@@ -1,15 +1,20 @@
 import React from "react"
-import Navigation from "../../components/Navigation"
-import Footer from "../../components/Footer"
-import BlogCard from "../../components/BlogCard"
 import fs from "fs"
 import path from "path"
 import matter from "gray-matter"
 import { serialize } from "next-mdx-remote/serialize"
+import Head from "next/head"
+import Navigation from "../../components/Navigation"
+import Footer from "../../components/Footer"
+import BlogCard from "../../components/BlogCard"
 
 const Index = ({ posts }) => {
   return (
     <>
+      <Head>
+        <title>Blog | Oz Ensemble</title>
+        <meta property="og:title" content="Blog | Oz EEnsemble" />
+      </Head>
       <div className="flex flex-col min-h-screen">
         <Navigation />
         <div className="flex-grow py-16 mx-[10%] sm:mx-20 h-auto">

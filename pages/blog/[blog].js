@@ -3,6 +3,7 @@ import Navigation from "../../components/Navigation"
 import Footer from "../../components/Footer"
 import { serialize } from "next-mdx-remote/serialize"
 import { MDXRemote } from "next-mdx-remote"
+import Head from "next/head"
 import fs from "fs"
 import path from "path"
 import matter from "gray-matter"
@@ -12,6 +13,13 @@ import styles from "../../style/bloga.module.css"
 const Blog = ({ mdxSource, data }) => {
   return (
     <>
+      <Head>
+        <title>{data.title} | Blog | Oz Ensemble</title>
+        <meta name="description" content={data.description} />
+        <meta property="og:title" content={data.title} />
+        <meta property="og:description" content={data.description} />
+        <meta property="og:image" content={data.image} />
+      </Head>
       <Navigation />
       <div className="p-4 lg:pt-16 sm:mx-20 xl:mx-auto xl:w-[1100px]">
         <div className="mb-6 text-oz-pink">
