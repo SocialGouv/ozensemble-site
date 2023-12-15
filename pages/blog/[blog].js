@@ -7,7 +7,7 @@ import fs from "fs"
 import path from "path"
 import matter from "gray-matter"
 import { HiChevronLeft } from "react-icons/hi"
-import styles from "../../style/blog.module.css"
+import styles from "../../style/bloga.module.css"
 
 const Blog = ({ mdxSource, data }) => {
   return (
