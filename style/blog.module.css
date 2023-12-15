@@ -1,5 +1,4 @@
-
-/* styles/Blog.module.css */
+/* styles/blog.module.css */
 .blogContent h1,
 .blogContent h2,
 .blogContent h3 {
@@ -7,7 +6,7 @@
   line-height: 2.2rem;
   margin-top: 2rem;
   margin-bottom: 1rem;
-  color: #2d3748; 
+  color: #2d3748;
 }
 
 .blogContent h1 {
@@ -23,7 +22,7 @@
 }
 
 .blogContent a {
-  color: #4130a5; 
+  color: #4130a5;
 }
 
 .blogContent img {
@@ -32,7 +31,7 @@
 }
 
 .blogContent strong {
-color: #de285e;
+  color: #de285e;
 }
 
 .blogContent ul,
@@ -42,7 +41,7 @@ color: #de285e;
 }
 
 .blogContent hr {
-  border-top-color: #bac3d1; 
+  border-top-color: #bac3d1;
   margin-top: 4rem;
   margin-bottom: 4rem;
 }
