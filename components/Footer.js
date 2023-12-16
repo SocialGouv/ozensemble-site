@@ -91,7 +91,7 @@ export default function Footer() {
             />
             <ArrowList text="Statistiques" link="/stats" />
             <p className="mt-5 text-sm font-light">
-              Accessibilité : non conforme
+              Accessibilité : partiellement conforme
             </p>
           </div>
           <div className="max-w-md col-span-4 mb-8 lg:col-span-3">
