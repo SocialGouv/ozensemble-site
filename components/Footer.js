@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { FaPhoneAlt } from "react-icons/fa"
 import {
   ANDROID_URL,
@@ -12,7 +12,13 @@ import ContactPopup from "./ContactPopup"
 
 export default function Footer() {
   const [showContactPopup, setShowContactPopup] = useState(false)
+  const [baseUrl, setBaseUrl] = useState("")
 
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      setBaseUrl(window.location.origin)
+    }
+  }, [])
   return (
     <>
       {/* Popup and overlay on top of the page */}
@@ -85,7 +91,7 @@ export default function Footer() {
             />
             <ArrowList text="Statistiques" link="/stats" />
             <p className="mt-5 text-sm font-light">
-              Accessibilité : non conforme
+              Accessibilité : partiellement conforme
             </p>
           </div>
           <div className="max-w-md col-span-4 mb-8 lg:col-span-3">
@@ -97,14 +103,14 @@ export default function Footer() {
               <a href={ANDROID_URL}>
                 <img
                   className="object-contain"
-                  src="images/other/google-play-fr.png"
+                  src={`${baseUrl}/images/other/google-play-fr.png`}
                   alt="Disponible sur Google Play"
                 />
               </a>
               <a href={IOS_URL}>
                 <img
                   className="object-contain"
-                  src="images/other/app-store-fr.png"
+                  src={`${baseUrl}/images/other/app-store-fr.png`}
                   alt="Télécharger dans l'App Store"
                 />
               </a>
@@ -117,28 +123,28 @@ export default function Footer() {
               <a href={INSTAGRAM_URL}>
                 <img
                   className="object-contain w-[40px]"
-                  src="images/icon/instagram.svg"
+                  src={`${baseUrl}/images/icon/instagram.svg`}
                   alt="Vers profil instagram"
                 />
               </a>
               <a href={FACEBOOK_URL}>
                 <img
                   className="object-contain w-[40px]"
-                  src="images/icon/facebook.svg"
+                  src={`${baseUrl}/images/icon/facebook.svg`}
                   alt="Vers profil facebook"
                 />
               </a>
               <a href={TWITTER_URL}>
                 <img
                   className="object-contain w-[40px]"
-                  src="images/icon/X.svg"
+                  src={`${baseUrl}/images/icon/X.svg`}
                   alt="Vers profil twitter"
                 />
               </a>
               <a href={LINKEDIN_URL}>
                 <img
                   className="object-contain w-[40px]"
-                  src="images/icon/linkedin.svg"
+                  src={`${baseUrl}/images/icon/linkedin.svg`}
                   alt="Vers profil linkedin"
                 />
               </a>
