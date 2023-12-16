@@ -15,10 +15,10 @@ const download = () => {
   return (
     <Head>
       <meta charset="UTF-8" />
-      <title>Télécharger OzEnsemble</title>
+      <title>Télécharger Oz Ensemble</title>
       <meta
         property="og:title"
-        content="Télécharger OzEnsemble"
+        content="Télécharger Oz Ensemble"
         key="download"
       />
       <meta

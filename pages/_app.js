@@ -31,7 +31,7 @@ class MyApp extends App {
             key="index"
           />
           <meta charset="UTF-8" />
-          <title key="download">Télécharger OzEnsemble</title>
+          <title key="download">Télécharger Oz Ensemble</title>
           <meta property="og:url" content={`${ROOT_URL}/download`} />
           <meta property="og:image" content="/images/logo_oz.png" />
           <meta property="og:type" content="article" />

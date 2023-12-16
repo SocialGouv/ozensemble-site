@@ -341,7 +341,7 @@ export default function Index() {
                   Affiche Oz Ensemble
                   <img
                     src="images/icon/external-link.svg"
-                    alt="Icone indiquant une redirection, ici vers le pdf affiche oz ensemble"
+                    alt="Icone indiquant une redirection, ici vers le pdf affiche Oz Ensemble"
                     className="w-4 ml-1 mt-1"
                   />
                 </a>
@@ -367,7 +367,7 @@ export default function Index() {
                   Dépliant Oz Ensemble
                   <img
                     src="images/icon/external-link.svg"
-                    alt="Icone indiquant une redirection, ici vers le pdf dépliant d'oz ensemble"
+                    alt="Icone indiquant une redirection, ici vers le pdf dépliant d'Oz Ensemble"
                     className="w-4 ml-1 mt-1"
                   />
                 </a>
