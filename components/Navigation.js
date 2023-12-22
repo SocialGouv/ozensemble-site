@@ -101,10 +101,14 @@ const DownloadPopupTrigger = ({ setShowPopup }) => {
 
 export const DownloadPopup = ({ showPopup, setShowPopup }) => {
   const popupFirstFocus = useRef(null)
+  const [baseUrl, setBaseUrl] = useState("")
 
   useEffect(() => {
     // on popup open, focus on the first link
     popupFirstFocus.current.focus()
+    if (typeof window !== "undefined") {
+      setBaseUrl(window.location.origin)
+    }
   }, [showPopup])
 
   return (
@@ -138,14 +142,14 @@ export const DownloadPopup = ({ showPopup, setShowPopup }) => {
             <a href={ANDROID_URL} ref={popupFirstFocus} tabIndex={1}>
               <img
                 className="object-contain w-full"
-                src="images/other/google-play-fr.png"
+                src={`${baseUrl}/images/other/google-play-fr.png`}
                 alt="télécharger dans Google Play"
               />
             </a>
             <a href={IOS_URL} tabIndex={1}>
               <img
                 className="object-contain w-full"
-                src="images/other/app-store-fr.png"
+                src={`${baseUrl}/images/other/app-store-fr.png`}
                 alt="télécharger dans l'App Store"
               />
             </a>

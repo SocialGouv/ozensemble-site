@@ -1,5 +1,5 @@
-import React from "react"
-import Navigation from "../../components/Navigation"
+import React, { useState } from "react"
+import Navigation, { DownloadPopup } from "../../components/Navigation"
 import Footer from "../../components/Footer"
 import { serialize } from "next-mdx-remote/serialize"
 import { MDXRemote } from "next-mdx-remote"
@@ -11,6 +11,7 @@ import { HiChevronLeft } from "react-icons/hi"
 import styles from "../../style/bloga.module.css"
 
 const Blog = ({ mdxSource, data }) => {
+  const [showPopup, setShowPopup] = useState(false)
   return (
     <>
       <Head>
@@ -20,7 +21,8 @@ const Blog = ({ mdxSource, data }) => {
         <meta property="og:description" content={data.description} />
         <meta property="og:image" content={data.image} />
       </Head>
-      <Navigation />
+      <DownloadPopup showPopup={showPopup} setShowPopup={setShowPopup} />
+      <Navigation showPopup={showPopup} setShowPopup={setShowPopup} />
       <div className="p-4 lg:pt-16 sm:mx-20 xl:mx-auto xl:w-[1100px]">
         <div className="mb-6 text-oz-pink">
           <a
