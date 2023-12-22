@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import fs from "fs"
 import path from "path"
 import matter from "gray-matter"
@@ -7,7 +7,6 @@ import Head from "next/head"
 import Navigation, { DownloadPopup } from "../../components/Navigation"
 import Footer from "../../components/Footer"
 import BlogCard from "../../components/BlogCard"
-import { useState } from "react"
 
 const Index = ({ posts }) => {
   const [showPopup, setShowPopup] = useState(false)
