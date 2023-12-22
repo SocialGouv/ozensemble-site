@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+​
+​
+<url>
+  <loc>https://ozensemble.fabrique.social.gouv.fr/</loc>
+  <lastmod>2023-12-16T19:39:33+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://ozensemble.fabrique.social.gouv.fr/blog</loc>
+  <lastmod>2023-12-16T19:39:35+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://ozensemble.fabrique.social.gouv.fr/files/Affiche_OZ-Ensemble.pdf</loc>
+  <lastmod>2023-12-16T19:39:33+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://ozensemble.fabrique.social.gouv.fr/files/AFFICHE_OZ_-_Defi_de_Janvier.pdf</loc>
+  <lastmod>2023-12-16T19:39:33+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://ozensemble.fabrique.social.gouv.fr/files/DEPLIANT-OZ.pdf</loc>
+  <lastmod>2023-12-16T19:39:33+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://ozensemble.fabrique.social.gouv.fr/files/Dossier_de_presse_-_2023_-_Defi_de_Janvier.pdf</loc>
+  <lastmod>2023-12-16T19:39:33+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://ozensemble.fabrique.social.gouv.fr/files/25012023-Oz_Ensemble-Mentions_legales_site_V2.pdf</loc>
+  <lastmod>2023-12-16T19:39:33+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://ozensemble.fabrique.social.gouv.fr/files/25012023-Oz_Ensemble-Politique_de_confidentialite_site_V3.pdf</loc>
+  <lastmod>2023-12-16T19:39:33+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://ozensemble.fabrique.social.gouv.fr/stats</loc>
+  <lastmod>2023-12-16T19:39:33+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://ozensemble.fabrique.social.gouv.fr/blog/reussir-son-dry-january-avec-oz-ensemble</loc>
+  <lastmod>2023-12-16T19:39:35+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+​
+​
+</urlset>
