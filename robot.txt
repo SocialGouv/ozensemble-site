@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /public/  # Allow crawling of pages in the /public/ directory
+Allow: /images/  # Allow crawling of images
+Sitemap: https://ozensemble.fabrique.social.gouv.fr/sitemap.xml
