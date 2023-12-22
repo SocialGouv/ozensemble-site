@@ -90,9 +90,11 @@ export default function Footer() {
               link="/files/25012023-Oz_Ensemble-Politique_de_confidentialite_site_V3.pdf"
             />
             <ArrowList text="Statistiques" link="/stats" />
-            <p className="mt-5 text-sm font-light">
-              Accessibilité : partiellement conforme
-            </p>
+
+            <ArrowList
+              text="Accessibilité : non conforme"
+              link="/files/ozensemble_declaration_accessibilite_finale_fixed-min.pdf"
+            />
           </div>
           <div className="max-w-md col-span-4 mb-8 lg:col-span-3">
             <div className="inline-block">
