@@ -66,10 +66,6 @@ function generateSiteMap(posts) {
  `
 }
 
-export default function SiteMap() {
-  return <div>{/* Render your sitemap content here */}</div>
-}
-
 export async function getStaticProps() {
   const files = fs.readdirSync(path.join(process.cwd(), "content"))
 
@@ -91,7 +87,6 @@ export async function getStaticProps() {
   )
 
   const sitemap = generateSiteMap(posts)
-  console.log(sitemap)
   fs.writeFileSync(path.join(process.cwd(), "public", "sitemap.xml"), sitemap)
 
   return {
