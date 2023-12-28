@@ -85,7 +85,7 @@ const Link = ({ name, target = null, setIsOpen }) => (
   </a>
 )
 
-const DownloadPopupTrigger = ({ setShowPopup }) => {
+export const DownloadPopupTrigger = ({ setShowPopup }) => {
   return (
     <>
       <button
