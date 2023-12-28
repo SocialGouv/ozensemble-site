@@ -2,6 +2,9 @@ import fs from "fs"
 import matter from "gray-matter"
 import path from "path"
 import { serialize } from "next-mdx-remote/serialize"
+import { stats } from "fs-extra"
+import { format, parse } from "date-fns"
+import { fr } from "date-fns/locale"
 
 const URL = "https://ozensemble.fabrique.social.gouv.fr"
 
@@ -54,16 +57,21 @@ function generateSiteMap(posts) {
    <priority>0.80</priority>
  </url>
      ${posts
-       .map(({ slug }) => {
+       .map(({ slug, lastmod }) => {
          return `
        <url>
            <loc>${`${URL}/blog/${slug}`}</loc>
+           <lastmod>${lastmod}</lastmod>
        </url>
      `
        })
        .join("")}
    </urlset>
  `
+}
+
+export default function SiteMap() {
+  return <div>{/* Render your sitemap content here */}</div>
 }
 
 export async function getStaticProps() {
@@ -77,16 +85,22 @@ export async function getStaticProps() {
         const rawContent = fs.readFileSync(filePath, "utf8")
         const { content, data } = matter(rawContent)
         const mdxSource = await serialize(content)
-
+        const parsedDate = data.date
+          ? parse(data.date, "MMMM d, yyyy", new Date(), { locale: fr })
+          : null
         return {
           ...data,
           mdxSource,
           slug: filename.replace(".mdx", ""),
+          lastmod: parsedDate
+            ? format(parsedDate, "yyyy-MM-dd")
+            : stats.mtime.toISOString(),
         }
       })
   )
 
   const sitemap = generateSiteMap(posts)
+
   fs.writeFileSync(path.join(process.cwd(), "public", "sitemap.xml"), sitemap)
 
   return {
