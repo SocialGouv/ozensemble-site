@@ -23,6 +23,7 @@
 
 .blogContent a {
   color: #4130a5;
+  text-decoration: underline;
 }
 
 .blogContent img {
