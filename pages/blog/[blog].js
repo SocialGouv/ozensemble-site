@@ -1,5 +1,8 @@
 import React, { useState } from "react"
-import Navigation, { DownloadPopup } from "../../components/Navigation"
+import Navigation, {
+  DownloadPopup,
+  DownloadPopupTrigger,
+} from "../../components/Navigation"
 import Footer from "../../components/Footer"
 import { serialize } from "next-mdx-remote/serialize"
 import { MDXRemote } from "next-mdx-remote"
@@ -12,6 +15,14 @@ import styles from "../../style/bloga.module.css"
 
 const Blog = ({ mdxSource, data }) => {
   const [showPopup, setShowPopup] = useState(false)
+  const components = {
+    CenteredDownloadPopupTrigger: () => (
+      <div className="flex justify-center mb-10">
+        <DownloadPopupTrigger setShowPopup={setShowPopup} />
+      </div>
+    ),
+  }
+
   return (
     <>
       <Head>
@@ -49,10 +60,11 @@ const Blog = ({ mdxSource, data }) => {
       </div>
 
       <div
-        className={`p-10 sm:rounded-xl md:rounded-3xl sm:mx-20 xl:mx-auto xl:w-[1100px] mb-12 text-base ${styles.blogContent}`}
+        className={`p-10 sm:rounded-xl md:rounded-3xl sm:mx-20 xl:mx-auto xl:w-[1100px] mb-8 text-base ${styles.blogContent}`}
       >
-        <MDXRemote {...mdxSource} />
+        <MDXRemote {...mdxSource} components={components} />
       </div>
+
       <Footer />
     </>
   )
@@ -63,7 +75,6 @@ export async function getStaticProps({ params }) {
   const fileContents = fs.readFileSync(filePath, "utf-8")
   const { content, data } = matter(fileContents)
   const mdxSource = await serialize(content)
-
   return {
     props: {
       mdxSource,
