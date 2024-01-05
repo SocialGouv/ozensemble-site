@@ -17,7 +17,9 @@ const Blog = ({ mdxSource, data }) => {
   const [showPopup, setShowPopup] = useState(false)
   const components = {
     CenteredDownloadPopupTrigger: () => (
-      <CenteredDownloadPopupTrigger setShowPopup={setShowPopup} />
+      <div className="flex justify-center mb-10">
+        <DownloadPopupTrigger setShowPopup={setShowPopup} />
+      </div>
     ),
   }
 
@@ -68,19 +70,11 @@ const Blog = ({ mdxSource, data }) => {
   )
 }
 
-const CenteredDownloadPopupTrigger = ({ setShowPopup }) => {
-  return (
-    <div className="flex justify-center mb-10">
-      <DownloadPopupTrigger setShowPopup={setShowPopup} />
-    </div>
-  )
-}
-
 export async function getStaticProps({ params }) {
   const filePath = path.join(process.cwd(), "content", `${params.blog}.mdx`)
   const fileContents = fs.readFileSync(filePath, "utf-8")
   const { content, data } = matter(fileContents)
-  const mdxSource = await serialize(content, <CenteredDownloadPopupTrigger />)
+  const mdxSource = await serialize(content)
   return {
     props: {
       mdxSource,
