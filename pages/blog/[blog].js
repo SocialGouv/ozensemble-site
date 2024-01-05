@@ -15,6 +15,12 @@ import styles from "../../style/bloga.module.css"
 
 const Blog = ({ mdxSource, data }) => {
   const [showPopup, setShowPopup] = useState(false)
+  const components = {
+    CenteredDownloadPopupTrigger: () => (
+      <CenteredDownloadPopupTrigger setShowPopup={setShowPopup} />
+    ),
+  }
+
   return (
     <>
       <Head>
@@ -54,13 +60,19 @@ const Blog = ({ mdxSource, data }) => {
       <div
         className={`p-10 sm:rounded-xl md:rounded-3xl sm:mx-20 xl:mx-auto xl:w-[1100px] mb-8 text-base ${styles.blogContent}`}
       >
-        <MDXRemote {...mdxSource} />
+        <MDXRemote {...mdxSource} components={components} />
       </div>
-      <div className="flex justify-center mb-10">
-        <DownloadPopupTrigger setShowPopup={setShowPopup} />
-      </div>
+
       <Footer />
     </>
+  )
+}
+
+const CenteredDownloadPopupTrigger = ({ setShowPopup }) => {
+  return (
+    <div className="flex justify-center mb-10">
+      <DownloadPopupTrigger setShowPopup={setShowPopup} />
+    </div>
   )
 }
 
@@ -68,8 +80,7 @@ export async function getStaticProps({ params }) {
   const filePath = path.join(process.cwd(), "content", `${params.blog}.mdx`)
   const fileContents = fs.readFileSync(filePath, "utf-8")
   const { content, data } = matter(fileContents)
-  const mdxSource = await serialize(content)
-
+  const mdxSource = await serialize(content, <CenteredDownloadPopupTrigger />)
   return {
     props: {
       mdxSource,
