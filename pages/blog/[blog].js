@@ -12,21 +12,30 @@ import styles from "../../style/bloga.module.css"
 import { ANDROID_URL, IOS_URL } from "../../constants"
 import appStorePic from "../../public/images/other/app-store-fr.png"
 import googlePlayPic from "../../public/images/other/google-play-fr.png"
+import { push } from "@socialgouv/matomo-next"
 
 const Blog = ({ mdxSource, data }) => {
   const [showPopup, setShowPopup] = useState(false)
+  const handleClickAndroid = () => {
+    push(["trackEvent", "Download", "Android", "Clicked"])
+    console.log("clicked")
+  }
 
+  const handleClickIOS = () => {
+    push(["trackEvent", "Download", "iOS", "Clicked"])
+    console.log("clicked")
+  }
   const components = {
     DownloadButtons: () => (
       <div className="mb-1 grid max-w-[200px] sm:max-w-[400px] sm:grid-flow-col gap-6 auto-cols-fr md:w-5/6 m-auto">
-        <a href={ANDROID_URL}>
+        <a href={ANDROID_URL} onClick={handleClickAndroid}>
           <img
             className="object-contain w-full"
             src={googlePlayPic.src}
             alt="télécharger dans Google Play"
           />
         </a>
-        <a href={IOS_URL}>
+        <a href={IOS_URL} onClick={handleClickIOS}>
           <img
             className="object-contain w-full"
             src={appStorePic.src}
