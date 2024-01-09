@@ -2,7 +2,6 @@ import Footer from "../components/Footer"
 import Navigation, { DownloadPopup } from "../components/Navigation"
 import { ANDROID_URL, IOS_URL } from "../constants"
 import { useState } from "react"
-import { push } from "@socialgouv/matomo-next"
 
 export default function Index() {
   const [showPopup, setShowPopup] = useState(false)
@@ -22,28 +21,14 @@ export default function Index() {
                 L'application mobile pour maitriser sa consommation d'alcool
               </p>
               <div className="grid grid-flow-col gap-3 sm:gap-6 max-w-sm mb-7 mx-auto md:mx-0">
-                <a
-                  href={ANDROID_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  onClick={() =>
-                    push(["trackEvent", "Download", "android", "MainPage"])
-                  }
-                >
+                <a href={ANDROID_URL} target="_blank" rel="noopener noreferrer">
                   <img
                     className="object-contain w-full"
                     src="images/other/google-play-fr.png"
                     alt="disponible sur google play"
                   />
                 </a>
-                <a
-                  href={IOS_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  onClick={() =>
-                    push(["trackEvent", "Download", "iOS", "MainPage"])
-                  }
-                >
+                <a href={IOS_URL} target="_blank" rel="noopener noreferrer">
                   <img
                     className="object-contain w-full"
                     src="images/other/app-store-fr.png"
