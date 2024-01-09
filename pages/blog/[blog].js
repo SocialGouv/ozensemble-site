@@ -22,9 +22,9 @@ const Blog = ({ mdxSource, data }) => {
       <div className="mb-1 grid max-w-[200px] sm:max-w-[400px] sm:grid-flow-col gap-6 auto-cols-fr md:w-5/6 m-auto">
         <a
           href={ANDROID_URL}
-          onClick={() => {
-            push(["trackEvent", "Download", "Android", "Clicked"])
-          }}
+          target="_blank"
+          rel="noopener noreferrer"
+          onClick={() => push(["trackEvent", "Download", "Android", "Blog"])}
         >
           <img
             className="object-contain w-full"
@@ -34,7 +34,9 @@ const Blog = ({ mdxSource, data }) => {
         </a>
         <a
           href={IOS_URL}
-          onClick={() => push(["trackEvent", "Download", "iOS", "Clicked"])}
+          target="_blank"
+          rel="noopener noreferrer"
+          onClick={() => push(["trackEvent", "Download", "iOS", "Blog"])}
         >
           <img
             className="object-contain w-full"
