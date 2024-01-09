@@ -9,6 +9,7 @@ import {
   LINKEDIN_URL,
 } from "../constants"
 import ContactPopup from "./ContactPopup"
+import { push } from "@socialgouv/matomo-next"
 
 export default function Footer() {
   const [showContactPopup, setShowContactPopup] = useState(false)
@@ -102,14 +103,28 @@ export default function Footer() {
               <div className="w-1/4 mt-3 mb-5 border-b border-green-300" />
             </div>
             <div className="grid grid-flow-col gap-6 max-w-md">
-              <a href={ANDROID_URL}>
+              <a
+                href={ANDROID_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() =>
+                  push(["trackEvent", "Download", "Android", "Footer"])
+                }
+              >
                 <img
                   className="object-contain"
                   src={`${baseUrl}/images/other/google-play-fr.png`}
                   alt="Disponible sur Google Play"
                 />
               </a>
-              <a href={IOS_URL}>
+              <a
+                href={IOS_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() =>
+                  push(["trackEvent", "Download", "iOS", "Footer"])
+                }
+              >
                 <img
                   className="object-contain"
                   src={`${baseUrl}/images/other/app-store-fr.png`}

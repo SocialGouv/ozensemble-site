@@ -4,6 +4,7 @@ import { AiOutlineClose } from "react-icons/ai"
 import Fade from "@mui/material/Fade"
 import { HiMenu } from "react-icons/hi"
 import ContactPopup from "./ContactPopup"
+import { push } from "@socialgouv/matomo-next"
 
 import { ANDROID_URL, IOS_URL } from "../constants"
 
@@ -139,14 +140,29 @@ export const DownloadPopup = ({ showPopup, setShowPopup }) => {
           <div className="w-1/5 h-1 bg-oz-pink m-auto my-7" />
           <p className="text-xl mb-7">Elle est 100% gratuite et anonyme.</p>
           <div className="mb-1 grid max-w-[200px] sm:max-w-[400px] sm:grid-flow-col gap-6 auto-cols-fr md:w-5/6 m-auto">
-            <a href={ANDROID_URL} ref={popupFirstFocus} tabIndex={1}>
+            <a
+              href={ANDROID_URL}
+              ref={popupFirstFocus}
+              tabIndex={1}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() =>
+                push(["trackEvent", "Download", "android", "Modale"])
+              }
+            >
               <img
                 className="object-contain w-full"
                 src={`${baseUrl}/images/other/google-play-fr.png`}
                 alt="télécharger dans Google Play"
               />
             </a>
-            <a href={IOS_URL} tabIndex={1}>
+            <a
+              href={IOS_URL}
+              tabIndex={1}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => push(["trackEvent", "Download", "iOS", "Modale"])}
+            >
               <img
                 className="object-contain w-full"
                 src={`${baseUrl}/images/other/app-store-fr.png`}
