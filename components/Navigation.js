@@ -4,8 +4,6 @@ import { AiOutlineClose } from "react-icons/ai"
 import Fade from "@mui/material/Fade"
 import { HiMenu } from "react-icons/hi"
 import ContactPopup from "./ContactPopup"
-import { push } from "@socialgouv/matomo-next"
-
 import { ANDROID_URL, IOS_URL } from "../constants"
 
 export default function Navigation({ showPopup, setShowPopup }) {
@@ -146,9 +144,6 @@ export const DownloadPopup = ({ showPopup, setShowPopup }) => {
               tabIndex={1}
               target="_blank"
               rel="noopener noreferrer"
-              onClick={() =>
-                push(["trackEvent", "Download", "android", "Modale"])
-              }
             >
               <img
                 className="object-contain w-full"
@@ -161,7 +156,6 @@ export const DownloadPopup = ({ showPopup, setShowPopup }) => {
               tabIndex={1}
               target="_blank"
               rel="noopener noreferrer"
-              onClick={() => push(["trackEvent", "Download", "iOS", "Modale"])}
             >
               <img
                 className="object-contain w-full"
