@@ -55,7 +55,7 @@ export default function Navigation({ showPopup, setShowPopup }) {
             <Link name="Accueil" target="/" setIsOpen={setIsOpen} />
             <Link
               name="Comment ça marche"
-              target="#how-it-works"
+              target="/#how-it-works"
               setIsOpen={setIsOpen}
             />
             {/* <Link
