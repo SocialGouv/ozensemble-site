@@ -191,9 +191,45 @@ export default function Index() {
             />
           </button>
         </div>
-
-        <div className="py-20 lg:py-32" id="who-are-we">
-          <div className="mx-[10%] sm:mx-20 md:mx-auto md:w-7/12 lg:w-[750px]">
+        <div className="py-20 lg:py-32 " id="partners">
+          <div className="mx-[10%] sm:mx-20 md:mx-auto md:w-7/12 lg:w-[750px] ">
+            <div className="bottom-9 bg-grey-600">
+              <h3 className="text-2xl font-bold text-center lg:text-3xl text-oz-blue">
+                Nos partenaires
+              </h3>
+            </div>
+            <div className="flex flex-wrap justify-center gap-8 top-9 mt-4">
+              <div className="transition duration-500 hover:scale-110 basis-1/4 lg:basis-1/3">
+                <a href="https://www.alcool-info-service.fr/Actualites/Oz-ensemble-une-application-pour-maitriser-sa-consommation-d-alcool">
+                  <img
+                    className="py-12"
+                    src="images/logo_alcool_info_service.png"
+                    alt="Partenaire alcool info service, accédez à leur site en cliquant sur ce logo"
+                  />
+                </a>
+              </div>
+              <div className="transition duration-500 hover:scale-110 basis-1/4 lg:basis-1/3">
+                <a href="https://www.federationaddiction.fr/actualites/oz-ensemble-une-application-pour-smartphone-pour-reprendre-la-maitrise-de-sa-consommation-dalcool/">
+                  <img
+                    className="py-9"
+                    src="images/logo_federation_addiction.png"
+                    alt="Partenaire fédération addiction, accédez à leur site en cliquant sur ce logo"
+                  />
+                </a>
+              </div>
+            </div>
+          </div>
+          <div className="flex items-center justify-center ">
+            <button
+              className=" rounded-full bg-oz-pink font-bold text-white py-2 px-6 items-center cursor-pointer hover:text-oz-pink hover:bg-white border border-oz-pink transition"
+              onClick={() => (window.location.href = "/partners")}
+            >
+              <span>Voir tous nos partenaires</span>
+            </button>
+          </div>
+        </div>
+        <div className="py-20 lg:py-32 bg-oz-gray " id="who-are-we">
+          <div className="mx-[10%] sm:mx-20 md:mx-auto md:w-7/12 lg:w-[750px] bg-white ">
             <div className="bottom-9 bg-grey-600">
               <h3 className="text-2xl font-bold text-center lg:text-4xl text-oz-blue">
                 Qui sommes nous ?
