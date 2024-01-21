@@ -68,6 +68,7 @@ export default function Footer() {
               text="Nous contacter ?"
               link="mailto:ozensemble@fabrique.social.gouv.fr"
             /> */}
+            <ArrowList text="Nos partenaires" link="/partners" />
             <button
               className="block underline text-sm font-light mb-2 cursor-pointer"
               onClick={() => setShowContactPopup(true)}

@@ -65,6 +65,11 @@ export default function Navigation({ showPopup, setShowPopup }) {
               onClick={() => setShowContactPopup(true)}
             /> */}
             <Link name="Blog" target="/blog" setIsOpen={setIsOpen} />
+            <Link
+              name="Nos partenaires"
+              target="/partners"
+              setIsOpen={setIsOpen}
+            />
             <ContactPopupTrigger setShowPopup={setShowContactPopup} />
             <DownloadPopupTrigger setShowPopup={setShowPopup} />
           </div>
