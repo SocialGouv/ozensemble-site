@@ -229,7 +229,7 @@ export default function Index() {
           </div>
         </div>
         <div className="py-20 lg:py-32 bg-oz-gray " id="who-are-we">
-          <div className="mx-[10%] sm:mx-20 md:mx-auto md:w-7/12 lg:w-[750px] bg-white ">
+          <div className="mx-[10%] sm:mx-20 md:mx-auto md:w-7/12 lg:w-[750px] ">
             <div className="bottom-9 bg-grey-600">
               <h3 className="text-2xl font-bold text-center lg:text-4xl text-oz-blue">
                 Qui sommes nous ?
