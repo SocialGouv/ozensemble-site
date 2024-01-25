@@ -23,12 +23,12 @@ const download = () => {
       />
       <meta
         name="description"
-        content="Télécharger Oz Ensemble, l'une application mobile pour maitriser sa consommation d'alcool."
+        content="Télécharger Oz Ensemble, une application mobile pour maitriser sa consommation d'alcool."
         key="download"
       />
       <meta
         property="og:description"
-        content="Télécharger Oz Ensemble, l'une application mobile pour maitriser sa consommation d'alcool."
+        content="Télécharger Oz Ensemble, une application mobile pour maitriser sa consommation d'alcool."
         key="download"
       />
       <meta property="og:image" content="/images/logo_oz.png" />
