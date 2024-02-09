@@ -84,11 +84,11 @@ export default function Footer() {
             </div>
             <ArrowList
               text="Mentions légales"
-              link="/files/25012023-Oz_Ensemble-Mentions_legales_site_V2.pdf"
+              link="/files/23012024-Oz_Ensemble-Mentions_legales_site_V3.pdf"
             />
             <ArrowList
               text="Politique de confidentialité"
-              link="/files/25012023-Oz_Ensemble-Politique_de_confidentialite_site_V3.pdf"
+              link="/files/23012024-Oz_Ensemble-Politique_de_confidentialite_site_V4.pdf"
             />
             <ArrowList text="Statistiques" link="/stats" />
 
