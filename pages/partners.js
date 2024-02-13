@@ -12,7 +12,7 @@ const Partners = () => {
         <Navigation />
         <div className="mt-30 lg:mt-40">
           <h1 className="mb-2 text-3xl text-center font-extrabold lg:text-5xl text-oz-blue">
-            Nos partenaires
+            Ils parlent de nous
           </h1>
           <div className="px-20 lg:py-10">
             <h3 className="text-2xl font-bold lg:text-4xl text-oz-green">
