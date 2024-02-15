@@ -195,7 +195,7 @@ export default function Index() {
           <div className="mx-[10%] sm:mx-20 md:mx-auto md:w-7/12 lg:w-[750px] ">
             <div className="bottom-9 bg-grey-600">
               <h3 className="text-2xl font-bold text-center lg:text-3xl text-oz-blue">
-                Nos partenaires
+                Ils parlent de nous
               </h3>
             </div>
             <div className="flex flex-wrap justify-center gap-8 top-9 mt-4">
@@ -224,7 +224,7 @@ export default function Index() {
               className=" rounded-full bg-oz-pink font-bold text-white py-2 px-6 items-center cursor-pointer hover:text-oz-pink hover:bg-white border border-oz-pink transition"
               onClick={() => (window.location.href = "/partners")}
             >
-              <span>Voir tous nos partenaires</span>
+              <span>Voir tous</span>
             </button>
           </div>
         </div>

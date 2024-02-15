@@ -66,7 +66,7 @@ export default function Navigation({ showPopup, setShowPopup }) {
             /> */}
             <Link name="Blog" target="/blog" setIsOpen={setIsOpen} />
             <Link
-              name="Nos partenaires"
+              name="Ils parlent de nous"
               target="/partners"
               setIsOpen={setIsOpen}
             />
