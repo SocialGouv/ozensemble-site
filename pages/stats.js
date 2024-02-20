@@ -12,7 +12,7 @@ const Stats = () => {
         <Navigation />
         <div>
           <iframe
-            src="https://matomo-metabase-ozensemble.fabrique.social.gouv.fr/public/dashboard/217417aa-20f3-4dae-acd8-7230ba3c8862"
+            src="https://metabase-ozensemble.fabrique.social.gouv.fr/public/dashboard/217417aa-20f3-4dae-acd8-7230ba3c8862"
             title="Oz Ensemble, statistiques"
             width="90%"
             height="700"
