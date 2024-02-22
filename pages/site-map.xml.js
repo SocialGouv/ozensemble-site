@@ -88,6 +88,11 @@ export async function getStaticProps() {
         const parsedDate = data.date
           ? parse(data.date, "MMMM d, yyyy", new Date(), { locale: fr })
           : null
+        const currentDate = new Date()
+
+        if (parsedDate >= currentDate) {
+          return null
+        }
         return {
           ...data,
           mdxSource,
@@ -99,7 +104,7 @@ export async function getStaticProps() {
       })
   )
 
-  const sitemap = generateSiteMap(posts)
+  const sitemap = generateSiteMap(posts.filter((post) => post !== null))
 
   fs.writeFileSync(path.join(process.cwd(), "public", "sitemap.xml"), sitemap)
 
