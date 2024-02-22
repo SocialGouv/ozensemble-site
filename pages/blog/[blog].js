@@ -12,6 +12,8 @@ import styles from "../../style/bloga.module.css"
 import { ANDROID_URL, IOS_URL } from "../../constants"
 import appStorePic from "../../public/images/other/app-store-fr.png"
 import googlePlayPic from "../../public/images/other/google-play-fr.png"
+import { parse } from "date-fns"
+import { fr } from "date-fns/locale"
 
 const Blog = ({ mdxSource, data }) => {
   const [showPopup, setShowPopup] = useState(false)
@@ -89,6 +91,18 @@ export async function getStaticProps({ params }) {
   const fileContents = fs.readFileSync(filePath, "utf-8")
   const { content, data } = matter(fileContents)
   const mdxSource = await serialize(content)
+
+  const articleDate = parse(data.date, "MMMM d, yyyy", new Date(), {
+    locale: fr,
+  })
+
+  const currentDate = new Date()
+
+  if (articleDate >= currentDate) {
+    return {
+      notFound: true,
+    }
+  }
   return {
     props: {
       mdxSource,
