@@ -7,6 +7,8 @@ import Head from "next/head"
 import Navigation, { DownloadPopup } from "../../components/Navigation"
 import Footer from "../../components/Footer"
 import BlogCard from "../../components/BlogCard"
+import { parse } from "date-fns"
+import { fr } from "date-fns/locale"
 
 const Index = ({ posts }) => {
   const [showPopup, setShowPopup] = useState(false)
@@ -27,6 +29,7 @@ const Index = ({ posts }) => {
 
             <div className="grid grid-cols-1 gap-6 lg:grid-cols-3 text-center">
               {posts
+                .filter((post) => !post.notFound)
                 .sort((a, b) => a.order - b.order)
                 .map((post) => (
                   <BlogCard
@@ -57,6 +60,17 @@ export async function getStaticProps() {
         const rawContent = fs.readFileSync(filePath, "utf8")
         const { content, data } = matter(rawContent)
         const mdxSource = await serialize(content)
+        const articleDate = parse(data.date, "MMMM d, yyyy", new Date(), {
+          locale: fr,
+        })
+
+        const currentDate = new Date()
+
+        if (articleDate >= currentDate) {
+          return {
+            notFound: true,
+          }
+        }
 
         return {
           ...data,
