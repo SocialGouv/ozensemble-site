@@ -1,8 +1,32 @@
 import Footer from "../components/Footer"
 import Navigation from "../components/Navigation"
 import Head from "next/head"
+import { useState, useEffect } from "react"
+import "@gouvfr/dsfr/dist/dsfr.min.css"
+import "@gouvfr/dsfr-chart/LineChart/line-chart.common"
 
 const Stats = () => {
+  const [result, setResult] = useState(null)
+  const [error, setError] = useState(null)
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch("/api/metabase")
+        const data = await response.json()
+        setResult(data.result)
+      } catch (error) {
+        console.error(error)
+        setError("Error loading data")
+      }
+    }
+
+    fetchData()
+  }, [])
+
+  if (error) return <div>{error}</div>
+  if (result === null) return <div>Loading...</div>
+
   return (
     <>
       <Head>
@@ -10,23 +34,23 @@ const Stats = () => {
       </Head>
       <div>
         <Navigation />
+        <div></div>
         <div>
-          <iframe
-            src="https://matomo-metabase-ozensemble.fabrique.social.gouv.fr/public/dashboard/217417aa-20f3-4dae-acd8-7230ba3c8862"
-            title="Oz Ensemble, statistiques"
-            width="90%"
-            height="700"
-            style={{ display: "block", margin: "0 auto", padding: "2rem 0" }}
-            // eslint-disable-next-line
-            allowTransparency
-          />
-        </div>
-        <div>
-          <p className="text-center">
-            L'affichage des données auxquelles vous avez accès est géré par
-            Métabase. L'accessibilité non-conforme de cet affichage est sous le
-            contrôle de Métabase.
-          </p>
+          <h1>Statistiques</h1>
+          <div>
+            <h1>My DSFR LineChart</h1>
+            <LineChart
+              title="My LineChart"
+              data={result}
+              options={{
+                scales: {
+                  y: {
+                    beginAtZero: true,
+                  },
+                },
+              }}
+            />
+          </div>
         </div>
         <Footer />
       </div>
