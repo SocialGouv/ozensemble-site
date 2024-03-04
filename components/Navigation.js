@@ -55,7 +55,7 @@ export default function Navigation({ showPopup, setShowPopup }) {
             <Link name="Accueil" target="/" setIsOpen={setIsOpen} />
             <Link
               name="Comment ça marche"
-              target="#how-it-works"
+              target="/#how-it-works"
               setIsOpen={setIsOpen}
             />
             {/* <Link
@@ -65,6 +65,11 @@ export default function Navigation({ showPopup, setShowPopup }) {
               onClick={() => setShowContactPopup(true)}
             /> */}
             <Link name="Blog" target="/blog" setIsOpen={setIsOpen} />
+            <Link
+              name="Ils parlent de nous"
+              target="/partners"
+              setIsOpen={setIsOpen}
+            />
             <ContactPopupTrigger setShowPopup={setShowContactPopup} />
             <DownloadPopupTrigger setShowPopup={setShowPopup} />
           </div>

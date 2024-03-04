@@ -89,6 +89,18 @@ export async function getStaticProps({ params }) {
   const fileContents = fs.readFileSync(filePath, "utf-8")
   const { content, data } = matter(fileContents)
   const mdxSource = await serialize(content)
+
+  const articleDate = parse(data.date, "MMMM d, yyyy", new Date(), {
+    locale: fr,
+  })
+
+  const currentDate = new Date()
+
+  if (articleDate >= currentDate) {
+    return {
+      notFound: true,
+    }
+  }
   return {
     props: {
       mdxSource,
