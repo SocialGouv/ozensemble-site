@@ -10,16 +10,12 @@ const Stats = () => {
       </Head>
       <div>
         <Navigation />
-        <div>
-          <iframe
-            src="https://metabase-ozensemble.fabrique.social.gouv.fr/public/dashboard/217417aa-20f3-4dae-acd8-7230ba3c8862"
-            title="Oz Ensemble, statistiques"
-            width="90%"
-            height="700"
-            style={{ display: "block", margin: "0 auto", padding: "2rem 0" }}
-            // eslint-disable-next-line
-            allowTransparency
-          />
+        <div className="h-96 bg-white">
+          <scatter-chart
+            className="w-full h-full"
+            x="[[1, 5, 8], [1, 2, 15]]"
+            y="[[30, 10, 20], [10, 20, 30]]"
+          ></scatter-chart>
         </div>
         <div>
           <p className="text-center">

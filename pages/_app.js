@@ -4,9 +4,18 @@ import { init } from "@socialgouv/matomo-next"
 import { ANDROID_APP_ID, IOS_APP_ID, ROOT_URL } from "constants"
 import App from "next/app"
 import Head from "next/head"
+import { createNextDsfrIntegrationApi } from "@codegouvfr/react-dsfr/next-pagesdir"
+import Link from "next/link"
+// import "@gouvfr/dsfr-chart/Charts/dsfr-chart.umd..js"
+import "@gouvfr/dsfr-chart/Charts/dsfr-chart.css"
 
 const MATOMO_URL = process.env.NEXT_PUBLIC_MATOMO_URL
 const MATOMO_SITE_ID = process.env.NEXT_PUBLIC_MATOMO_SITE_ID
+
+const { withDsfr, dsfrDocumentApi } = createNextDsfrIntegrationApi({
+  defaultColorScheme: "system",
+  Link,
+})
 
 class MyApp extends App {
   componentDidMount() {
@@ -50,4 +59,6 @@ class MyApp extends App {
   }
 }
 
-export default MyApp
+export default withDsfr(MyApp)
+
+export { dsfrDocumentApi }
