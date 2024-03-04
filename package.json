@@ -5,8 +5,10 @@
   "license": "MIT",
   "private": true,
   "dependencies": {
+    "@codegouvfr/react-dsfr": "^1.7.4",
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
+    "@gouvfr/dsfr-chart": "1.0.0",
     "@mui/material": "^5.11.6",
     "@next/font": "13.1.6",
     "@socialgouv/matomo-next": "^1.2.2",
@@ -25,6 +27,8 @@
     "remark": "^15.0.1"
   },
   "scripts": {
+    "predev": "only-include-used-icons",
+    "prebuild": "only-include-used-icons",
     "dev": "next dev",
     "start": "next start",
     "build": "next build",
