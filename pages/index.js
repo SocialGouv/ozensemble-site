@@ -72,7 +72,7 @@ export default function Index() {
             </h3>
             <div className="grid grid-cols-1 gap-6 lg:grid-cols-3 text-center">
               <div className="px-10 py-8 rounded-3xl bg-oz-gray oz-box-shadow">
-                <h4 className="text-oz-green text-4xl font-bold mb-4">
+                <h4 className="text-[#115F3D] text-4xl font-bold mb-4">
                   5 millions
                 </h4>
                 <p className="text-black leading-relaxed">
@@ -80,7 +80,7 @@ export default function Index() {
                 </p>
               </div>
               <div className="px-10 py-8 rounded-3xl bg-oz-gray oz-box-shadow">
-                <h4 className="text-oz-green text-4xl font-bold mb-4">
+                <h4 className="text-[#115F3D] text-4xl font-bold mb-4">
                   120 milliards
                 </h4>
                 <p className="text-base text-black">
@@ -88,7 +88,7 @@ export default function Index() {
                 </p>
               </div>
               <div className="px-10 py-8 rounded-3xl bg-oz-gray oz-box-shadow">
-                <h4 className="text-oz-green text-4xl font-bold mb-4">2ème</h4>
+                <h4 className="text-[#115F3D] text-4xl font-bold mb-4">2ème</h4>
                 <p className="text-base text-black">
                   cause de mortalité prématurée évitable après le tabac.
                 </p>
@@ -105,18 +105,18 @@ export default function Index() {
             <h3 className="mb-8 text-2xl font-bold leading-normal lg:text-4xl text-oz-blue">
               Oz Ensemble, comment ça marche ?
             </h3>
-            <p className="text-base text-black">
+            <p className="text-base text-black mb-4">
               Chez Oz Ensemble, l’objectif est de vous redonner la maîtrise de
               votre consommation d’alcool, tout au long de l’année,{" "}
               <span className="sr-only">
                 Le texte suivant est en gras et de couleur rouge
               </span>
-              <strong className="text-oz-pink">
+              <strong className="text-oz-pink mb-4">
                 sans nécessairement promouvoir l’abstinence totale et
                 définitive.
               </strong>
-              <br />
-              <br />
+            </p>
+            <p className="text-base text-black mb-4">
               Oz Ensemble s’appuie sur les dernières recommandations de la HAS
               (Haute Autorité de Santé) qui promeut la{" "}
               <span className="sr-only">
@@ -126,8 +126,8 @@ export default function Index() {
                 réduction des risques alcool
               </strong>{" "}
               par les acteurs de la prévention et du soin en addictologie.
-              <br />
-              <br />
+            </p>
+            <p className="text-base text-black">
               Oz Ensemble enrichie également le{" "}
               <span className="sr-only">
                 Le texte suivant est en gras et de couleur rouge
@@ -154,9 +154,9 @@ export default function Index() {
           <div className="grid grid-cols-1 gap-9 lg:grid-cols-3 text-center">
             <div className="p-5 bg-white rounded-2xl">
               <h4 className="text-oz-pink text-2xl mb-4">Aux usagers</h4>
+              <p>Vous vous interrogez sur votre consommation ?</p>
+              <p>Vous buvez plus de 2 verres par jour ?</p>
               <p>
-                Vous vous interrogez sur votre consommation ?<br />
-                Vous buvez plus de 2 verres par jour ? <br />
                 Vous désirez apprendre à maitriser votre consommation d’alcool ?
               </p>
             </div>
@@ -182,15 +182,6 @@ export default function Index() {
           </div>
         </div>
 
-        <div className="mt-5 md:mx-[5%] lg:mx-[8%] xl:mx-auto xl:max-w-[1200px]">
-          <button onClick={() => setShowPopup(true)}>
-            <img
-              className="w-full"
-              src="images/other/january_challenge.png"
-              alt="Et si on faisait le défi de janvier ? Tous ensemble. Première étape : on télécharge l'appli ! Lancer le téléchargement en cliquant ici"
-            />
-          </button>
-        </div>
         <div className="py-20 lg:py-32 " id="partners">
           <div className="mx-[10%] sm:mx-20 md:mx-auto md:w-7/12 lg:w-[750px] ">
             <div className="bottom-9 bg-grey-600">
@@ -310,7 +301,7 @@ export default function Index() {
                 .
               </p>
             </div>
-            <div className="flex flex-wrap justify-center gap-6 top-9">
+            <div className="flex flex-wrap justify-center gap-6 top-9 ">
               <div className="transition duration-500 hover:scale-110 basis-1/4 lg:basis-1/6">
                 <a href="https://www.fabrique.social.gouv.fr/">
                   <img

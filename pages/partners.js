@@ -15,7 +15,7 @@ const Partners = () => {
             Nos partenaires
           </h1>
           <div className="px-20 lg:py-10">
-            <h3 className="text-2xl font-bold lg:text-4xl text-oz-green">
+            <h3 className="text-2xl font-bold lg:text-4xl text-[#115F3D]">
               Institutions
             </h3>
             <div className="flex flex-wrap mt-10 gap-10 ">
@@ -61,7 +61,7 @@ const Partners = () => {
             </div>
           </div>
           <div className="px-20 py-20 lg:py-10">
-            <h3 className="text-2xl font-bold lg:text-4xl text-oz-green">
+            <h3 className="text-2xl font-bold lg:text-4xl text-[#115F3D]">
               Communes
             </h3>
             <div className="flex flex-wrap mt-10 gap-10 ">
@@ -131,7 +131,7 @@ const Partners = () => {
             </div>
           </div>
           <div className="px-20 py-20 lg:py-10">
-            <h3 className="text-2xl font-bold lg:text-4xl text-oz-green">
+            <h3 className="text-2xl font-bold lg:text-4xl text-[#115F3D]">
               Autres
             </h3>
             <div className="flex flex-wrap mt-10 gap-10 ">
@@ -174,7 +174,7 @@ const Partners = () => {
             </div>
           </div>
           <div className="px-20 py-20 lg:py-10">
-            <h3 className="text-2xl font-bold lg:text-4xl text-oz-green">
+            <h3 className="text-2xl font-bold lg:text-4xl text-[#115F3D]">
               Presse
             </h3>
             <div className="flex flex-wrap my-10 gap-10 ">

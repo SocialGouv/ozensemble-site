@@ -39,7 +39,7 @@ const Stats = () => {
     if (id === "myChart2") {
       parsedData = data.map((row) => {
         return {
-          x: new Date(row[1]).toLocaleString("en-FR", {
+          x: new Date(row[1]).toLocaleString("fr-FR", {
             month: "long",
             year: "numeric",
           }),
@@ -49,7 +49,7 @@ const Stats = () => {
     } else {
       parsedData = data.map((row) => {
         return {
-          x: new Date(row[0]).toLocaleString("en-FR", {
+          x: new Date(row[0]).toLocaleString("fr-FR", {
             day: "numeric",
             month: "long",
             year: "numeric",
@@ -65,26 +65,37 @@ const Stats = () => {
         data: {
           datasets: [
             {
-              label: "Your Data",
+              label:
+                id === "myChart2"
+                  ? "Nombre de nouveaux utilisateurs engagés distincts, par mois"
+                  : "Nombre d'utilisateurs distincts ayant ouvert l'application par jour",
               data: parsedData,
-              borderColor: "rgba(75,192,192,1)",
+              borderColor: "#4030A5",
               borderWidth: 2,
-              fill: false,
+              fill: true,
+              backgroundColor: "#bebaff",
             },
           ],
         },
         options: {
+          layout: {
+            padding: 20,
+          },
+
           scales: {
             x: {
+              ticks: {
+                maxTicksLimit: 10,
+              },
               position: "bottom",
             },
             y: {
-              beginAtZero: true,
               ticks: {
-                tickLength: 4,
+                beginAtZero: true,
               },
             },
           },
+          pointRadius: 0,
         },
       })
     }
@@ -98,37 +109,40 @@ const Stats = () => {
       </Head>
       <div>
         <Navigation />
-        <div></div>
         <div>
-          <h3 className="mb-16 text-4xl xl:text-5xl font-bold text-center lg:text-4xl text-oz-blue">
+          <h3 className="mb-16 text-4xl xl:text-5xl font-bold text-center text-oz-blue">
             Statistiques
           </h3>
           <div className="p-10 h-[1200px] lg:pt-10 sm:rounded-xl md:rounded-3xl bg-oz-gray sm:mx-20 xl:mx-auto xl:w-[1100px] mb-10">
-            <div className="flex flex-col gap-8 mb-10 text-center">
+            <div className="flex flex-col gap-4 mb-10 text-center">
               <div className=" bg-white rounded-2xl">
-                <div className="text-2xl font-bold">DAU</div>
+                <div className="text-2xl text-[#DE285E] font-bold pt-4">
+                  Utilisateurs Actifs Journaliers
+                </div>
                 {result ? (
                   <canvas
-                    aria-label="DAU graphique"
+                    aria-label="Graphique représentant les Utilisateurs Actifs Journaliers"
                     role="graphique"
                     id="myChart"
                     ref={(el) => el && createChart(result, "myChart")}
                   ></canvas>
                 ) : (
-                  <div>Loading...</div>
+                  <div aria-live="polite">Chargement en cours...</div>
                 )}
               </div>
-              <div className=" bg-white rounded-2xl">
-                <div className="text-2xl font-bold">Engagés</div>
+              <div className=" bg-white rounded-2xl ">
+                <div className="text-2xl text-[#DE285E] font-bold pt-4">
+                  Engagement global - par mois
+                </div>
                 {result2 ? (
                   <canvas
-                    aria-label="Engagés graphique"
+                    aria-label="Graphique représentant les Engagés"
                     role="graphique"
                     id="myChart2"
                     ref={(el) => el && createChart(result2, "myChart2")}
                   ></canvas>
                 ) : (
-                  <div>Loading...</div>
+                  <div aria-live="polite">Chargement en cours...</div>
                 )}
               </div>
             </div>
