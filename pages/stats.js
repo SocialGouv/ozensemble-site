@@ -8,6 +8,7 @@ const Stats = () => {
   const [error, setError] = useState(null)
   const [result, setResult] = useState(null)
   const [result2, setResult2] = useState(null)
+  const [showPopup, setShowPopup] = useState(false)
 
   useEffect(() => {
     const fetchData = async () => {
@@ -108,7 +109,7 @@ const Stats = () => {
         <title>Statistiques | Oz Ensemble</title>
       </Head>
       <div>
-        <Navigation />
+        <Navigation showPopup={showPopup} setShowPopup={setShowPopup} />
         <div>
           <h3 className="mb-16 text-4xl xl:text-5xl font-bold text-center text-oz-blue">
             Statistiques
@@ -122,10 +123,11 @@ const Stats = () => {
                 {result ? (
                   <canvas
                     aria-label="Graphique représentant les Utilisateurs Actifs Journaliers"
-                    role="graphique"
+                    role="widget"
                     id="myChart"
+                    tabIndex={0}
                     ref={(el) => el && createChart(result, "myChart")}
-                  ></canvas>
+                  />
                 ) : (
                   <div aria-live="polite">Chargement en cours...</div>
                 )}
@@ -137,10 +139,11 @@ const Stats = () => {
                 {result2 ? (
                   <canvas
                     aria-label="Graphique représentant les Engagés"
-                    role="graphique"
+                    role="widget"
                     id="myChart2"
+                    tabIndex={0}
                     ref={(el) => el && createChart(result2, "myChart2")}
-                  ></canvas>
+                  />
                 ) : (
                   <div aria-live="polite">Chargement en cours...</div>
                 )}

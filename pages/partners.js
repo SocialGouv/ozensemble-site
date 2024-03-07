@@ -1,15 +1,17 @@
 import Footer from "../components/Footer"
 import Navigation from "../components/Navigation"
 import Head from "next/head"
+import { useState } from "react"
 
 const Partners = () => {
+  const [showPopup, setShowPopup] = useState(false)
   return (
     <>
       <Head>
         <title>Partners | Oz Ensemble</title>
       </Head>
       <div>
-        <Navigation />
+        <Navigation showPopup={showPopup} setShowPopup={setShowPopup} />
         <div className="mt-30 lg:mt-40">
           <h1 className="mb-2 text-3xl text-center font-extrabold lg:text-5xl text-oz-blue">
             Nos partenaires

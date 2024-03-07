@@ -35,22 +35,12 @@ export default function Navigation({ showPopup, setShowPopup }) {
         </div>
         <div className="items-center justify-center md:flex">
           {/* Mobile */}
-          <button
-            className="block md:hidden"
-            onClick={(e) => {
-              e.stopPropagation()
-              setIsOpen(true)
-            }}
-          >
-            <HiMenu className="text-2xl text-black" />
-          </button>
 
           <div
             className={`fixed inset-y-0 top-0 right-0 p-4 pl-6 pt-12 md:p-0 lg:justify-end transform shadow-xl md:shadow-none md:transform-none md:w-auto md:relative md:border-0 transition-transform z-0 flex flex-col items-start bg-white space-y-8 md:space-y-0 md:items-center md:flex-row w-72 ${
               isOpen ? "translate-x-0" : "translate-x-full"
             }`}
             // eslint-disable-next-line
-            onClick={(e) => e.stopPropagation()}
           >
             <Link name="Accueil" target="/" setIsOpen={setIsOpen} />
             <Link
@@ -70,6 +60,7 @@ export default function Navigation({ showPopup, setShowPopup }) {
               target="/partners"
               setIsOpen={setIsOpen}
             />
+            <Link name="Plan du site" target="/plan" setIsOpen={setIsOpen} />
             <ContactPopupTrigger setShowPopup={setShowContactPopup} />
             <DownloadPopupTrigger setShowPopup={setShowPopup} />
           </div>
@@ -83,6 +74,7 @@ const Link = ({ name, target = null, setIsOpen }) => (
   <a
     className="text-sm font-bold transition-all text-oz-blue hover:text-oz-green mr-6"
     href={target}
+    tabIndex={0}
     onClick={() => setIsOpen(false)}
   >
     {name}
@@ -135,7 +127,6 @@ export const DownloadPopup = ({ showPopup, setShowPopup }) => {
           <button
             className="rounded-full bg-oz-green p-4 absolute top-1/2 right-1/2 transform translate-x-1/3 -translate-y-1/3"
             onClick={() => setShowPopup(false)}
-            tabIndex={2}
             aria-label="Fermer la popup"
           >
             <AiOutlineClose size={24} />

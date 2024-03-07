@@ -12,6 +12,7 @@ import ContactPopup from "./ContactPopup"
 
 export default function Footer() {
   const [showContactPopup, setShowContactPopup] = useState(false)
+
   const [baseUrl, setBaseUrl] = useState("")
 
   useEffect(() => {
@@ -69,6 +70,7 @@ export default function Footer() {
               link="mailto:ozensemble@fabrique.social.gouv.fr"
             /> */}
             <ArrowList text="Nos partenaires" link="/partners" />
+            <ArrowList text="Plan du site" link="/plan" />
             <button
               className="block underline text-sm font-light mb-2 cursor-pointer"
               onClick={() => setShowContactPopup(true)}
