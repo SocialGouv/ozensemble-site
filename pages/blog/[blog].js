@@ -40,7 +40,7 @@ const Blog = ({ mdxSource, data }) => {
   return (
     <>
       <Head>
-        <title>{data.title} | Blog | Oz Ensemble</title>
+        <title>{data.title}</title>
         <meta name="description" content={data.description} />
         <meta property="og:title" content={data.title} />
         <meta property="og:description" content={data.description} />
@@ -58,9 +58,9 @@ const Blog = ({ mdxSource, data }) => {
             <span className="lg:text-xl">Retour</span>
           </a>
         </div>
-        <h2 className="font-bold text-4xl lg:text-4xl text-oz-blue p-4 md:px-16">
+        <h1 className="font-bold text-4xl lg:text-4xl text-oz-blue p-4 md:px-16">
           {data.title}
-        </h2>
+        </h1>
         <p className="lg:text-base text-gray-400 p-4 md:px-16 mb-10">
           {data.date}
         </p>
