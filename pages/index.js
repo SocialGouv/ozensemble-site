@@ -181,16 +181,6 @@ export default function Index() {
             </div>
           </div>
         </div>
-
-        <div className="mt-5 md:mx-[5%] lg:mx-[8%] xl:mx-auto xl:max-w-[1200px]">
-          <button onClick={() => setShowPopup(true)}>
-            <img
-              className="w-full"
-              src="images/other/january_challenge.png"
-              alt="Et si on faisait le défi de janvier ? Tous ensemble. Première étape : on télécharge l'appli ! Lancer le téléchargement en cliquant ici"
-            />
-          </button>
-        </div>
         <div className="py-20 lg:py-32 " id="partners">
           <div className="mx-[10%] sm:mx-20 md:mx-auto md:w-7/12 lg:w-[750px] ">
             <div className="bottom-9 bg-grey-600">
