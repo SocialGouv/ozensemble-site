@@ -42,7 +42,7 @@ function generateSiteMap(posts) {
    <priority>0.80</priority>
  </url>
  <url>
-   <loc>${URL}/files/25012023-Oz_Ensemble-Mentions_legales_site_V2.pdf</loc>
+   <loc>${URL}/files/26022024-Oz_Ensemble-Mentions_legales_site_V4.pdf</loc>
    <lastmod>2023-12-16T19:39:33+00:00</lastmod>
    <priority>0.80</priority>
  </url>
