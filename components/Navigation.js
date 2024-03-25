@@ -5,6 +5,7 @@ import Fade from "@mui/material/Fade"
 import { HiMenu } from "react-icons/hi"
 import ContactPopup from "./ContactPopup"
 import { ANDROID_URL, IOS_URL } from "../constants"
+import { isMobile } from "react-device-detect"
 
 export default function Navigation({ showPopup, setShowPopup }) {
   const [isOpen, setIsOpen] = useState(false)
@@ -22,6 +23,12 @@ export default function Navigation({ showPopup, setShowPopup }) {
         showPopup={showContactPopup}
         setShowPopup={setShowContactPopup}
       />
+
+      {isMobile && (
+        <div className="fixed bottom-0 left-1/2 pb-4 text-center transform -translate-x-1/2">
+          <DownloadPopupTrigger setShowPopup={setShowPopup} />
+        </div>
+      )}
 
       <nav className="flex items-center justify-between px-5 bg-white fixed w-full h-[70px] top-0 z-0">
         <div>
@@ -89,7 +96,7 @@ const Link = ({ name, target = null, setIsOpen }) => (
   </a>
 )
 
-const DownloadPopupTrigger = ({ setShowPopup }) => {
+export const DownloadPopupTrigger = ({ setShowPopup }) => {
   return (
     <>
       <button
