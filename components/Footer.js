@@ -123,30 +123,42 @@ export default function Footer() {
               <div className="w-1/4 mt-3 mb-5 border-b border-green-300" />
             </div>
             <div className="flex gap-6">
-              <a href={INSTAGRAM_URL}>
+              <a
+                href={INSTAGRAM_URL}
+                className="transform hover:scale-110 transition-transform"
+              >
                 <img
                   className="object-contain w-[40px]"
                   src={`${baseUrl}/images/icon/instagram.svg`}
                   alt="Vers profil instagram"
                 />
               </a>
-              <a href={FACEBOOK_URL}>
+              <a
+                href={FACEBOOK_URL}
+                className="transform hover:scale-110 transition-transform"
+              >
                 <img
                   className="object-contain w-[40px]"
                   src={`${baseUrl}/images/icon/facebook.svg`}
                   alt="Vers profil facebook"
                 />
               </a>
-              <a href={TWITTER_URL}>
+              <a
+                href={TWITTER_URL}
+                className="transform hover:scale-110 transition-transform"
+              >
                 <img
                   className="object-contain w-[40px]"
                   src={`${baseUrl}/images/icon/X.svg`}
                   alt="Vers profil twitter"
                 />
               </a>
-              <a href={LINKEDIN_URL}>
+              <a
+                href={LINKEDIN_URL}
+                className="transform hover:scale-110 transition-transform"
+              >
                 <img
-                  className="object-contain w-[40px]"
+                  className="object-contain w-[40px] "
                   src={`${baseUrl}/images/icon/linkedin.svg`}
                   alt="Vers profil linkedin"
                 />
