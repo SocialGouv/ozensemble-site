@@ -19,6 +19,6 @@ ENV NODE_ENV=production
 ENV YARN_IGNORE_NODE=1
 RUN yarn build-static
 
-FROM ghcr.io/socialgouv/docker/nginx:8.2.0
+FROM ghcr.io/socialgouv/docker/nginx:8.2.3
 
 COPY --from=builder --chown=nginx:nginx /app/out /usr/share/nginx/html
