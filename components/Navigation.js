@@ -1,7 +1,6 @@
 import { useEffect, useRef, useState } from "react"
 import { FiSmartphone } from "react-icons/fi"
 import { AiOutlineClose } from "react-icons/ai"
-import Fade from "@mui/material/Fade"
 import { HiMenu } from "react-icons/hi"
 import ContactPopup from "./ContactPopup"
 import { ANDROID_URL, IOS_URL } from "../constants"
@@ -109,69 +108,73 @@ export const DownloadPopup = ({ showPopup, setShowPopup }) => {
 
   useEffect(() => {
     // on popup open, focus on the first link
-    popupFirstFocus.current.focus()
+    if (showPopup) {
+      popupFirstFocus.current.focus()
+    }
     if (typeof window !== "undefined") {
       setBaseUrl(window.location.origin)
     }
   }, [showPopup])
 
+  if (!showPopup) {
+    return null
+  }
+
   return (
-    <Fade in={!!showPopup} timeout={200}>
+    <div
+      className="test fixed z-10 top-0 left-0 w-full h-full bg-black bg-opacity-50 transition-all flex justify-center items-center"
+      // eslint-disable-next-line
+      onClick={() => setShowPopup(false)}
+    >
       <div
-        className="test fixed z-10 top-0 left-0 w-full h-full bg-black bg-opacity-50 transition-all flex justify-center items-center"
+        className="rounded-3xl bg-white text-center py-6 px-4 sm:p-10 mx-[10%] max-w-[800px] relative"
         // eslint-disable-next-line
-        onClick={() => setShowPopup(false)}
+        onClick={(e) => e.stopPropagation()}
       >
-        <div
-          className="rounded-3xl bg-white text-center py-6 px-4 sm:p-10 mx-[10%] max-w-[800px] relative"
-          // eslint-disable-next-line
-          onClick={(e) => e.stopPropagation()}
-        >
-          <div className="absolute top-0 right-0">
-            <button
-              className="rounded-full bg-oz-green p-4 absolute top-1/2 right-1/2 transform translate-x-1/3 -translate-y-1/3"
-              onClick={() => setShowPopup(false)}
-              tabIndex={2}
-              aria-label="Fermer la popup"
-            >
-              <AiOutlineClose size={24} />
-            </button>
-          </div>
-          <h6 className="text-oz-blue text-3xl font-bold">
-            Télécharger l’application Oz Ensemble
-          </h6>
-          <div className="w-1/5 h-1 bg-oz-pink m-auto my-7" />
-          <p className="text-xl mb-7">Elle est 100% gratuite et anonyme.</p>
-          <div className="mb-1 grid max-w-[200px] sm:max-w-[400px] sm:grid-flow-col gap-6 auto-cols-fr md:w-5/6 m-auto">
-            <a
-              href={ANDROID_URL}
-              ref={popupFirstFocus}
-              tabIndex={1}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <img
-                className="object-contain w-full"
-                src={`${baseUrl}/images/other/google-play-fr.png`}
-                alt="télécharger dans Google Play"
-              />
-            </a>
-            <a
-              href={IOS_URL}
-              tabIndex={1}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <img
-                className="object-contain w-full"
-                src={`${baseUrl}/images/other/app-store-fr.png`}
-                alt="télécharger dans l'App Store"
-              />
-            </a>
-          </div>
+        <div className="absolute top-0 right-0">
+          <button
+            className="rounded-full bg-oz-blue p-4 absolute top-1/2 right-1/2 transform translate-x-1/3 -translate-y-1/3 border-2 border-white"
+            onClick={() => setShowPopup(false)}
+            tabIndex={2}
+            aria-label="Fermer la popup"
+          >
+            <AiOutlineClose color="white" size={24} />
+          </button>
+        </div>
+        <h6 className="text-oz-blue text-3xl font-bold">
+          Télécharger l’application Oz Ensemble
+        </h6>
+        <div className="w-1/5 h-1 bg-oz-pink m-auto my-7" />
+        <p className="text-xl mb-7">Elle est 100% gratuite et anonyme.</p>
+        <div className="mb-1 grid max-w-[200px] sm:max-w-[400px] sm:grid-flow-col gap-6 auto-cols-fr md:w-5/6 m-auto">
+          <a
+            href={ANDROID_URL}
+            ref={popupFirstFocus}
+            tabIndex={1}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              className="object-contain w-full"
+              src={`${baseUrl}/images/other/google-play-fr.png`}
+              alt="télécharger dans Google Play"
+            />
+          </a>
+          <a
+            href={IOS_URL}
+            tabIndex={1}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              className="object-contain w-full"
+              src={`${baseUrl}/images/other/app-store-fr.png`}
+              alt="télécharger dans l'App Store"
+            />
+          </a>
         </div>
       </div>
-    </Fade>
+    </div>
   )
 }
 
