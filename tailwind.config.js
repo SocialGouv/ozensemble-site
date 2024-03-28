@@ -12,7 +12,7 @@ module.exports = {
     extend: {
       colors: {
         "oz-blue": "#4030a5",
-        "oz-green": "#39cec1",
+        "oz-green": "#115F3D", //color changed for more contrast
         "oz-pink": "#de285e",
         "oz-gray": "#f7f7f7",
       },
