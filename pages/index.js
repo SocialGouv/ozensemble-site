@@ -105,18 +105,18 @@ export default function Index() {
             <h3 className="mb-8 text-2xl font-bold leading-normal lg:text-4xl text-oz-blue">
               Oz Ensemble, comment ça marche ?
             </h3>
-            <p className="text-base text-black">
+            <p className="text-base text-black mb-4">
               Chez Oz Ensemble, l’objectif est de vous redonner la maîtrise de
               votre consommation d’alcool, tout au long de l’année,{" "}
               <span className="sr-only">
                 Le texte suivant est en gras et de couleur rouge
               </span>
-              <strong className="text-oz-pink">
+              <strong className="text-oz-pink mb-4">
                 sans nécessairement promouvoir l’abstinence totale et
                 définitive.
               </strong>
-              <br />
-              <br />
+            </p>
+            <p className="text-base text-black mb-4">
               Oz Ensemble s’appuie sur les dernières recommandations de la HAS
               (Haute Autorité de Santé) qui promeut la{" "}
               <span className="sr-only">
@@ -126,8 +126,8 @@ export default function Index() {
                 réduction des risques alcool
               </strong>{" "}
               par les acteurs de la prévention et du soin en addictologie.
-              <br />
-              <br />
+            </p>
+            <p className="text-base text-black">
               Oz Ensemble enrichie également le{" "}
               <span className="sr-only">
                 Le texte suivant est en gras et de couleur rouge
@@ -154,9 +154,9 @@ export default function Index() {
           <div className="grid grid-cols-1 gap-9 lg:grid-cols-3 text-center">
             <div className="p-5 bg-white rounded-2xl">
               <h4 className="text-oz-pink text-2xl mb-4">Aux usagers</h4>
+              <p>Vous vous interrogez sur votre consommation ?</p>
+              <p>Vous buvez plus de 2 verres par jour ?</p>
               <p>
-                Vous vous interrogez sur votre consommation ?<br />
-                Vous buvez plus de 2 verres par jour ? <br />
                 Vous désirez apprendre à maitriser votre consommation d’alcool ?
               </p>
             </div>
