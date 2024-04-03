@@ -3,3 +3,6 @@ app:
   redirectFrom:
     - www.ozensemble.fr
     - ozensemble.fr
+  envFrom:
+    - secretRef:
+        name: "api"

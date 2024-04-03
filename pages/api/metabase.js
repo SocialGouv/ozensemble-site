@@ -1,5 +1,6 @@
 import got from "got"
 import { DataFrame } from "data-forge"
+import { METABASE_ACCOUNT, METABASE_PASSWORD } from "../../config"
 
 export default async function handler(req, res) {
   try {
@@ -7,7 +8,7 @@ export default async function handler(req, res) {
     let response = await got.post(
       "https://metabase-ozensemble.fabrique.social.gouv.fr/api/session",
       {
-        json: { username: "yoan.roszak@selego.co", password: "***REMOVED***" },
+        json: { username: METABASE_ACCOUNT, password: METABASE_PASSWORD },
         responseType: "json",
       }
     )
