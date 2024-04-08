@@ -4,13 +4,18 @@ import { AiOutlineClose } from "react-icons/ai"
 import { HiMenu } from "react-icons/hi"
 import ContactPopup from "./ContactPopup"
 import { ANDROID_URL, IOS_URL } from "../constants"
+import { isMobile } from "react-device-detect"
 
 export default function Navigation({ showPopup, setShowPopup }) {
   const [isOpen, setIsOpen] = useState(false)
   const [showContactPopup, setShowContactPopup] = useState(false)
+  const [isMobileDetected, setIsMobileDetected] = useState(false)
 
   useEffect(() => {
     document.body.addEventListener("click", () => setIsOpen(false))
+  })
+  useEffect(() => {
+    setIsMobileDetected(isMobile)
   })
 
   return (
@@ -21,7 +26,11 @@ export default function Navigation({ showPopup, setShowPopup }) {
         showPopup={showContactPopup}
         setShowPopup={setShowContactPopup}
       />
-
+      {isMobileDetected && (
+        <div className="fixed bottom-0 left-1/2 pb-4 text-center transform -translate-x-1/2">
+          <DownloadPopupTrigger setShowPopup={setShowPopup} />
+        </div>
+      )}
       <nav className="flex items-center justify-between px-5 bg-white fixed w-full h-[70px] top-0 z-0">
         <div>
           <a className="flex-center" href="/">
@@ -90,15 +99,13 @@ const Link = ({ name, target = null, setIsOpen }) => (
 
 const DownloadPopupTrigger = ({ setShowPopup }) => {
   return (
-    <>
-      <button
-        className="flex group rounded-full bg-oz-pink font-bold text-white py-2 px-6 gap-1 items-center cursor-pointer hover:text-oz-pink hover:bg-white border border-oz-pink transition"
-        onClick={() => setShowPopup(true)}
-      >
-        <FiSmartphone className="stroke-white group-hover:stroke-oz-pink transition" />
-        <span>Télécharger l'app</span>
-      </button>
-    </>
+    <button
+      className="flex group rounded-full bg-oz-pink font-bold text-white py-2 px-6 gap-1 items-center cursor-pointer hover:text-oz-pink hover:bg-white border border-oz-pink transition"
+      onClick={() => setShowPopup(true)}
+    >
+      <FiSmartphone className="stroke-white group-hover:stroke-oz-pink transition" />
+      <span>Télécharger l'app</span>
+    </button>
   )
 }
 

@@ -166,7 +166,7 @@ export default function Footer() {
             </div>
           </div>
         </div>
-        <div className="text-center mb-1 mx-[10%]">
+        <div className="text-center mb-4 mx-[10%]">
           <p>La Fabrique Numérique des Ministères Sociaux © 2023</p>
         </div>
       </footer>
