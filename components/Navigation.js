@@ -1,4 +1,4 @@
-import { use, useEffect, useRef, useState } from "react"
+import { useEffect, useRef, useState } from "react"
 import { FiSmartphone } from "react-icons/fi"
 import { AiOutlineClose } from "react-icons/ai"
 import Fade from "@mui/material/Fade"
