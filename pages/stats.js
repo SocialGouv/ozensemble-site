@@ -125,6 +125,18 @@ const Stats = () => {
           <h3 className="mb-16 text-4xl xl:text-5xl font-bold text-center text-oz-blue">
             Statistiques
           </h3>
+          <div className="flex justify-center">
+            <button
+              className="flex group rounded-full bg-oz-pink font-bold text-white py-2 px-6 mb-6 items-center cursor-pointer hover:text-oz-pink hover:bg-white border border-oz-pink transition"
+              onClick={() => setShowTable(!showTable)}
+            >
+              <span>
+                {showTable
+                  ? "Afficher les graphiques"
+                  : "Afficher les tableaux"}
+              </span>
+            </button>
+          </div>
 
           <div className=" flex justify-between flex-col text-center p-10 h-[1300px] lg:pt-10 sm:rounded-xl md:rounded-3xl bg-oz-gray sm:mx-20 xl:mx-auto xl:w-[1100px] mb-2">
             <div className=" bg-white rounded-2xl ">
@@ -232,18 +244,6 @@ const Stats = () => {
                 <div aria-live="polite">Chargement en cours...</div>
               )}
             </div>
-          </div>
-          <div className="flex justify-center">
-            <button
-              className="flex group rounded-full bg-oz-pink font-bold text-white py-2 px-6 mb-6 items-center cursor-pointer hover:text-oz-pink hover:bg-white border border-oz-pink transition"
-              onClick={() => setShowTable(!showTable)}
-            >
-              <span>
-                {showTable
-                  ? "Afficher les graphiques"
-                  : "Afficher les tableaux"}
-              </span>
-            </button>
           </div>
         </div>
         <Footer />
