@@ -9216,6 +9216,8 @@ __metadata:
   version: 3.3.0
   resolution: "typy@npm:3.3.0"
   checksum: 409529672989a6281a56810f5a0be3256ceccb8e73166a9344da53713b935ad036ca10fe702240e55ff0265e2e1a09c19d74b5dd10ce2366759027d24fa0089b
+  languageName: node
+  linkType: hard
 
 "ua-parser-js@npm:^1.0.33":
   version: 1.0.37
