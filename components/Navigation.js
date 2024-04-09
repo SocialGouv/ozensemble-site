@@ -27,7 +27,7 @@ export default function Navigation({ showPopup, setShowPopup }) {
         setShowPopup={setShowContactPopup}
       />
       {isMobileDetected && (
-        <div className="fixed bottom-0 left-1/2 pb-4 text-center transform -translate-x-1/2">
+        <div className="fixed bottom-0 left-1/2 pb-4 text-center transform -translate-x-1/2 whitespace-nowrap">
           <DownloadPopupTrigger setShowPopup={setShowPopup} />
         </div>
       )}
