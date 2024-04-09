@@ -38,6 +38,7 @@ const Index = ({ posts }) => {
                     title={post.title}
                     date={post.date}
                     articleUrl={`/blog/${post.slug}`}
+                    alt={post.alt}
                   />
                 ))}
             </div>

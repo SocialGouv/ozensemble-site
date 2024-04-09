@@ -70,7 +70,7 @@ const Blog = ({ mdxSource, data }) => {
           <img
             className="w-full h-auto rounded-3xl"
             src={data.image}
-            alt={data.title}
+            alt={data.alt}
           />
         )}
       </div>
