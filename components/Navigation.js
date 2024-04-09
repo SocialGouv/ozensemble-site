@@ -73,6 +73,7 @@ export default function Navigation({ showPopup, setShowPopup }) {
               onClick={() => setShowContactPopup(true)}
             /> */}
             <Link name="Blog" target="/blog" setIsOpen={setIsOpen} />
+            <Link name="Plan du site" target="/plan" setIsOpen={setIsOpen} />
             <Link
               name="Ils parlent de nous"
               target="/partners"
