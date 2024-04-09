@@ -95,6 +95,7 @@ const Stats = () => {
           legend: {
             onClick: null,
           },
+          events: ["mousemove"],
 
           scales: {
             x: {
@@ -137,7 +138,7 @@ const Stats = () => {
                 !showTable ? (
                   <canvas
                     aria-label="Graphique représentant les Utilisateurs Actifs Journaliers"
-                    role="widget"
+                    role="img"
                     id="myChart"
                     tabIndex={0}
                     ref={(el) => el && createChart(result, "myChart")}
@@ -190,7 +191,7 @@ const Stats = () => {
                 !showTable ? (
                   <canvas
                     aria-label="Graphique représentant les Utilisateurs Actifs Journaliers"
-                    role="widget"
+                    role="img"
                     id="myChart2"
                     tabIndex={0}
                     ref={(el) => el && createChart(result2, "myChart2")}

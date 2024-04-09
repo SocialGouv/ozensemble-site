@@ -2,7 +2,7 @@ import { DataFrame } from "data-forge"
 import { METABASE_ACCOUNT, METABASE_PASSWORD } from "../../config"
 import fetch from "node-fetch"
 
-export default async function handler(req, res) {
+export default async function metabase(req, res) {
   try {
     const questionIndex = req.query.question
     const sessionResponse = await fetch(
