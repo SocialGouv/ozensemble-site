@@ -6,7 +6,6 @@ import Chart from "chart.js/auto"
 import Pagination from "./pagination"
 
 const Stats = () => {
-  const [error, setError] = useState(null)
   const [result, setResult] = useState(null)
   const [result2, setResult2] = useState(null)
   const [showTable, setShowTable] = useState(false)
@@ -36,7 +35,6 @@ const Stats = () => {
         setResult2(data2)
       } catch (error) {
         console.error(error)
-        setError("Error loading data")
       }
     }
 
@@ -70,7 +68,7 @@ const Stats = () => {
       })
     }
 
-    if (ctx && !Chart.getChart(ctx)) {
+    if (ctx && parsedData && !Chart.getChart(ctx)) {
       new Chart(ctx, {
         type: "line",
         data: {
@@ -115,7 +113,6 @@ const Stats = () => {
       })
     }
   }
-  if (error) return <div>{error}</div>
 
   return (
     <>
