@@ -1,13 +1,13 @@
 import Link from "next/link"
 
-const BlogCard = ({ imageUrl, title, articleUrl, date }) => {
+const BlogCard = ({ imageUrl, title, articleUrl, date, alt }) => {
   return (
     <Link href={articleUrl} passHref>
       <div className="flex flex-col rounded-3xl bg-gray-100 shadow-lg mt-0 h-full">
         <div className="flex-shrink-0 w-full h-56 rounded-3xl overflow-hidden shadow-xl">
           <img
             src={imageUrl}
-            alt={title}
+            alt={alt}
             className="object-cover w-full h-full"
           />
         </div>
