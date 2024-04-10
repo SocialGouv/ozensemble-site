@@ -1,5 +1,4 @@
 import { DataFrame } from "data-forge"
-import { METABASE_ACCOUNT, METABASE_PASSWORD } from "../../config"
 import fetch from "node-fetch"
 
 export default async function metabase(req, res) {
@@ -11,8 +10,8 @@ export default async function metabase(req, res) {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          username: METABASE_ACCOUNT,
-          password: METABASE_PASSWORD,
+          username: process.env.METABASE_ACCOUNT,
+          password: process.env.METABASE_PASSWORD,
         }),
       }
     )
