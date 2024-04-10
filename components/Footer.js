@@ -68,6 +68,7 @@ export default function Footer() {
               text="Nous contacter ?"
               link="mailto:ozensemble@fabrique.social.gouv.fr"
             /> */}
+            <ArrowList text="Plan du site" link="/plan" />
             <ArrowList text="Ils parlent de nous" link="/partners" />
             <button
               className="block underline text-sm font-light mb-2 cursor-pointer"
