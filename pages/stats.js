@@ -22,13 +22,17 @@ const Stats = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch("/api/metabase?question=0")
+        const response = await fetch(
+          "http://localhost:3615/public/metabase?question=0"
+        )
         const responseData = await response.json()
         const data = JSON.parse(responseData.result)
 
         setResult(data)
 
-        const response2 = await fetch("/api/metabase?question=1")
+        const response2 = await fetch(
+          "http://localhost:3615/public/metabase?question=1"
+        )
         const responseData2 = await response2.json()
         const data2 = JSON.parse(responseData2.result)
 
@@ -159,7 +163,7 @@ const Stats = () => {
                         <thead className="bg-[#DE285E] text-white">
                           <tr>
                             <th className="py-2 px-4">Date</th>
-                            <th className="py-2 px-4">Value</th>
+                            <th className="py-2 px-4">Nombre d'utilisateurs</th>
                           </tr>
                         </thead>
                         <tbody>
@@ -212,7 +216,7 @@ const Stats = () => {
                         <thead className="bg-[#DE285E] text-white">
                           <tr>
                             <th className="py-2 px-4">Date</th>
-                            <th className="py-2 px-4">Value</th>
+                            <th className="py-2 px-4">Nombre d'utilisateurs</th>
                           </tr>
                         </thead>
                         <tbody>
