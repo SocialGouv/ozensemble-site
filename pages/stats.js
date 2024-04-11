@@ -23,7 +23,7 @@ const Stats = () => {
     const fetchData = async () => {
       try {
         const response = await fetch(
-          "http://localhost:3615/public/metabase?question=0"
+          "https://api-ozensemble.fabrique.social.gouv.fr/public/metabase?question=0"
         )
         const responseData = await response.json()
         const data = JSON.parse(responseData.result)
@@ -31,7 +31,7 @@ const Stats = () => {
         setResult(data)
 
         const response2 = await fetch(
-          "http://localhost:3615/public/metabase?question=1"
+          "https://api-ozensemble.fabrique.social.gouv.fr/public/metabase?question=1"
         )
         const responseData2 = await response2.json()
         const data2 = JSON.parse(responseData2.result)
