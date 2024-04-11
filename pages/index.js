@@ -17,9 +17,9 @@ export default function Index() {
               <h1 className="mb-2 text-3xl font-bold lg:text-6xl text-oz-blue">
                 Oz Ensemble
               </h1>
-              <p className="mb-5 text-lg  leading-normal lg:leading-9 lg:text-2xl">
+              <h2 className="mb-5 text-lg  leading-normal lg:leading-9 lg:text-2xl">
                 L'application mobile pour maitriser sa consommation d'alcool
-              </p>
+              </h2>
               <div className="grid grid-flow-col gap-3 sm:gap-6 max-w-sm mb-7 mx-auto md:mx-0">
                 <a href={ANDROID_URL} target="_blank" rel="noopener noreferrer">
                   <img

@@ -22,16 +22,15 @@ class MyApp extends App {
           <meta property="og:title" content="Oz Ensemble" key="index" />
           <meta
             name="description"
-            content="Oz Ensemble est une application mobile pour maitriser sa consommation d'alcool. Ce dispositif expérimental créé par le Dr Géraldine Talbot, médecin addictologue de l'association CaPASSCité, financé par l'ARS, la MILDECA et la DINUM, en collaboration avec la Fabrique numérique des ministères sociaux."
-            key="index"
+            content="Mesurer votre consommation grâce à l’application Oz Ensemble. Oz Ensemble vous accompagne pour réduire votre consommation d’alcool."
           />
           <meta
             property="og:description"
-            content="Oz Ensemble est une application mobile pour maitriser sa consommation d'alcool. Ce dispositif expérimental créé par le Dr Géraldine Talbot, médecin addictologue de l'association CaPASSCité, financé par l'ARS, la MILDECA et la DINUM, en collaboration avec la Fabrique numérique des ministères sociaux."
+            content="Mesurer votre consommation grâce à l’application Oz Ensemble. Oz Ensemble vous accompagne pour réduire votre consommation d’alcool."
             key="index"
           />
           <meta charset="UTF-8" />
-          <title key="download">Télécharger Oz Ensemble</title>
+          <title key="download">Oz Ensemble : Maîtriser votre consommation d’alcool</title>
           <meta property="og:url" content={`${ROOT_URL}/download`} />
           <meta property="og:image" content="/images/logo_oz.png" />
           <meta property="og:type" content="article" />
