@@ -24,7 +24,7 @@ const Plan = () => {
             </div>
             <ArrowList text="Blog" link="/blog" />
             <ArrowList text="Ils parlent de nous" link="/partners" />
-            <h3 className="text-2xl text-[#115F3D]">Utilités</h3>
+            <h2 className="text-2xl text-[#115F3D]">Utilités</h2>
             <div className="flex flex-col gap-6 px-12">
               <SubArrowList
                 text="Mentions légales"
@@ -50,14 +50,14 @@ const Plan = () => {
 const ArrowList = ({ text, link }) => (
   <div className="mb-2 items-start">
     <a href={link}>
-      <p className="text-2xl underline text-[#115F3D]">→ {text}</p>
+      <h2 className="text-2xl underline text-[#115F3D]">→ {text}</h2>
     </a>
   </div>
 )
 const SubArrowList = ({ text, link }) => (
   <div className="mb-2 items-start">
     <a href={link}>
-      <p className="text-xl font-light underline text-[#115F3D]">→ {text}</p>
+      <h3 className="text-xl font-light underline text-[#115F3D]">→ {text}</h3>
     </a>
   </div>
 )

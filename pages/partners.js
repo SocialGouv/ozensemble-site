@@ -17,9 +17,9 @@ const Partners = () => {
             Ils parlent de nous
           </h1>
           <div className="px-20 lg:py-10">
-            <h3 className="text-2xl font-bold lg:text-4xl text-oz-green">
+            <h2 className="text-2xl font-bold lg:text-4xl text-oz-green">
               Institutions
-            </h3>
+            </h2>
             <div className="flex flex-wrap mt-10 gap-10 ">
               <div className="transition duration-500 hover:scale-110 basis-1/6">
                 <a
@@ -63,9 +63,9 @@ const Partners = () => {
             </div>
           </div>
           <div className="px-20 py-20 lg:py-10">
-            <h3 className="text-2xl font-bold lg:text-4xl text-oz-green">
+            <h2 className="text-2xl font-bold lg:text-4xl text-oz-green">
               Communes
-            </h3>
+            </h2>
             <div className="flex flex-wrap mt-10 gap-10 ">
               <div className="transition duration-500 hover:scale-110 basis-1/6">
                 <a href="https://correns.fr/fr/nw/1870442/1732031/dispositif-oz-ensemble">
@@ -133,9 +133,9 @@ const Partners = () => {
             </div>
           </div>
           <div className="px-20 py-20 lg:py-10">
-            <h3 className="text-2xl font-bold lg:text-4xl text-oz-green">
+            <h2 className="text-2xl font-bold lg:text-4xl text-oz-green">
               Autres
-            </h3>
+            </h2>
             <div className="flex flex-wrap mt-10 gap-10 ">
               <div className="transition duration-500 hover:scale-110 basis-1/6">
                 <a href="https://www.whatsupdoc-lemag.fr/article/quarantaine-confinement-une-app-oz-ensemble-aide-au-controle-de-la-consommation-dalcool">
@@ -176,9 +176,9 @@ const Partners = () => {
             </div>
           </div>
           <div className="px-20 py-20 lg:py-10">
-            <h3 className="text-2xl font-bold lg:text-4xl text-oz-green">
+            <h2 className="text-2xl font-bold lg:text-4xl text-oz-green">
               Presse
-            </h3>
+            </h2>
             <div className="flex flex-wrap my-10 gap-10 ">
               <div className="transition duration-500 hover:scale-110 basis-1/6">
                 <a href="https://rmc.bfmtv.com/conso/dry-january-maitrisez-votre-consommation-d-alcool-grace-a-ces-applications_AN-202401020669.html">

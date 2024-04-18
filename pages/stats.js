@@ -126,9 +126,9 @@ const Stats = () => {
       <div>
         <Navigation showPopup={showPopup} setShowPopup={setShowPopup} />
         <div>
-          <h3 className="mb-16 text-4xl xl:text-5xl font-bold text-center text-oz-blue">
+          <h1 className="mb-2 text-3xl text-center font-extrabold lg:text-5xl text-oz-blue">
             Statistiques
-          </h3>
+          </h1>
           <div className="flex justify-center">
             <button
               className="flex group rounded-full bg-oz-pink font-bold text-white py-2 px-6 mb-6 items-center cursor-pointer hover:text-oz-pink hover:bg-white border border-oz-pink transition"

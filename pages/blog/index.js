@@ -23,9 +23,9 @@ const Index = ({ posts }) => {
         <Navigation showPopup={showPopup} setShowPopup={setShowPopup} />
         <div className="flex-grow py-16 mx-[10%] sm:mx-20 h-auto">
           <div className="w-full mx-auto xl:w-[1100px]">
-            <h3 className="mb-16 text-4xl xl:text-5xl font-bold text-center lg:text-4xl text-oz-blue">
+            <h1 className="mb-16 text-4xl xl:text-5xl font-bold text-center lg:text-4xl text-oz-blue">
               Nos derniers posts
-            </h3>
+            </h1>
 
             <div className="grid grid-cols-1 gap-6 lg:grid-cols-3 text-center">
               {posts
