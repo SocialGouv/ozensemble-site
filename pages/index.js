@@ -2,6 +2,7 @@ import Footer from "../components/Footer"
 import Navigation, { DownloadPopup } from "../components/Navigation"
 import { ANDROID_URL, IOS_URL } from "../constants"
 import { useState } from "react"
+import { fr } from "@codegouvfr/react-dsfr"
 
 export default function Index() {
   const [showPopup, setShowPopup] = useState(false)
@@ -9,7 +10,7 @@ export default function Index() {
   return (
     <div className="">
       <DownloadPopup showPopup={showPopup} setShowPopup={setShowPopup} />
-      <header className="oz-header-gradient">
+      <header className={fr.cx("background-action-low-blue-france")}>
         <Navigation showPopup={showPopup} setShowPopup={setShowPopup} />
         <div className="md:flex pt-20 pb-8 md:pb-32 auto-cols-fr md:w-5/6 xl:w-[1100px] mx-[10%] md:m-auto">
           <div className="w-full md:w-1/2 text-center md:text-left flex items-center">
@@ -17,6 +18,7 @@ export default function Index() {
               <h1 className="mb-2 text-3xl font-bold lg:text-6xl text-oz-blue">
                 Oz Ensemble
               </h1>
+              <p class="fr-badge fr-badge--blue-ecume">Label Rouge</p>
               <p className="mb-5 text-lg  leading-normal lg:leading-9 lg:text-2xl">
                 L'application mobile pour maitriser sa consommation d'alcool
               </p>

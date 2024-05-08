@@ -5,6 +5,7 @@
   "license": "MIT",
   "private": true,
   "dependencies": {
+    "@codegouvfr/react-dsfr": "^1.9.10",
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
     "@next/font": "13.1.6",
@@ -32,7 +33,9 @@
     "export": "next export",
     "build-static": "next build && next export",
     "lint": "eslint pages/*.js",
-    "k8s": "yarn --silent --cwd .k8s"
+    "k8s": "yarn --silent --cwd .k8s",
+    "predev": "only-include-used-icons",
+    "prebuild": "only-include-used-icons"
   },
   "devDependencies": {
     "@socialgouv/eslint-config-react": "^1.89.0",

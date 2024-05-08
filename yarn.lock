@@ -463,6 +463,19 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@codegouvfr/react-dsfr@npm:^1.9.10":
+  version: 1.9.10
+  resolution: "@codegouvfr/react-dsfr@npm:1.9.10"
+  dependencies:
+    tsafe: ^1.6.3
+    yargs-parser: ^21.1.1
+  bin:
+    copy-dsfr-to-public: bin/copy-dsfr-to-public.js
+    only-include-used-icons: bin/only-include-used-icons.js
+  checksum: 2094a5f879decac50d30bc92947b72a544a0cd76d09fe545b8544e58a080a4b1ceb59e928dc02a46a34610ac44bc3ee573b686da43ad6970c30cc43b1064f460
+  languageName: node
+  linkType: hard
+
 "@emotion/babel-plugin@npm:^11.10.5":
   version: 11.10.5
   resolution: "@emotion/babel-plugin@npm:11.10.5"
@@ -7235,6 +7248,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "ozensemble-site@workspace:."
   dependencies:
+    "@codegouvfr/react-dsfr": ^1.9.10
     "@emotion/react": ^11.10.5
     "@emotion/styled": ^11.10.5
     "@next/font": 13.1.6
@@ -8998,6 +9012,13 @@ __metadata:
   version: 2.1.0
   resolution: "trough@npm:2.1.0"
   checksum: a577bb561c2b401cc0e1d9e188fcfcdf63b09b151ff56a668da12197fe97cac15e3d77d5b51f426ccfd94255744a9118e9e9935afe81a3644fa1be9783c82886
+  languageName: node
+  linkType: hard
+
+"tsafe@npm:^1.6.3":
+  version: 1.6.6
+  resolution: "tsafe@npm:1.6.6"
+  checksum: 7855ddf338455366a6876a0e1398e73a9e34c688925e8254934c2323c6540098120429fd825b0f7473ff5dfedcdbe60ca44727df8c2b96fd61985d3fc7cc4f12
   languageName: node
   linkType: hard
 

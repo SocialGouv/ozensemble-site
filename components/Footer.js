@@ -164,6 +164,15 @@ export default function Footer() {
                   alt="Vers profil linkedin"
                 />
               </a>
+              <li class="fr-footer__bottom-item">
+                <button
+                  class="fr-footer__bottom-link fr-icon-theme-fill fr-btn--icon-left"
+                  aria-controls="fr-theme-modal"
+                  data-fr-opened="false"
+                >
+                  Paramètres d'affichage
+                </button>
+              </li>
             </div>
           </div>
         </div>
