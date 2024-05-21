@@ -1,7 +1,6 @@
 import fs from "fs"
 import matter from "gray-matter"
 import path from "path"
-import { serialize } from "next-mdx-remote/serialize"
 import { stats } from "fs-extra"
 import { format, parse } from "date-fns"
 import { fr } from "date-fns/locale"
@@ -17,8 +16,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       .map(async (filename) => {
         const filePath = path.join(process.cwd(), "content", filename)
         const rawContent = fs.readFileSync(filePath, "utf8")
-        const { content, data } = matter(rawContent)
-        const mdxSource = await serialize(content)
+        const { data } = matter(rawContent)
         const parsedDate = data.date
           ? parse(data.date, "MMMM d, yyyy", new Date(), { locale: fr })
           : null
@@ -28,8 +26,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
           return null
         }
         return {
-          ...data,
-          mdxSource,
           slug: filename.replace(".mdx", ""),
           lastmod: parsedDate
             ? format(parsedDate, "yyyy-MM-dd")

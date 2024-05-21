@@ -6,16 +6,13 @@ import path from "path"
 import matter from "gray-matter"
 import { parse } from "date-fns"
 import { fr } from "date-fns/locale"
-import type { Metadata, ResolvingMetadata } from "next"
+import type { Metadata } from "next"
 
-type MetadataProps = {
+export async function generateMetadata({
+  params,
+}: {
   params: { blog: string }
-  searchParams: { [key: string]: string | string[] | undefined }
-}
-export async function generateMetadata(
-  { params, searchParams }: MetadataProps,
-  parent: ResolvingMetadata
-): Promise<Metadata> {
+}): Promise<Metadata> {
   // read route params
   const filePath = path.join(process.cwd(), "content", `${params.blog}.mdx`)
   const fileContents = fs.readFileSync(filePath, "utf-8")
@@ -50,4 +47,11 @@ export default function BlogLayout({ children }) {
       <Footer />
     </>
   )
+}
+
+export async function generateStaticParams() {
+  const directoryPath = path.join(process.cwd(), "content")
+  const filenames = fs.readdirSync(directoryPath)
+
+  return filenames.map((filename) => ({ blog: filename.replace(".mdx", "") }))
 }

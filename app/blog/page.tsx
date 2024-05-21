@@ -49,7 +49,7 @@ export default async function Blog() {
   )
 }
 
-export async function getBlogPosts() {
+async function getBlogPosts() {
   const files = fs.readdirSync(path.join(process.cwd(), "content"))
 
   const posts = await Promise.all(
