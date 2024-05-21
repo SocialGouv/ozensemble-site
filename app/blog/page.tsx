@@ -17,7 +17,7 @@ export default async function Blog() {
   const posts = await getBlogPosts()
 
   return (
-    <>
+    <div className="mt-[70px]">
       <DownloadPopupStandalone />
       <div className="flex flex-col min-h-screen">
         <Navigation />
@@ -45,11 +45,11 @@ export default async function Blog() {
         </div>
         <Footer />
       </div>
-    </>
+    </div>
   )
 }
 
-export async function getBlogPosts() {
+async function getBlogPosts() {
   const files = fs.readdirSync(path.join(process.cwd(), "content"))
 
   const posts = await Promise.all(

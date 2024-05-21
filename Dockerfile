@@ -17,7 +17,7 @@ ENV NEXT_PUBLIC_MATOMO_URL="https://matomo.fabrique.social.gouv.fr/"
 ENV NODE_ENV=production
 
 ENV YARN_IGNORE_NODE=1
-RUN yarn build-static
+RUN yarn build
 
 FROM ghcr.io/socialgouv/docker/nginx:8.2.0
 

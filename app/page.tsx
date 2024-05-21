@@ -428,12 +428,14 @@ const Checklist = ({ title, subtitle }) => (
 )
 
 const Checklist2 = ({ content }) => (
-  <div className="flex p-5 rounded-xl bg-oz-gray">
-    <img
-      className="mr-3 md:mx-7"
-      src="images/icon/check-circle-oz-green.svg"
-      alt="Icone coche turquoise entourée "
-    />
-    <p className="text-base text-black">{content}</p>
+  <div className="mt-[70px]">
+    <div className="flex p-5 rounded-xl bg-oz-gray">
+      <img
+        className="mr-3 md:mx-7"
+        src="images/icon/check-circle-oz-green.svg"
+        alt="Icone coche turquoise entourée "
+      />
+      <p className="text-base text-black">{content}</p>
+    </div>
   </div>
 )

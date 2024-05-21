@@ -19,7 +19,7 @@ export default function Navigation() {
   })
   useEffect(() => {
     setIsMobileDetected(isMobile)
-  })
+  }, [])
 
   return (
     <>
