@@ -12,22 +12,9 @@ export const metadata: Metadata = {
     type: "article",
     locale: "fr_FR",
     url: `${ROOT_URL}/download`,
-    title: "Oz Ensemble",
-    description:
-      "Oz Ensemble est une application mobile pour maitriser sa consommation d'alcool. Ce dispositif expérimental créé par le Dr Géraldine Talbot, médecin addictologue de l'association CaPASSCité, financé par l'ARS, la MILDECA et la DINUM, en collaboration avec la Fabrique numérique des ministères sociaux.",
-    siteName: "Oz Ensemble",
-    images: [
-      {
-        url: "/images/logo_oz.png",
-        alt: "Oz Ensemble logo",
-      },
-    ],
   },
   alternates: {
     canonical: ROOT_URL,
-  },
-  icons: {
-    icon: "/images/logo_oz.png",
   },
   appLinks: {
     ios: {
