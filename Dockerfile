@@ -12,12 +12,14 @@ RUN yarn fetch --immutable && yarn cache clean
 
 COPY . .
 
+RUN yarn postinstall
+
 ENV NEXT_PUBLIC_MATOMO_SITE_ID="34"
 ENV NEXT_PUBLIC_MATOMO_URL="https://matomo.fabrique.social.gouv.fr/"
 ENV NODE_ENV=production
 
 ENV YARN_IGNORE_NODE=1
-RUN yarn postinstall && yarn build
+RUN yarn build
 
 FROM ghcr.io/socialgouv/docker/nginx:8.2.0
 
