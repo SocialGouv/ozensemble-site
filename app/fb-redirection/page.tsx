@@ -297,11 +297,11 @@ export default function Page() {
                 iconId="ri-download-2-fill"
                 priority="secondary"
               >
-                Me renseigner sur les risques liés à la grossesse
+                Me renseigner sur les aides pour diminuer
               </Button>
             }
             size="medium"
-            title="Je suis enceinte"
+            title="Je suis en recherche d’aide pour diminuer"
             titleAs="h3"
           />
           <Card
@@ -317,7 +317,7 @@ export default function Page() {
               </Button>
             }
             size="medium"
-            title="Je souffre de troubles physiques et ou psychologique"
+            title="Je souhaite me sevrer complètement (abstinence à l’alcool)"
             titleAs="h3"
           />
           <Card

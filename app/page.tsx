@@ -8,7 +8,7 @@ export default function Index() {
     <>
       <header className="oz-header-gradient">
         <Navigation />
-        <div className="md:flex pt-20 pb-8 md:pb-32 auto-cols-fr md:w-5/6 xl:w-[1100px] mx-[10%] md:m-auto">
+        <div className="mt-[70px] md:flex pt-20 pb-8 md:pb-32 auto-cols-fr md:w-5/6 xl:w-[1100px] mx-[10%] md:m-auto">
           <div className="w-full md:w-1/2 text-center md:text-left flex items-center">
             <div>
               <h1 className="mb-2 text-3xl font-bold lg:text-6xl text-oz-blue">
@@ -18,7 +18,12 @@ export default function Index() {
                 L'application mobile pour maitriser sa consommation d'alcool
               </p>
               <div className="grid grid-flow-col gap-3 sm:gap-6 max-w-sm mb-7 mx-auto md:mx-0">
-                <a href={ANDROID_URL} target="_blank" rel="noopener noreferrer">
+                <a
+                  className="!after:hidden"
+                  href={ANDROID_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <img
                     className="object-contain w-full"
                     src="images/other/google-play-fr.png"
