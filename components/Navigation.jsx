@@ -1,12 +1,15 @@
+"use client"
+
 import { useEffect, useRef, useState } from "react"
 import { FiSmartphone } from "react-icons/fi"
 import { AiOutlineClose } from "react-icons/ai"
 import { HiMenu } from "react-icons/hi"
 import ContactPopup from "./ContactPopup"
-import { ANDROID_URL, IOS_URL } from "../constants"
+import { ANDROID_URL, IOS_URL } from "~/constants"
 import { isMobile } from "react-device-detect"
 
-export default function Navigation({ showPopup, setShowPopup }) {
+export default function Navigation() {
+  const [showPopup, setShowPopup] = useState(false)
   const [isOpen, setIsOpen] = useState(false)
   const [showContactPopup, setShowContactPopup] = useState(false)
   const [isMobileDetected, setIsMobileDetected] = useState(false)
@@ -16,7 +19,7 @@ export default function Navigation({ showPopup, setShowPopup }) {
   })
   useEffect(() => {
     setIsMobileDetected(isMobile)
-  })
+  }, [])
 
   return (
     <>
@@ -110,7 +113,13 @@ const DownloadPopupTrigger = ({ setShowPopup }) => {
   )
 }
 
-export const DownloadPopup = ({ showPopup, setShowPopup }) => {
+export const DownloadPopupStandalone = () => {
+  const [showPopup, setShowPopup] = useState(false)
+
+  return <DownloadPopup showPopup={showPopup} setShowPopup={setShowPopup} />
+}
+
+const DownloadPopup = ({ showPopup, setShowPopup }) => {
   const popupFirstFocus = useRef(null)
   const [baseUrl, setBaseUrl] = useState("")
 

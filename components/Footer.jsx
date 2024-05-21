@@ -1,3 +1,5 @@
+"use client"
+
 import { useState, useEffect } from "react"
 import { FaPhoneAlt } from "react-icons/fa"
 import {
@@ -7,7 +9,7 @@ import {
   FACEBOOK_URL,
   TWITTER_URL,
   LINKEDIN_URL,
-} from "../constants"
+} from "~/constants"
 import ContactPopup from "./ContactPopup"
 
 export default function Footer() {

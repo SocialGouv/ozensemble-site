@@ -1,3 +1,5 @@
+"use client"
+
 import { useEffect, useRef } from "react"
 import { AiOutlineClose } from "react-icons/ai"
 import { FiMail } from "react-icons/fi"
