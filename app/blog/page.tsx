@@ -49,10 +49,6 @@ export default async function Blog() {
   )
 }
 
-// export async function getStaticProps() {
-//
-// }
-
 export async function getBlogPosts() {
   const files = fs.readdirSync(path.join(process.cwd(), "content"))
 
