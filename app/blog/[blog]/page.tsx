@@ -1,22 +1,22 @@
-import React, { useState } from "react"
-import Navigation, { DownloadPopup } from "../../components/Navigation"
-import Footer from "../../components/Footer"
+import React from "react"
 import { serialize } from "next-mdx-remote/serialize"
 import { MDXRemote } from "next-mdx-remote"
-import Head from "next/head"
+import { useParams } from "next/navigation"
 import fs from "fs"
 import path from "path"
 import matter from "gray-matter"
 import { HiChevronLeft } from "react-icons/hi"
-import styles from "../../style/bloga.module.css"
-import { ANDROID_URL, IOS_URL } from "../../constants"
+import styles from "style/bloga.module.css"
+import { ANDROID_URL, IOS_URL } from "../../../constants"
 import appStorePic from "../../public/images/other/app-store-fr.png"
 import googlePlayPic from "../../public/images/other/google-play-fr.png"
 import { parse } from "date-fns"
 import { fr } from "date-fns/locale"
 
-const Blog = ({ mdxSource, data }) => {
-  const [showPopup, setShowPopup] = useState(false)
+export default async function Blog() {
+  const params = useParams<{ blog: string }>()
+
+  const { mdxSource, data } = await getBlogPost(params)
 
   const components = {
     DownloadButtons: () => (
@@ -41,15 +41,6 @@ const Blog = ({ mdxSource, data }) => {
 
   return (
     <>
-      <Head>
-        <title>{data.title} | Blog | Oz Ensemble</title>
-        <meta name="description" content={data.description} />
-        <meta property="og:title" content={data.title} />
-        <meta property="og:description" content={data.description} />
-        <meta property="og:image" content={data.image} />
-      </Head>
-      <DownloadPopup showPopup={showPopup} setShowPopup={setShowPopup} />
-      <Navigation showPopup={showPopup} setShowPopup={setShowPopup} />
       <div className="p-4 lg:pt-16 sm:mx-20 xl:mx-auto xl:w-[1100px]">
         <div className="mb-6 text-oz-pink">
           <a
@@ -80,13 +71,11 @@ const Blog = ({ mdxSource, data }) => {
       >
         <MDXRemote {...mdxSource} components={components} />
       </div>
-
-      <Footer />
     </>
   )
 }
 
-export async function getStaticProps({ params }) {
+export async function getBlogPost(params: { blog: string }) {
   const filePath = path.join(process.cwd(), "content", `${params.blog}.mdx`)
   const fileContents = fs.readFileSync(filePath, "utf-8")
   const { content, data } = matter(fileContents)
@@ -104,25 +93,14 @@ export async function getStaticProps({ params }) {
     }
   }
   return {
-    props: {
-      mdxSource,
-      data,
-    },
+    mdxSource,
+    data,
   }
 }
 
-export async function getStaticPaths() {
+export async function generateStaticParams() {
   const directoryPath = path.join(process.cwd(), "content")
   const filenames = fs.readdirSync(directoryPath)
 
-  const paths = filenames.map((filename) => ({
-    params: { blog: filename.replace(".mdx", "") },
-  }))
-
-  return {
-    paths,
-    fallback: false,
-  }
+  return filenames.map((filename) => ({ blog: filename.replace(".mdx", "") }))
 }
-
-export default Blog

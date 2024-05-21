@@ -1,16 +1,13 @@
-import Footer from "../components/Footer"
-import Navigation, { DownloadPopup } from "../components/Navigation"
-import { ANDROID_URL, IOS_URL } from "../constants"
-import { useState } from "react"
+import Footer from "~/components/Footer"
+import Navigation from "~/components/Navigation"
+import { ANDROID_URL, IOS_URL } from "~/constants"
+import Link from "next/link"
 
 export default function Index() {
-  const [showPopup, setShowPopup] = useState(false)
-
   return (
-    <div className="">
-      <DownloadPopup showPopup={showPopup} setShowPopup={setShowPopup} />
+    <>
       <header className="oz-header-gradient">
-        <Navigation showPopup={showPopup} setShowPopup={setShowPopup} />
+        <Navigation />
         <div className="md:flex pt-20 pb-8 md:pb-32 auto-cols-fr md:w-5/6 xl:w-[1100px] mx-[10%] md:m-auto">
           <div className="w-full md:w-1/2 text-center md:text-left flex items-center">
             <div>
@@ -210,12 +207,12 @@ export default function Index() {
             </div>
           </div>
           <div className="flex items-center justify-center ">
-            <button
+            <Link
+              href="/partners"
               className=" rounded-full bg-oz-pink font-bold text-white py-2 px-6 items-center cursor-pointer hover:text-oz-pink hover:bg-white border border-oz-pink transition"
-              onClick={() => (window.location.href = "/partners")}
             >
               <span>Voir tous</span>
-            </button>
+            </Link>
           </div>
         </div>
         <div className="py-20 lg:py-32 bg-oz-gray " id="who-are-we">
@@ -417,7 +414,7 @@ export default function Index() {
       </main>
 
       <Footer />
-    </div>
+    </>
   )
 }
 

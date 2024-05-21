@@ -1,6 +1,6 @@
 # ozensemble-site
 
-https://ozensemble.fr
+https://ozensemble.fabrique.social.gouv.fr
 
 ## Env vars
 

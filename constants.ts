@@ -3,7 +3,7 @@ export const ANDROID_URL =
   "https://play.google.com/store/apps/details?id=com.addicto"
 export const IOS_APP_ID = "1498190343"
 export const IOS_URL = "https://apps.apple.com/fr/app/oz-ensemble/id1498190343"
-export const ROOT_URL = "https://ozensemble.fr"
+export const ROOT_URL = "https://ozensemble.fabrique.social.gouv.fr"
 export const INSTAGRAM_URL = "https://www.instagram.com/ozensemble/"
 export const FACEBOOK_URL =
   "https://www.facebook.com/people/Oz-Ensemble/100089366502471/"
