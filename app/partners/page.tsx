@@ -9,7 +9,7 @@ export const metadata = {
 
 export default function Partners() {
   return (
-    <div>
+    <div className="mt-[70px]">
       <Navigation />
       <div className="mt-30 lg:mt-40">
         <h1 className="mb-2 text-3xl text-center font-extrabold lg:text-5xl text-oz-blue">

@@ -14,7 +14,10 @@ const nextConfig = {
   // distDir: 'dist',
   webpack: (config) => {
     config.resolve.fallback = { fs: false }
-
+    config.module.rules.push({
+      test: /\.woff2$/,
+      type: "asset/resource",
+    })
     return config
   },
 }

@@ -17,7 +17,7 @@ export default async function Blog({ params }) {
 
   const components = {
     DownloadButtons: () => (
-      <div className="mb-1 grid max-w-[200px] sm:max-w-[400px] sm:grid-flow-col gap-6 auto-cols-fr md:w-5/6 m-auto">
+      <div className="mt-[70px] mb-1 grid max-w-[200px] sm:max-w-[400px] sm:grid-flow-col gap-6 auto-cols-fr md:w-5/6 m-auto">
         <a href={ANDROID_URL} target="_blank" rel="noopener noreferrer">
           <img
             className="object-contain w-full"
