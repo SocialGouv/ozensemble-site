@@ -9,13 +9,13 @@ import { Quote } from "@codegouvfr/react-dsfr/Quote"
 import { Footer } from "@codegouvfr/react-dsfr/Footer"
 import testimonies from "./testimonies"
 
-export default function LandingV2Page() {
+export default function Page() {
   function onDownloadClick() {
     function redirect() {
-      var userAgent =
+      let userAgent =
         // @ts-expect-error navigator is read-only
-        navigator.userAgent || navigator.vendor || window.opera
-      var ios =
+        navigator.userAgent || window.opera
+      let ios =
         // @ts-expect-error navigator is read-only
         /iPad|iPhone|iPod/.test(userAgent) && !window.MSStream
       if (ios) {
@@ -25,7 +25,7 @@ export default function LandingV2Page() {
         }, 25)
         return
       }
-      var android = /android/i.test(userAgent)
+      let android = /android/i.test(userAgent)
       if (android) {
         // window.location = myapp://element/{ELEMENT_ID};
         window.setTimeout(() => {
