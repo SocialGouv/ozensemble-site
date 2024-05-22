@@ -2,8 +2,8 @@ import Matomo from "~/components/Matomo"
 import "~/style/default.css"
 import { ANDROID_APP_ID, IOS_APP_ID, ROOT_URL } from "~/constants"
 import type { Metadata } from "next"
-import { getHtmlAttributes } from "@codegouvfr/react-dsfr/next-appdir/getHtmlAttributes"
-import { defaultColorScheme } from "./defaultColorScheme"
+// import { getHtmlAttributes } from "@codegouvfr/react-dsfr/next-appdir/getHtmlAttributes"
+// import { defaultColorScheme } from "./defaultColorScheme"
 
 export const metadata: Metadata = {
   title: "Oz Ensemble",
