@@ -129,7 +129,7 @@ export default function Stats() {
   }, [])
 
   return (
-    <div>
+    <div className="mt-[70px]">
       <Navigation />
       <div>
         <h3 className="mb-16 text-4xl xl:text-5xl font-bold text-center text-oz-blue">
