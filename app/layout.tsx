@@ -42,7 +42,11 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }) {
   const lang = "fr"
   return (
-    <html {...getHtmlAttributes({ defaultColorScheme, lang })}>
+    <html
+      //  {...getHtmlAttributes({ defaultColorScheme, lang })} // for dark mode
+      data-fr-scheme="light" // we don't want dark mode
+      lang={lang}
+    >
       <body>
         {children}
         <Matomo />

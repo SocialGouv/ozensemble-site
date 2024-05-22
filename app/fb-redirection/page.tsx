@@ -8,6 +8,7 @@ import { Card } from "@codegouvfr/react-dsfr/Card"
 import { Quote } from "@codegouvfr/react-dsfr/Quote"
 import { Footer } from "@codegouvfr/react-dsfr/Footer"
 import testimonies from "./testimonies"
+import { push } from "@socialgouv/matomo-next"
 
 export default function Page() {
   function onDownloadClick() {
@@ -22,6 +23,18 @@ export default function Page() {
         // window.location = myapp://element/{ELEMENT_ID};
         window.setTimeout(() => {
           window.location.replace(IOS_URL)
+          push(["adSpecialLandingPage", "appStoreRedirect", "iOS"])
+        }, 25)
+        return
+      }
+      let macos =
+        // @ts-expect-error navigator is read-only
+        /Mac/.test(userAgent) && !window.MSStream
+      if (macos) {
+        // window.location = myapp://element/{ELEMENT_ID};
+        window.setTimeout(() => {
+          window.location.replace(IOS_URL)
+          push(["adSpecialLandingPage", "appStoreRedirect", "macOS"])
         }, 25)
         return
       }
@@ -30,9 +43,11 @@ export default function Page() {
         // window.location = myapp://element/{ELEMENT_ID};
         window.setTimeout(() => {
           window.location.replace(ANDROID_URL)
+          push(["adSpecialLandingPage", "appStoreRedirect", "android"])
         }, 25)
         return
       }
+      push(["adSpecialLandingPage", "appStoreRedirect", "no-redirect"])
       window.location.replace(ROOT_URL)
     }
     redirect()
@@ -124,10 +139,10 @@ export default function Page() {
                     alt="Partenaire alcool info service, accédez à leur site en cliquant sur ce logo"
                   />
                 </a>
-                <a href="https://www.liberation.fr/lifestyle/gastronomie/dry-january-questionner-sa-consommation-dalcool-sur-la-duree-20230131_M6DBQPJS4VALHIKGNUPSS7KIHA/">
+                <a href="https://www.lemonde.fr/sciences/article/2021/02/23/alcool-tabac-drogues-medicaments-les-addictions-autre-degat-collateral-du-covid-19_6070854_1650684.html">
                   <img
-                    className="h-full w-full"
-                    src="images/logo_liberation.svg"
+                    className="object-contain"
+                    src="images/Le_monde_logo.png"
                     alt="Journal libération, accédez à leur site en cliquant sur ce logo"
                   />
                 </a>
@@ -151,7 +166,7 @@ export default function Page() {
           <div
             className={[
               fr.cx("fr-col", "fr-col-md-6", "fr-col-12"),
-              "flex items-center justify-end",
+              "flex items-center md:justify-end justify-center mb-20 md:mb-0",
             ].join(" ")}
           >
             <img
@@ -161,8 +176,7 @@ export default function Page() {
               - l'écran calendrier indiquant par des icones la réusite d'objectifs quotidiens
               - l'écran mes activités regroupant les activités disponibles"
               className={[
-                fr.cx("fr-responsive-img--1x1"),
-                "h-screen md:h-[75vh] object-contain md:p-10",
+                " h-screen max-h-[700px] md:h-[75vh] object-contain md:p-10",
               ].join(" ")}
             />
           </div>
@@ -206,15 +220,14 @@ export default function Page() {
           <div
             className={[
               fr.cx("fr-col", "fr-col-md-6", "fr-col-12"),
-              "flex items-center justify-end",
+              "flex items-center md:justify-end justify-center mb-20 md:mb-0",
             ].join(" ")}
           >
             <img
               src="images/landing/quizz-screenshot.png"
               alt="Écran de l'app avec un quizz pour évaluer sa consommation d'alcool"
               className={[
-                fr.cx("fr-responsive-img--1x1"),
-                "h-screen md:h-[75vh] object-contain md:p-10",
+                " h-screen max-h-[700px] md:h-[75vh] object-contain md:p-10",
               ].join(" ")}
             />
           </div>
@@ -257,15 +270,14 @@ export default function Page() {
           <div
             className={[
               fr.cx("fr-col", "fr-col-md-6", "fr-col-12"),
-              "flex items-center justify-start",
+              "flex items-center md:justify-start justify-center mb-20 md:mb-0",
             ].join(" ")}
           >
             <img
               src="images/landing/quizz-screenshot-2.png"
               alt="Écran de l'app avec un quizz pour évaluer sa consommation d'alcool"
               className={[
-                fr.cx("fr-responsive-img--1x1"),
-                "h-screen md:h-[75vh] object-contain md:p-10",
+                " h-screen max-h-[700px] md:h-[75vh] object-contain md:p-10",
               ].join(" ")}
             />
           </div>
