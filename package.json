@@ -18,7 +18,7 @@
     "gray-matter": "^4.0.3",
     "next": "latest",
     "next-compose-plugins": "^2.2.1",
-    "next-mdx-remote": "0.0.0-canary-20240321205249",
+    "next-mdx-remote": "0.6.0",
     "react": "latest",
     "react-device-detect": "^2.2.3",
     "react-dom": "latest",
