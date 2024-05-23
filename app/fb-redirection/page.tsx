@@ -58,9 +58,13 @@ export default function Page() {
       <Header
         brandTop={
           <>
-            LA FABRIQUE
+            MINISTÈRE
             <br />
-            DES MINISTÈRES SOCIAUX
+            DU TRAVAIL,
+            <br />
+            DE LA SANTÉ
+            <br />
+            ET DE LA SOLIDARITÉ
           </>
         }
         homeLinkProps={{
