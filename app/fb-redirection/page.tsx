@@ -67,6 +67,15 @@ export default function Page() {
             ET DE LA SOLIDARITÉ
           </>
         }
+        operatorLogo={{
+          alt: "Logo de la Fabrique Numérique des Ministères sociaux",
+          imgUrl: "images/logo_fabrique.png",
+          orientation: "horizontal",
+          linkProps: {
+            href: "https://www.fabrique.social.gouv.fr/",
+            title: "La Fabrique Numérique des Ministères sociaux",
+          },
+        }}
         homeLinkProps={{
           href: "/",
           title: "Oz Ensemble",
