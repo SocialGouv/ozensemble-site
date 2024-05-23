@@ -8,9 +8,7 @@
     "@codegouvfr/react-dsfr": "^1.9.11",
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
-    "@mdx-js/mdx": "^3.0.1",
     "@socialgouv/matomo-next": "^1.2.2",
-    "@types/mdx": "^2.0.10",
     "chart.js": "^4.4.2",
     "date-fns": "^3.0.6",
     "eslint-config-next": "latest",
@@ -40,6 +38,7 @@
   "devDependencies": {
     "@socialgouv/eslint-config-react": "^1.89.0",
     "@socialgouv/sre-secrets": "^1.4.0",
+    "@types/mdx": "^2.0.10",
     "@types/react": "^18.3.2",
     "autoprefixer": "^10.4.13",
     "eslint": "^7.32.0",
@@ -54,6 +53,8 @@
   },
   "eslintConfig": {
     "rules": {
+      "react/no-unescaped-entities": "off",
+      "@next/next/no-img-element": "off",
       "react/prop-types": "warn",
       "simple-import-sort/sort": "off",
       "jsx-a11y/anchor-is-valid": "warn",
@@ -61,19 +62,12 @@
       "jsx-a11y/no-static-element-interactions": "off",
       "jsx-a11y/click-events-have-key-events": "off",
       "react/react-in-jsx-scope": "off",
-      "jsx-a11y/tabindex-no-positive": "warn",
-      "react/no-unescaped-entities": [
-        "error",
-        {
-          "forbid": [
-            ">",
-            "}"
-          ]
-        }
-      ]
+      "jsx-a11y/tabindex-no-positive": "warn"
     },
     "extends": [
-      "@socialgouv/eslint-config-react"
+      "@socialgouv/eslint-config-react",
+      "eslint:recommended",
+      "next"
     ]
   },
   "engines": {

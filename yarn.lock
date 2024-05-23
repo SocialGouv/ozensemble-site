@@ -7946,7 +7946,6 @@ __metadata:
     "@codegouvfr/react-dsfr": "npm:^1.9.11"
     "@emotion/react": "npm:^11.10.5"
     "@emotion/styled": "npm:^11.10.5"
-    "@mdx-js/mdx": "npm:^3.0.1"
     "@socialgouv/eslint-config-react": "npm:^1.89.0"
     "@socialgouv/matomo-next": "npm:^1.2.2"
     "@socialgouv/sre-secrets": "npm:^1.4.0"
