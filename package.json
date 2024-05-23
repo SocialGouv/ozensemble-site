@@ -8,6 +8,7 @@
     "@codegouvfr/react-dsfr": "^1.9.11",
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
+    "@mdx-js/mdx": "^3.0.1",
     "@socialgouv/matomo-next": "^1.2.2",
     "@types/mdx": "^2.0.10",
     "chart.js": "^4.4.2",
@@ -18,7 +19,7 @@
     "gray-matter": "^4.0.3",
     "next": "latest",
     "next-compose-plugins": "^2.2.1",
-    "next-mdx-remote": "0.0.0-canary-20240321205249",
+    "next-mdx-remote-client": "^1.0.3",
     "react": "latest",
     "react-device-detect": "^2.2.3",
     "react-dom": "latest",
@@ -39,6 +40,7 @@
   "devDependencies": {
     "@socialgouv/eslint-config-react": "^1.89.0",
     "@socialgouv/sre-secrets": "^1.4.0",
+    "@types/react": "^18.3.2",
     "autoprefixer": "^10.4.13",
     "eslint": "^7.32.0",
     "jest": "^26.6.3",
@@ -73,10 +75,6 @@
     "extends": [
       "@socialgouv/eslint-config-react"
     ]
-  },
-  "resolutions": {
-    "@mdx-js/mdx": "2.1.5",
-    "@mdx-js/react": "2.1.5"
   },
   "engines": {
     "npm": "please-use-yarn",
