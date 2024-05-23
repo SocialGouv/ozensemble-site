@@ -1,6 +1,5 @@
 import React from "react"
 import fs from "fs"
-import path from "path"
 import matter from "gray-matter"
 import Navigation, { DownloadPopupStandalone } from "~/components/Navigation"
 import Footer from "~/components/Footer"
@@ -50,14 +49,18 @@ export default async function Blog() {
 }
 
 async function getBlogPosts() {
-  const files = fs.readdirSync(path.join(process.cwd(), "content"))
+  // in the current folder there is an (articles) folder
+  const folders = fs.readdirSync("./app/blog/(articles)")
+  console.log(folders)
 
   const posts = await Promise.all(
-    files
-      .filter((fn) => fn.endsWith(".mdx"))
-      .map(async (filename) => {
-        const filePath = path.join(process.cwd(), "content", filename)
-        const rawContent = fs.readFileSync(filePath, "utf8")
+    folders
+      .filter((fn) => !fn.endsWith(".tsx"))
+      .map(async (slug) => {
+        const rawContent = fs.readFileSync(
+          `./app/blog/(articles)/${slug}/page.mdx`,
+          "utf8"
+        )
         const { data } = matter(rawContent)
         const articleDate = parse(data.date, "MMMM d, yyyy", new Date(), {
           locale: fr,
@@ -70,7 +73,7 @@ async function getBlogPosts() {
         }
 
         return {
-          slug: filename.replace(".mdx", ""),
+          slug,
           order: data.order || 0,
           image: data.image || "",
           title: data.title || "",
