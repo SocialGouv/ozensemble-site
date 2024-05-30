@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_number_card_number_cards",
+  "info": {
+    "displayName": "numberCard",
+    "icon": "chartCircle",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "vertical",
+        "horizental"
+      ],
+      "default": "horizental"
+    }
+  }
+}

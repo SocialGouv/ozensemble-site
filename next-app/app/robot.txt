@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /public/  # Allow crawling of pages in the /public/ directory
+Allow: /images/  # Allow crawling of images
+Disallow: /fb-redirection/
+Sitemap: https://ozensemble.fabrique.social.gouv.fr/public/sitemap.xml

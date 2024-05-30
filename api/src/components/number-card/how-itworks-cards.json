@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_number_card_how_itworks_cards",
+  "info": {
+    "displayName": "howItworksCards",
+    "icon": "check",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "icon": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "de": {
+      "type": "text"
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_blocks_parterns_sections",
+  "info": {
+    "displayName": "parterns-section",
+    "icon": "bulletList",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "logos": {
+      "displayName": "image",
+      "type": "component",
+      "repeatable": true,
+      "component": "micros.image"
+    }
+  }
+}
