@@ -1,0 +1,30 @@
+{
+  "collectionName": "components_hero_heroes",
+  "info": {
+    "displayName": "hero",
+    "icon": "cloud",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "Problem": {
+      "type": "string"
+    },
+    "numberCard": {
+      "displayName": "numberCard",
+      "type": "component",
+      "repeatable": true,
+      "component": "number-card.number-card"
+    }
+  }
+}

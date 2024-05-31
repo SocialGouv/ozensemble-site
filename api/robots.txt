@@ -1,0 +1,1 @@
+Sitemap: https://http://localhost:1337/api/sitemap/index.xml

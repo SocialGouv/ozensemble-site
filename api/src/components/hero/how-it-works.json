@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_hero_how_it_works_s",
+  "info": {
+    "displayName": "how it works ",
+    "icon": "lightbulb",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "blocks"
+    },
+    "howitworkscard": {
+      "displayName": "howItworksCards",
+      "type": "component",
+      "repeatable": true,
+      "component": "number-card.how-itworks-cards"
+    }
+  }
+}

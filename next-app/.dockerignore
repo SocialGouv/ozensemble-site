@@ -1,0 +1,10 @@
+.dockerignore
+Dockerfile
+.git
+.github
+.kontinuous
+.socialgouv.yaml
+.releaserc.yml
+*.md
+**/node_modules
+**/.next/cache

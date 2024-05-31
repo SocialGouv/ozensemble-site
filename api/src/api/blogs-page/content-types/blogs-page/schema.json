@@ -1,0 +1,24 @@
+{
+  "kind": "singleType",
+  "collectionName": "blogs_pages",
+  "info": {
+    "singularName": "blogs-page",
+    "pluralName": "blogs-pages",
+    "displayName": "Blogs-page",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "blogCard": {
+      "type": "component",
+      "repeatable": true,
+      "component": "number-card.blog-card"
+    }
+  }
+}

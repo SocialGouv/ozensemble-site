@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_micros_images",
+  "info": {
+    "displayName": "partner-image",
+    "icon": "expand",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "url": {
+      "type": "text"
+    }
+  }
+}
