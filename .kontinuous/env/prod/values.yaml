@@ -1,4 +1,6 @@
 app:
+  autoscale:
+    enabled: true
   host: ozensemble.fabrique.social.gouv.fr
   redirectFrom:
     - www.ozensemble.fr
