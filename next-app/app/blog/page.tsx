@@ -62,7 +62,6 @@ export default async function Blog() {
 
 async function getBlogPosts() {
   try {
-    const token = process.env.NEXT_PUBLIC_STRAPI_API_TOKEN;
     const path = `/articles`;
     const urlParamsObject = {
       populate: {
@@ -74,7 +73,7 @@ async function getBlogPosts() {
       },
       sort: { PublishAt: "desc" },
     };
-    const options = { headers: { Authorization: `Bearer ${token}` } };
+    const options = {};
     const responseData = await fetchAPI(path, urlParamsObject, options);
     return responseData.data;
   } catch (error) {

@@ -49,7 +49,6 @@ export default async function Blog({ params }) {
 }
 
 async function getBlogPostBySlug(slug: string) {
-  const token = process.env.NEXT_PUBLIC_STRAPI_API_TOKEN;
   const path = `/articles`;
   const urlParamsObject = {
     filters: { slug },
@@ -60,7 +59,7 @@ async function getBlogPostBySlug(slug: string) {
       cover: { fields: ["url", "alternativeText", "caption"] },
     },
   };
-  const options = { headers: { Authorization: `Bearer ${token}` } };
+  const options = {};
   const response = await fetchAPI(path, urlParamsObject, options);
   const post = response.data[0];
   const data = post.attributes;

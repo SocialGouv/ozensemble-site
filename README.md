@@ -71,35 +71,8 @@ touch .env
 3. Paste in the following.
 
 ```yaml
-NEXT_PUBLIC_STRAPI_API_TOKEN=your-api-token
 NEXT_PUBLIC_STRAPI_API_URL=http://127.0.0.1:1337
 ```
-
-4. Before starting our Next JS app we need to go inside our Strapi Admin and create a token that we will be using for displaying our **content**.
-
-Inside your Strapi Admin Panel navigate to `Settings` -> `API Tokens` and click on the `Create new API Token`.
-
-![api-tokens](https://user-images.githubusercontent.com/6153188/231865572-cebc5538-374c-4050-91cd-c303fae25a3d.png)
-
-Here are our Token Settings
-
-Name: Public API Token Content
-Description: Access to public content.
-Token duration: Unlimited
-Token type: Custom
-
-In Permissions let's give the following access.
-
-| Content  |   Permissions    |
-| -------- | :--------------: |
-| Article  | find and findOne |
-| Author   | find and findOne |
-| Category | find and findOne |
-| Page     | find and findOne |
-
-![permissions](https://user-images.githubusercontent.com/6153188/231865625-a3634d89-0f40-4a6d-a356-8f654abd88b9.gif)
-
-Once you have your token add it to your `NEXT_PUBLIC_STRAPI_API_TOKEN` variable name in the `.env` file.
 
 5. Start your frontend
 

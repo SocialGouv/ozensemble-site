@@ -14,12 +14,11 @@ export async function generateMetadata({
 }: {
   params: { blog: string }
 }): Promise<Metadata> {
-  const token = process.env.NEXT_PUBLIC_STRAPI_API_TOKEN;
   const path = `/articles`;
   const urlParamsObject = {
     filters: { slug: params.blog },
   };
-  const options = { headers: { Authorization: `Bearer ${token}` } };
+  const options = {};
   const post = await fetchAPI(path, urlParamsObject, options);
   const postAttributes = post.data[0].attributes;
   return {
