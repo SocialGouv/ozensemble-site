@@ -1,9 +1,11 @@
 .dockerignore
-Dockerfile
-.releaserc.yml
-*.md
 node_modules
-.next
+Dockerfile
+build
+.strapi
+.tmp
+.env
+.strapi-update.json
 
 .yarn/*
 !.yarn/patches

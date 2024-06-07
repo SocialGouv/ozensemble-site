@@ -1,14 +1,9 @@
-FROM node:20-alpine as builder
-
-RUN apk add --no-cache gcc autoconf automake build-base libpng-dev nasm
-
+FROM node:20 AS builder
 WORKDIR /app
-
-RUN chown node:node /app
 
 COPY yarn.lock .yarnrc.yml ./
 COPY .yarn .yarn
-RUN yarn fetch --immutable && yarn cache clean
+RUN yarn fetch --immutable
 
 COPY . .
 
@@ -18,9 +13,20 @@ ENV NEXT_PUBLIC_MATOMO_SITE_ID="34"
 ENV NEXT_PUBLIC_MATOMO_URL="https://matomo.fabrique.social.gouv.fr/"
 ENV NODE_ENV=production
 
-ENV YARN_IGNORE_NODE=1
+ARG NEXT_PUBLIC_STRAPI_API_URL
+ENV NEXT_PUBLIC_STRAPI_API_URL $NEXT_PUBLIC_STRAPI_API_URL
+
 RUN yarn build
 
-FROM ghcr.io/socialgouv/docker/nginx:8.2.0
+FROM node:20 AS runner
+WORKDIR /app
+ENV NODE_ENV=production
 
-COPY --from=builder --chown=nginx:nginx /app/out /usr/share/nginx/html
+COPY --from=builder --chown=node:node /app/next.config.js ./
+COPY --from=builder --chown=node:node /app/public ./public
+COPY --from=builder --chown=node:node /app/.next/standalone ./
+COPY --from=builder --chown=node:node /app/.next/static ./.next/static
+
+USER 1000
+
+CMD ["node", "server.js"]

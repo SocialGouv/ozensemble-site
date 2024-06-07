@@ -39,12 +39,11 @@ export default function BlogLayout({ children }) {
 }
 
 export async function generateStaticParams() {
-  const token = process.env.NEXT_PUBLIC_STRAPI_API_TOKEN;
   const path = `/articles`;
   const urlParamsObject = {
     fields: ["slug"],
   };
-  const options = { headers: { Authorization: `Bearer ${token}` } };
+  const options = {};
   const posts = await fetchAPI(path, urlParamsObject, options);
   return  posts.data.map((post) => ({  blog: post.attributes.slug }));;
 }
