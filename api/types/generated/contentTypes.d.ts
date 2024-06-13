@@ -892,7 +892,7 @@ export interface ApiArticleArticle extends Schema.CollectionType {
   }
   attributes: {
     title: Attribute.String
-    description: Attribute.String
+    description: Attribute.Text
     slug: Attribute.UID<"api::article.article", "title">
     cover: Attribute.Media
     autorsBio: Attribute.Relation<
