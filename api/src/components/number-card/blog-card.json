@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_number_card_blog_cards",
+  "info": {
+    "displayName": "BlogCard",
+    "icon": "grid",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "Heading": {
+      "type": "string"
+    },
+    "date": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    }
+  }
+}

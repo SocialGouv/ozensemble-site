@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_shared_seo_meta_socials",
+  "info": {
+    "displayName": "metaSocial",
+    "icon": "cast",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "socialNetwor": {
+      "type": "enumeration",
+      "enum": [
+        "twitter",
+        "facebook"
+      ]
+    },
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    }
+  }
+}

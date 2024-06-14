@@ -1,8 +1,2 @@
 projectName: ozensemble
 ciNamespace: ci-ozensemble
-
-dependencies:
-  fabrique:
-    extends:
-      - name: ovh
-      - name: buildkit-service

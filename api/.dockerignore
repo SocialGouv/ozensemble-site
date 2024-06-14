@@ -1,0 +1,15 @@
+.dockerignore
+node_modules
+Dockerfile
+build
+.strapi
+.tmp
+.env
+.strapi-update.json
+
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions

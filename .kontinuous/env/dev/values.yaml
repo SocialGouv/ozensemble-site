@@ -1,0 +1,25 @@
+api:
+  cmd: true
+  args:
+    - sh
+    - -c
+    - "yarn strapi import --force -f seed-data.tar.gz && yarn start"
+  ~preDeploy.cleaner:
+    match:
+      kind: Deployment
+    value: true
+
+  # Strapi wants to move the entire uploads dir to a backup when you import data
+  # so public cannot be a volume, it must be its parent
+  # see https://github.com/strapi/strapi/issues/17809
+  initContainers:
+    - name: move-public-to-volume
+      image:
+        "{{ .Values.global.registry }}/{{ .Values.global.projectName }}/{{
+        .Values.global.imageRepository }}/api:{{ .Values.global.imageTag }}"
+      command: ["/bin/sh", "-c"]
+      args:
+        - cp -r public/* /mnt/public;
+      volumeMounts:
+        - name: public
+          mountPath: /mnt/public

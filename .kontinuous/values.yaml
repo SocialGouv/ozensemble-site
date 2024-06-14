@@ -1,8 +1,59 @@
-app:
-  securityContext:
-    fsGroup: 101
-    runAsGroup: 101
-    runAsUser: 101
+next-app:
+  ~chart: app
+  ~needs: ["build-next-app"]
+  imagePackage: next-app
+  probesPath: /
+  host: "{{ .Values.global.host }}"
   envFrom:
     - secretRef:
         name: api
+
+pg:
+  ~chart: pg
+
+api:
+  ~chart: app
+  ~needs: ["build-api", "pg"]
+  imagePackage: api
+  probesPath: /_health
+  containerPort: "1337"
+  envFrom:
+    - secretRef:
+        name: pg-app
+    - secretRef:
+        name: api
+  vars:
+    DATABASE_HOST: "$(PGHOST)"
+    DATABASE_PORT: "$(PGPORT)"
+    DATABASE_NAME: "$(PGDATABASE)"
+    DATABASE_USERNAME: "$(PGUSER)"
+    DATABASE_PASSWORD: "$(PGPASSWORD)"
+    HOST: "0.0.0.0"
+    PORT: "1337"
+    DATABASE_CLIENT: postgres
+  replicas: 1 # mandatory because volume is RWO
+  strategyType: Recreate # idem
+  securityContext:
+    fsGroup: 1000
+  volumes:
+    - name: public
+  volumeMounts:
+    - mountPath: /app/public
+      name: public
+
+jobs:
+  runs:
+    build-next-app:
+      use: build
+      ~needs: ["api"]
+      with:
+        context: ./next-app
+        imagePackage: next-app
+        buildArgs:
+          NEXT_PUBLIC_STRAPI_API_URL: "https://api-{{ .Values.global.host}}"
+
+    build-api:
+      use: build
+      with:
+        imagePackage: api
+        context: ./api

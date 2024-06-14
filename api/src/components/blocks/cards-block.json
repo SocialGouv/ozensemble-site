@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_blocks_cards_blocks",
+  "info": {
+    "displayName": "cards-block",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "blocks"
+    },
+    "card": {
+      "type": "component",
+      "repeatable": true,
+      "component": "number-card.number-card"
+    },
+    "direction": {
+      "type": "enumeration",
+      "enum": [
+        "horizental",
+        "vertical"
+      ],
+      "default": "horizental"
+    }
+  }
+}
