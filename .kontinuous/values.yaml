@@ -36,10 +36,10 @@ api:
   securityContext:
     fsGroup: 1000
   volumes:
-    - name: public
+    - name: uploads
   volumeMounts:
-    - mountPath: /app/public
-      name: public
+    - mountPath: /app/public/uploads
+      name: uploads
 
 jobs:
   runs:
