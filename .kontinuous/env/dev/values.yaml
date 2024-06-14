@@ -8,6 +8,11 @@ api:
     match:
       kind: Deployment
     value: true
+  volumes:
+    - name: public
+  volumeMounts:
+    - mountPath: /app/public
+      name: public
 
   # Strapi wants to move the entire uploads dir to a backup when you import data
   # so public cannot be a volume, it must be its parent
@@ -19,7 +24,7 @@ api:
         .Values.global.imageRepository }}/api:{{ .Values.global.imageTag }}"
       command: ["/bin/sh", "-c"]
       args:
-        - cp -r public/* /mnt/public;
+        - cp -r public/. /mnt/public;
       volumeMounts:
         - name: public
           mountPath: /mnt/public

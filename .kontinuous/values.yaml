@@ -35,11 +35,6 @@ api:
   strategyType: Recreate # idem
   securityContext:
     fsGroup: 1000
-  volumes:
-    - name: public
-  volumeMounts:
-    - mountPath: /app/public
-      name: public
 
 jobs:
   runs:

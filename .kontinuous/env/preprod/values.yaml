@@ -1,0 +1,6 @@
+api:
+  addVolumes:
+    - uploads
+  volumeMounts:
+    - mountPath: /app/public/uploads
+      name: uploads
