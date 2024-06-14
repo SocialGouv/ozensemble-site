@@ -1,10 +1,6 @@
-app:
-  autoscale:
-    enabled: true
-  host: ozensemble.fabrique.social.gouv.fr
-  redirectFrom:
-    - www.ozensemble.fr
-    - ozensemble.fr
-  envFrom:
-    - secretRef:
-        name: "api"
+api:
+  addVolumes:
+    - uploads
+  volumeMounts:
+    - mountPath: /app/public/uploads
+      name: uploads

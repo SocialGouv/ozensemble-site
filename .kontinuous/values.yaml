@@ -3,7 +3,7 @@ next-app:
   ~needs: ["build-next-app"]
   imagePackage: next-app
   probesPath: /
-  host: "{{ .Values.global.host }}"
+  host: "ozensemble.fabrique.social.gouv.fr"
   envFrom:
     - secretRef:
         name: api
