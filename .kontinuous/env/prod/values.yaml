@@ -4,3 +4,9 @@ api:
   volumeMounts:
     - mountPath: /app/public/uploads
       name: uploads
+
+next-app:
+  host: ozensemble.fabrique.social.gouv.fr
+  redirectFrom:
+    - "ozensemble.fr"
+    - "www.ozensemble.fr"
