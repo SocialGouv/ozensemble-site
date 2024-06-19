@@ -193,7 +193,7 @@ export default function Footer() {
           </div>
         </div>
         <div className="text-center mb-4 mx-[10%]">
-          <p>La Fabrique Numérique des Ministères Sociaux © 2023</p>
+          <p>La Fabrique Numérique des Ministères Sociaux © 2024</p>
         </div>
       </footer>
     </>
