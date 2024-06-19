@@ -100,6 +100,29 @@ export default function Footer() {
               link="/files/ozensemble_declaration_accessibilite_finale_fixed-min.pdf"
             />
           </div>
+          <div className="col-span-2 mb-8">
+            <div className="inline-block">
+              <p>Liens du gouv</p>
+              <div className="w-4/5 mt-3 mb-5 border-b border-green-300" />
+            </div>
+            <ArrowList
+              text="info.gouv.fr"
+              link="https://www.info.gouv.fr/"
+            />
+            <ArrowList
+              text="service-public.fr"
+              link="https://www.service-public.fr/"
+            />
+            <ArrowList
+              text="legifrance.gouv.fr"
+              link="https://www.legifrance.gouv.fr/"
+            />
+            <ArrowList
+              text="data.gouv.fr"
+              link="https://www.data.gouv.fr/"
+            />
+
+          </div>
           <div className="max-w-md col-span-4 mb-8 lg:col-span-3">
             <div className="inline-block">
               <p>Téléchargez l'application Oz Ensemble</p>
