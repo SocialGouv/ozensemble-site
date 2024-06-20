@@ -2,4 +2,4 @@ User-agent: *
 Allow: /public/  # Allow crawling of pages in the /public/ directory
 Allow: /images/  # Allow crawling of images
 Disallow: /fb-redirection/
-https://api-ozensemble-site.fabrique.social.gouv.fr/api/sitemap/index.xml
+Sitemap: https://api-ozensemble-site.fabrique.social.gouv.fr/api/sitemap/index.xml
