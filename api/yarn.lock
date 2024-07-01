@@ -2574,6 +2574,31 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@strapi/helper-plugin@npm:4.24.2":
+  version: 4.24.2
+  resolution: "@strapi/helper-plugin@npm:4.24.2"
+  dependencies:
+    axios: "npm:1.6.0"
+    date-fns: "npm:2.30.0"
+    formik: "npm:2.4.0"
+    immer: "npm:9.0.19"
+    lodash: "npm:4.17.21"
+    qs: "npm:6.11.1"
+    react-helmet: "npm:6.1.0"
+    react-intl: "npm:6.4.1"
+    react-query: "npm:3.39.3"
+    react-select: "npm:5.7.0"
+  peerDependencies:
+    "@strapi/design-system": 1.18.0
+    "@strapi/icons": 1.18.0
+    react: ^17.0.0 || ^18.0.0
+    react-dom: ^17.0.0 || ^18.0.0
+    react-router-dom: ^5.2.0
+    styled-components: ^5.2.1
+  checksum: 10c0/3fe594dbba3ca5d86bd18611e912f485c2ca181804d8cf208d2ff1f9ba9784295d9adb1517de48928b8d1a20fa5f5b37d514367810844ce9c7a8e33a714f22ef
+  languageName: node
+  linkType: hard
+
 "@strapi/icons@npm:1.18.0":
   version: 1.18.0
   resolution: "@strapi/icons@npm:1.18.0"
@@ -2796,14 +2821,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@strapi/plugin-users-permissions@npm:4.24.0":
-  version: 4.24.0
-  resolution: "@strapi/plugin-users-permissions@npm:4.24.0"
+"@strapi/plugin-users-permissions@npm:4.24.2":
+  version: 4.24.2
+  resolution: "@strapi/plugin-users-permissions@npm:4.24.2"
   dependencies:
     "@strapi/design-system": "npm:1.18.0"
-    "@strapi/helper-plugin": "npm:4.24.0"
+    "@strapi/helper-plugin": "npm:4.24.2"
     "@strapi/icons": "npm:1.18.0"
-    "@strapi/utils": "npm:4.24.0"
+    "@strapi/utils": "npm:4.24.2"
     bcryptjs: "npm:2.4.3"
     formik: "npm:2.4.0"
     grant-koa: "npm:5.4.8"
@@ -2826,7 +2851,7 @@ __metadata:
     react-dom: ^17.0.0 || ^18.0.0
     react-router-dom: ^5.2.0
     styled-components: ^5.2.1
-  checksum: 10c0/c5fffc1b56232f63c7651f24dcbc3fa57a9280db3bc2bf4885dc181e80bdfdcd208966004d8b2bb25d5cea0f94f9b725628dcc7118d515b25304444bf6d26657
+  checksum: 10c0/4b521b4e5ef12e84445c78666084bc95789b62393ebf27b1c8d9ed8bf7e22302209fde26545720bad8835a1b10648d6d33d6167fbd1279202569d8b9c395bf0d
   languageName: node
   linkType: hard
 
@@ -3009,6 +3034,20 @@ __metadata:
     p-map: "npm:4.0.0"
     yup: "npm:0.32.9"
   checksum: 10c0/0cd585080a1059618b970117a9f08d91cbe0c97d03c581e56d4e484618a4071b6775a8e7764d05bd0aee73f6948843707544c0c16cb987bd424c0bdb1438b929
+  languageName: node
+  linkType: hard
+
+"@strapi/utils@npm:4.24.2":
+  version: 4.24.2
+  resolution: "@strapi/utils@npm:4.24.2"
+  dependencies:
+    "@sindresorhus/slugify": "npm:1.1.0"
+    date-fns: "npm:2.30.0"
+    http-errors: "npm:1.8.1"
+    lodash: "npm:4.17.21"
+    p-map: "npm:4.0.0"
+    yup: "npm:0.32.9"
+  checksum: 10c0/a56144449c1be9095cb586638df23b070fb40a7ccec582a0c1f0b40d1559784cf9dc3a102654905eadb1f2b95e79f8bbd3d8113058bf83c259faef8437871b86
   languageName: node
   linkType: hard
 
@@ -10210,7 +10249,7 @@ __metadata:
   dependencies:
     "@strapi/plugin-cloud": "npm:4.24.0"
     "@strapi/plugin-i18n": "npm:4.24.0"
-    "@strapi/plugin-users-permissions": "npm:4.24.0"
+    "@strapi/plugin-users-permissions": "npm:4.24.2"
     "@strapi/strapi": "npm:4.24.0"
     better-sqlite3: "npm:8.6.0"
     pg: "npm:^8.12.0"
