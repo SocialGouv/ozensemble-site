@@ -7,7 +7,7 @@ api:
   resources:
     requests:
       cpu: "100m"
-      memory: "768Mi"
+      memory: 768Mi
     limits:
       cpu: "300m"
       memory: "1Gi"
