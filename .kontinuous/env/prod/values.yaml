@@ -4,9 +4,32 @@ api:
   volumeMounts:
     - mountPath: /app/public/uploads
       name: uploads
+  resources:
+    requests:
+      cpu: "100m"
+      memory: "768Mi
+    limits:
+      cpu: "300m"
+      memory: "1Gi"
 
 next-app:
   host: ozensemble.fabrique.social.gouv.fr
   redirectFrom:
     - "ozensemble.fr"
     - "www.ozensemble.fr"
+  resources:
+    requests:
+      cpu: "200m"
+      memory: "256Mi
+    limits:
+      cpu: "300m"
+      memory: "512Mi"
+
+pg:
+  cnpg-cluster:
+    resources:
+      requests:
+        memory: 1Gi
+      limits:
+        cpu: "1"
+        memory: 1Gi
