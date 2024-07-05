@@ -26,7 +26,6 @@ next-app:
       memory: "512Mi"
 
 pg:
-  ~chart: pg
   cnpg-cluster:
     resources:
       requests:
