@@ -15,8 +15,6 @@ api:
   ~needs: ["build-api", "pg"]
   imagePackage: api
   probesPath: /_health
-  startupProbe:
-    initialDelaySeconds: 300
   containerPort: "1337"
   envFrom:
     - secretRef:
