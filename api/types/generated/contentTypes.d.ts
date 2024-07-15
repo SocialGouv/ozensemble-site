@@ -1113,6 +1113,41 @@ export interface ApiPartnersPagePartnersPage extends Schema.SingleType {
   }
 }
 
+export interface ApiPlanPagePlanPage extends Schema.SingleType {
+  collectionName: "plan_pages"
+  info: {
+    singularName: "plan-page"
+    pluralName: "plan-pages"
+    displayName: "Plan-page "
+    description: ""
+  }
+  options: {
+    draftAndPublish: true
+  }
+  attributes: {
+    title: Attribute.String
+    sections: Attribute.Component<"blocks.urls-section", true>
+    createdAt: Attribute.DateTime
+    updatedAt: Attribute.DateTime
+    publishedAt: Attribute.DateTime
+    createdBy: Attribute.Relation<
+      "api::plan-page.plan-page",
+      "oneToOne",
+      "admin::user"
+    > &
+      Attribute.Private
+    updatedBy: Attribute.Relation<
+      "api::plan-page.plan-page",
+      "oneToOne",
+      "admin::user"
+    > &
+      Attribute.Private
+    sitemap_exclude: Attribute.Boolean &
+      Attribute.Private &
+      Attribute.DefaultTo<false>
+  }
+}
+
 declare module "@strapi/types" {
   export module Shared {
     export interface ContentTypes {
@@ -1139,6 +1174,7 @@ declare module "@strapi/types" {
       "api::category.category": ApiCategoryCategory
       "api::page.page": ApiPagePage
       "api::partners-page.partners-page": ApiPartnersPagePartnersPage
+      "api::plan-page.plan-page": ApiPlanPagePlanPage
     }
   }
 }
