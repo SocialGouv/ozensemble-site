@@ -145,6 +145,15 @@ export default function Partners() {
                 />
               </a>
             </div>
+            <div className="transition duration-500 hover:scale-110 basis-1/12">
+              <a href="https://apps.apple.com/app/id1443535001">
+                <img
+                  className=""
+                  src="images/logo_nutri_app.png"
+                  alt="Application nutri app, accédez à la page de téléchargement en cliquant sur ce logo"
+                />
+              </a>
+            </div>
             <div className="transition duration-500 hover:scale-110 basis-1/6">
               <a href="https://www.ordotype.fr/recommandations/sevrage-alcoolique-application-oz-ensemble">
                 <img
