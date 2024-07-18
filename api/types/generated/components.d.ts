@@ -28,6 +28,19 @@ export interface BlocksParternsSection extends Schema.Component {
   }
 }
 
+export interface BlocksUrlsSection extends Schema.Component {
+  collectionName: "components_blocks_urls_sections"
+  info: {
+    displayName: "urls-section"
+    description: ""
+  }
+  attributes: {
+    title: Attribute.String
+    urls: Attribute.Component<"micros.titled-url", true>
+    parentUrl: Attribute.String
+  }
+}
+
 export interface HeroHero extends Schema.Component {
   collectionName: "components_hero_heroes"
   info: {
@@ -67,6 +80,18 @@ export interface MicrosImage extends Schema.Component {
     name: Attribute.String
     image: Attribute.Media
     url: Attribute.Text
+  }
+}
+
+export interface MicrosTitledUrl extends Schema.Component {
+  collectionName: "components_micros_titled_urls"
+  info: {
+    displayName: "titled-url"
+    description: ""
+  }
+  attributes: {
+    title: Attribute.String
+    url: Attribute.String
   }
 }
 
@@ -189,9 +214,11 @@ declare module "@strapi/types" {
     export interface Components {
       "blocks.cards-block": BlocksCardsBlock
       "blocks.parterns-section": BlocksParternsSection
+      "blocks.urls-section": BlocksUrlsSection
       "hero.hero": HeroHero
       "hero.how-it-works": HeroHowItWorks
       "micros.image": MicrosImage
+      "micros.titled-url": MicrosTitledUrl
       "number-card.blog-card": NumberCardBlogCard
       "number-card.how-itworks-cards": NumberCardHowItworksCards
       "number-card.number-card": NumberCardNumberCard

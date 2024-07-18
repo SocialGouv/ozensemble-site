@@ -1,0 +1,21 @@
+{
+    "collectionName": "components_blocks_urls_sections",
+    "info": {
+      "displayName": "urls-section",
+      "description": ""
+    },
+    "options": {},
+    "attributes": {
+      "title": {
+        "type": "string"
+      },
+      "urls": {
+        "type": "component",
+        "repeatable": true,
+        "component": "micros.titled-url"
+      },
+      "parentUrl": {
+        "type": "string"
+      }
+    }
+  }

@@ -1,0 +1,16 @@
+{
+    "collectionName": "components_micros_titled_urls",
+    "info": {
+      "displayName": "titled-url",
+      "description": ""
+    },
+    "options": {},
+    "attributes": {
+      "title": {
+        "type": "string"
+      },
+      "url": {
+        "type": "string"
+      }
+    }
+  }
