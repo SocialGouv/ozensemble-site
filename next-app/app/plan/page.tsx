@@ -4,44 +4,55 @@ export const metadata = {
   title: "Plan du site | Oz Ensemble",
   description: "Plan du site de l'application Oz Ensemble",
 }
+import { fetchAPI } from "~/app/api/strapi";
 
-export default function Plan() {
+
+export default async function Plan() {
+  const data = await getData();
   return (
     <div className="mt-[70px]">
       <Navigation />
       <div className="mt-30 lg:mt-40">
-        <h1 className="mb-2 text-3xl text-center font-extrabold lg:text-5xl text-oz-blue">
-          Plan du site
+        <h1 className="mb-2 text-3xl text-center font-extrabold lg:text-5xl text-oz-blue">         {data?.title || "Plan du site"}
         </h1>
         <div className="flex flex-col gap-9 pl-40 py-12">
-          <ArrowList text="Accueil" link="/" />
-          <div className="flex flex-col gap-6 px-12">
-            <SubArrowList text="Comment ça marche ?" link="/#how-it-works" />
-            <SubArrowList text="Qui sommes-nous ?" link="/#who-are-we" />
-          </div>
-          <ArrowList text="Blog" link="/blog" />
-          <ArrowList text="Ils parlent de nous" link="/partners" />
-          <h3 className="text-2xl text-[#115F3D]">Utilités</h3>
-          <div className="flex flex-col gap-6 px-12">
-            <SubArrowList
-              text="Mentions légales"
-              link="/files/25012023-Oz_Ensemble-Mentions_legales_site_V2.pdf"
-            />
-            <SubArrowList
-              text="Politique de confidentialité"
-              link="/files/25012023-Oz_Ensemble-Politique_de_confidentialite_site_V3.pdf"
-            />
-            <SubArrowList text="Statistiques" link="/stats" />
-            <SubArrowList
-              text="Accessibilité : non conforme"
-              link="/accessibility"
-            />
-          </div>
+        { data?.sections?.map((section)=> ( 
+            <>
+            { section.parentUrl ?
+              <ArrowList key={section.id} text={section.title} link={section.parentUrl} />
+              : <h3 key={section.id} className="text-2xl text-[#115F3D]">{section.title}</h3>
+            }
+            { section.urls?.length > 0 &&
+              <div className="flex flex-col gap-6 px-12">
+                {section.urls.map((link)=>(
+                  <SubArrowList key={link.id} text={link.title} link={link.url} />
+                ))}
+              </div>
+            }
+          </>
+          ))}
+
         </div>
       </div>
       <Footer />
     </div>
   )
+}
+
+async function getData() {
+  try {
+    const path = `/plan-page`;
+    const urlParamsObject = {
+      populate: ["sections", "sections.urls"],
+    };
+    const options = {};
+    const { data } = await fetchAPI(path, urlParamsObject, options);
+    console.log(data);
+    return data?.attributes;
+  } catch (error) {
+    console.error(error);
+    return [];
+  }
 }
 const ArrowList = ({ text, link }) => (
   <div className="mb-2 items-start">
