@@ -56,7 +56,7 @@ if (block.__component === "shared.media") {
     return (
       <div className="flex flex-col items-center">
         <img
-          className="w-full h-auto rounded-3xl"
+          className="max-w-full h-auto rounded-3xl"
           src={getStrapiMedia(block.file.data.attributes.url)}
           alt={block.file.data.attributes.alternativeText}
         />
