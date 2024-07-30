@@ -41,11 +41,33 @@ export default async function Blog({ params }) {
 
       <div
         className={`p-10 sm:rounded-xl md:rounded-3xl sm:mx-20 xl:mx-auto xl:w-[1100px] mb-8 text-base ${styles.blogContent}`}
-      >
-        <CustomMDX source={mdxSource} />
+        >
+        {mdxSource.map((block, index) => (
+          
+          <RenderBlock key={index} block={block} />
+        ))}
       </div>
     </>
-  )
+  );
+}
+
+function RenderBlock({ block }) {
+if (block.__component === "shared.media") {
+    return (
+      <div className="flex flex-col items-center">
+        <img
+          className="w-full h-auto rounded-3xl"
+          src={getStrapiMedia(block.file.data.attributes.url)}
+          alt={block.file.data.attributes.alternativeText}
+        />
+        <p className="text-center text-gray-400">{block.file.data.attributes.caption}</p>
+      </div>
+    );
+  }
+      return <CustomMDX source={block.body} />;
+    // Add more cases here for other block types
+
+  
 }
 
 async function getBlogPostBySlug(slug: string) {
@@ -75,6 +97,6 @@ async function getBlogPostBySlug(slug: string) {
       alt: data.cover.data.attributes.alternativeText,
       caption: data.cover.data.attributes.caption,
     },
-    mdxSource: post.attributes.blocks[0]?.body,
+    mdxSource: data.blocks
   };
 }
