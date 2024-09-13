@@ -1,39 +1,23 @@
 "use client"
 
-import { useEffect, useRef, useState } from "react"
-import { FiSmartphone } from "react-icons/fi"
-import { AiOutlineClose } from "react-icons/ai"
+import { useEffect, useState } from "react"
 import { HiMenu } from "react-icons/hi"
 import ContactPopup from "./ContactPopup"
-import { ANDROID_URL, IOS_URL } from "~/constants"
-import { isMobile } from "react-device-detect"
 
 export default function Navigation() {
-  const [showPopup, setShowPopup] = useState(false)
   const [isOpen, setIsOpen] = useState(false)
   const [showContactPopup, setShowContactPopup] = useState(false)
-  const [isMobileDetected, setIsMobileDetected] = useState(false)
 
   useEffect(() => {
     document.body.addEventListener("click", () => setIsOpen(false))
   })
-  useEffect(() => {
-    setIsMobileDetected(isMobile)
-  }, [])
 
   return (
     <>
-      {/* Popups and overlays on top of the page */}
-      <DownloadPopup showPopup={showPopup} setShowPopup={setShowPopup} />
       <ContactPopup
         showPopup={showContactPopup}
         setShowPopup={setShowContactPopup}
       />
-      {isMobileDetected && (
-        <div className="fixed bottom-0 left-1/2 pb-4 text-center transform -translate-x-1/2">
-          <DownloadPopupTrigger setShowPopup={setShowPopup} />
-        </div>
-      )}
       <nav className="flex items-center justify-between px-5 bg-white fixed w-full h-[70px] top-0 z-0">
         <div>
           <a className="flex-center" href="/">
@@ -83,7 +67,6 @@ export default function Navigation() {
               setIsOpen={setIsOpen}
             />
             <ContactPopupTrigger setShowPopup={setShowContactPopup} />
-            <DownloadPopupTrigger setShowPopup={setShowPopup} />
           </div>
         </div>
       </nav>
@@ -100,100 +83,6 @@ const Link = ({ name, target = null, setIsOpen }) => (
     {name}
   </a>
 )
-
-const DownloadPopupTrigger = ({ setShowPopup }) => {
-  return (
-    <button
-      className="flex group rounded-full bg-oz-pink font-bold text-white py-2 px-6 gap-1 items-center cursor-pointer hover:text-oz-pink hover:bg-white border border-oz-pink transition"
-      onClick={() => setShowPopup(true)}
-    >
-      <FiSmartphone className="stroke-white group-hover:stroke-oz-pink transition" />
-      <span>Télécharger l'app</span>
-    </button>
-  )
-}
-
-export const DownloadPopupStandalone = () => {
-  const [showPopup, setShowPopup] = useState(false)
-
-  return <DownloadPopup showPopup={showPopup} setShowPopup={setShowPopup} />
-}
-
-const DownloadPopup = ({ showPopup, setShowPopup }) => {
-  const popupFirstFocus = useRef(null)
-  const [baseUrl, setBaseUrl] = useState("")
-
-  useEffect(() => {
-    // on popup open, focus on the first link
-    if (showPopup) {
-      popupFirstFocus.current.focus()
-    }
-    if (typeof window !== "undefined") {
-      setBaseUrl(window.location.origin)
-    }
-  }, [showPopup])
-
-  if (!showPopup) {
-    return null
-  }
-
-  return (
-    <div
-      className="test fixed z-10 top-0 left-0 w-full h-full bg-black bg-opacity-50 transition-all flex justify-center items-center"
-      // eslint-disable-next-line
-      onClick={() => setShowPopup(false)}
-    >
-      <div
-        className="rounded-3xl bg-white text-center py-6 px-4 sm:p-10 mx-[10%] max-w-[800px] relative"
-        // eslint-disable-next-line
-        onClick={(e) => e.stopPropagation()}
-      >
-        <div className="absolute top-0 right-0">
-          <button
-            className="rounded-full bg-oz-blue p-4 absolute top-1/2 right-1/2 transform translate-x-1/3 -translate-y-1/3 border-2 border-white"
-            onClick={() => setShowPopup(false)}
-            tabIndex={2}
-            aria-label="Fermer la popup"
-          >
-            <AiOutlineClose color="white" size={24} />
-          </button>
-        </div>
-        <h6 className="text-oz-blue text-3xl font-bold">
-          Télécharger l’application Oz Ensemble
-        </h6>
-        <div className="w-1/5 h-1 bg-oz-pink m-auto my-7" />
-        <p className="text-xl mb-7">Elle est 100% gratuite et anonyme.</p>
-        <div className="mb-1 grid max-w-[200px] sm:max-w-[400px] sm:grid-flow-col gap-6 auto-cols-fr md:w-5/6 m-auto">
-          <a
-            href={ANDROID_URL}
-            ref={popupFirstFocus}
-            tabIndex={1}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img
-              className="object-contain w-full"
-              src={`${baseUrl}/images/other/google-play-fr.png`}
-              alt="télécharger dans Google Play"
-            />
-          </a>
-          <a
-            href={IOS_URL}
-            tabIndex={1}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img
-              className="object-contain w-full"
-              src={`${baseUrl}/images/other/app-store-fr.png`}
-              alt="télécharger dans l'App Store"
-            />
-          </a>
-        </div>
-      </div>
-    </div>
-  )
-}
 
 const ContactPopupTrigger = ({ setShowPopup }) => {
   return (
