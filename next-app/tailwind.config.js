@@ -16,6 +16,9 @@ module.exports = {
         "oz-pink": "#de285e",
         "oz-gray": "#f7f7f7",
       },
+      fontFamily: {
+        Sourcesans: ["Source Sans Pro", "sans-serif"],
+      },
     },
   },
   plugins: [],

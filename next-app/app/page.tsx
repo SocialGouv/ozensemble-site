@@ -1,6 +1,8 @@
 import Footer from "~/components/Footer"
 import Navigation from "~/components/Navigation"
-import { ANDROID_URL, IOS_URL } from "~/constants"
+import { FaCircleChevronDown } from "react-icons/fa6"
+import { AiFillEuroCircle } from "react-icons/ai"
+
 import Link from "next/link"
 
 export default function Index() {
@@ -8,49 +10,31 @@ export default function Index() {
     <>
       <header className="oz-header-gradient">
         <Navigation />
-        <div className="mt-[70px] md:flex pt-20 pb-8 md:pb-32 auto-cols-fr md:w-5/6 xl:w-[1100px] mx-[10%] md:m-auto">
+        <div className="mt-[70px] md:flex pt-32 pb-8 md:pb-32 auto-cols-fr md:w-full px-[6%] md:my-auto">
           <div className="w-full md:w-1/2 text-center md:text-left flex items-center">
             <div>
-              <h1 className="mb-2 text-3xl font-bold lg:text-6xl text-oz-blue">
-                Oz Ensemble
+              <h1 className="mb-16 text-3xl font-bold leading-6 lg:text-6xl text-oz-blue">
+                Oz Ensemble s’arrête
               </h1>
-              <p className="mb-5 text-lg  leading-normal lg:leading-9 lg:text-2xl">
-                L'application mobile pour maitriser sa consommation d'alcool
+              <p className="mb-3 text-[20px] font-[300] leading-6  font-Sourcesans">
+                L’application mobile et le site internet Oz Ensemble vont
+                s’arrêter de fonctionner le{" "}
+                <span className="font-bold">[date]</span>.
               </p>
-              <div className="grid grid-flow-col gap-3 sm:gap-6 max-w-sm mb-7 mx-auto md:mx-0">
-                <a
-                  className="!after:hidden"
-                  href={ANDROID_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <img
-                    className="object-contain w-full"
-                    src="images/other/google-play-fr.png"
-                    alt="disponible sur google play"
-                  />
-                </a>
-                <a href={IOS_URL} target="_blank" rel="noopener noreferrer">
-                  <img
-                    className="object-contain w-full"
-                    src="images/other/app-store-fr.png"
-                    alt="télécharger dans l'app store"
-                  />
-                </a>
-              </div>
-              <div className="flex flex-col space-y-6 lg:pb-10">
-                <Checklist
-                  title="100% gratuit, 100 % anonyme et sans création de compte"
-                  subtitle="Si vous souhaitez supprimer toutes vos données d’un coup, il vous suffit de désinstaller l’application."
-                />
-                <Checklist
-                  title="Sécurité des données"
-                  subtitle="Je reste propriétaire des données saisies, je les partage uniquement si je le souhaite"
-                />
-                <Checklist
-                  title="Simple, rapide et intuitive"
-                  subtitle="En quelques secondes par jour, je remplis mon agenda de consommation"
-                />
+              <br />
+              <p className="mb-3 text-[20px] font-[300] leading-6 font-Sourcesans">
+                Nous tenons à sincèrement vous remercier pour votre confiance au
+                cours de ce projet, et nous espérons que Oz vous a été d’un
+                grand soutien durant ces derniers jours, mois ou années.{" "}
+              </p>
+              <br />
+              <p className="mb-3 text-[20px] font-[300] leading-6 font-Sourcesans">
+                <span className="font-bold">Suivez les étapes ci-dessous</span>{" "}
+                pour continuer à bénéficier d’une aide numérique dans la
+                maîtrise de votre consommation d’alcool.
+              </p>
+              <div className="mt-20 self-center flex flex-center">
+                <FaCircleChevronDown size={40} color="#DE285E" />
               </div>
             </div>
           </div>
@@ -67,6 +51,49 @@ export default function Index() {
         </div>
       </header>
       <main>
+        <div className="py-16 mx-[10%] sm:mx-20">
+          <h3 className="mb-4 text-3xl font-bold lg:text-6xl text-oz-blue">
+            Continuez à suivre votre consommation
+          </h3>
+          <h4 className="mt-12 text-xl lg:text-3xl tracking-wide text-oz-blue">
+            Voici des exemples ci-dessous d’applications mobiles que vous pouvez
+            télécharger
+          </h4>
+          <p className=" italic text-sm md:text-base mt-6 text-[#2F4351] font-[300]">
+            Applications triées par ordre alphabétique, cette liste n’est pas
+            exhaustive
+          </p>
+          <div className="grid grid-cols-1 gap-3 mt-10 md:grid-cols-2 lg:grid-cols-3">
+            <AppCard
+              imgUrl="images/logo_sobero.png"
+              appName="Arrêter l’alcool - Sobero"
+              downloadUrl="https://fr.sobero.app/"
+              isPaid={true}
+            />
+            <AppCard
+              imgUrl="images/logo_mydefi.png"
+              appName="Mydéfi"
+              downloadUrl="https://mydefi.life/portfolio/"
+            />
+            <AppCard
+              imgUrl="images/logo_objectif_zen.png"
+              appName="Objectif Zen"
+              downloadUrl="#"
+            />
+          </div>
+        </div>
+
+        <div className="py-16 mx-[10%] sm:mx-20">
+          <h3 className="mb-4 text-3xl font-bold lg:text-6xl text-oz-blue">
+            Exportez vos données avant la fermeture du service
+          </h3>
+          <ExportSteps />
+        </div>
+
+        <div className="px-[8%] sm:mx-20">
+          <div className="border-t border-oz-blue"></div>
+        </div>
+
         <div className="py-16 mx-[10%] sm:mx-20">
           <div className="w-full mx-auto xl:w-[1100px]">
             <h3 className="mb-16 text-2xl font-bold text-center lg:text-4xl text-oz-blue">
@@ -444,3 +471,87 @@ const Checklist2 = ({ content }) => (
     </div>
   </div>
 )
+
+const Step = ({ number, description, imageUrl }) => {
+  return (
+    <div className="flex flex-col items-center text-center p-2">
+      <div className="w-20 h-20 bg-oz-blue text-white rounded-full flex items-center justify-center text-6xl leading-10 font-bold font-Sourcesans mb-4">
+        {number}
+      </div>
+      <h3 className="text-[20px] font-sans tracking-wider leading-5 text-oz-blue mb-8 lg:mb-0 md:h-36">
+        {description}
+      </h3>
+      <img src={imageUrl} alt={description} className="w-48 max-w-xs" />
+    </div>
+  )
+}
+
+const ExportSteps = () => {
+  const steps = [
+    {
+      number: 1,
+      description: "Connectez-vous à votre application Oz Ensemble",
+      imageUrl: "/images/exportStep1.png",
+    },
+    {
+      number: 2,
+      description:
+        'Allez sur la page "Infos", rubrique "Sauvegarder l’historique de mon profil"',
+      imageUrl: "/images/exportStep2.png",
+    },
+    {
+      number: 3,
+      description: "Sauvegardez les données de votre profil Oz Ensemble",
+      imageUrl: "/images/exportStep3.png",
+    },
+    {
+      number: 4,
+      description:
+        "Téléchargez une nouvelle app vous permettant de suivre vos consommations.",
+      imageUrl: "/images/exportStep4.png",
+    },
+    {
+      number: 5,
+      description: "Contactez l'équipe de Oz Ensemble en cas de question",
+      imageUrl: "/images/exportStep5.png",
+    },
+  ]
+
+  return (
+    <div className="mt-10 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-x-2 gap-y-10">
+      {steps.map((step) => (
+        <Step
+          key={step.number}
+          number={step.number}
+          description={step.description}
+          imageUrl={step.imageUrl}
+        />
+      ))}
+    </div>
+  )
+}
+
+const AppCard = ({ imgUrl, appName, isPaid = false, downloadUrl }) => {
+  return (
+    <div className="border rounded-md p-4 flex flex-col items-center justify-between gap-y-4 border-gray-500">
+      <div className="flex items-center justify-start w-full">
+        <img src={imgUrl} alt={appName} className="w-14 h-14 mr-4" />
+        <div>
+          <h2 className="text-lg font-light">{appName}</h2>
+        </div>
+        {isPaid && (
+          <div className="ml-auto flex flex-col items-center text-red-500 font-medium mr-4">
+            <AiFillEuroCircle color="#DE285E" />
+            <span className="text-sm text-oz-pink">payant</span>
+          </div>
+        )}
+      </div>
+      <Link
+        className="flex group rounded-full bg-oz-blue font-bold text-white py-2 px-6 gap-1 items-center cursor-pointer hover:bg-opacity-90"
+        href={downloadUrl}
+      >
+        <span>Télécharger</span>
+      </Link>
+    </div>
+  )
+}
