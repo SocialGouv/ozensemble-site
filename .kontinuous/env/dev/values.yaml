@@ -1,49 +1,34 @@
 api:
-  ~preDeploy.cleaner:
-    match:
-      kind: Deployment
-    value: true
-  volumes:
-    - name: public
-  volumeMounts:
-    - mountPath: /app/public
-      name: public
+  vars:
+    ENV: review
 
-  # Strapi wants to move the entire uploads dir to a backup when you import data
-  # so public cannot be a volume, it must be its parent
-  # see https://github.com/strapi/strapi/issues/17809
-  # initContainers:
-  #   - name: import-and-prepare
-  #     image:
-  #       "{{ .Values.global.registry }}/{{ .Values.global.projectName }}/{{
-  #       .Values.global.imageRepository }}/api:{{ .Values.global.imageTag }}"
-  #     command: ["/bin/sh", "-c"]
-  #     args:
-  #       - |
-  #         yarn strapi import --force -f seed-data.tar.gz && \
-  #         cp -r public/. /mnt/public
-  #     volumeMounts:
-  #       - name: public
-  #         mountPath: /mnt/public
-  #     envFrom:
-  #       - secretRef:
-  #           name: pg-app
-  #       - secretRef:
-  #           name: api
-  #     env:
-  #       - name: DATABASE_HOST
-  #         value: "$(PGHOST)"
-  #       - name: DATABASE_PORT
-  #         value: "$(PGPORT)"
-  #       - name: DATABASE_NAME
-  #         value: "$(PGDATABASE)"
-  #       - name: DATABASE_USERNAME
-  #         value: "$(PGUSER)"
-  #       - name: DATABASE_PASSWORD
-  #         value: "$(PGPASSWORD)"
-  #       - name: HOST
-  #         value: "0.0.0.0"
-  #       - name: PORT
-  #         value: "1337"
-  #       - name: DATABASE_CLIENT
-  #         value: postgres
+  initContainers:
+    - name: import
+      image: "{{ .Values.global.registry }}/{{ .Values.global.projectName }}/{{
+        .Values.global.imageRepository }}/api:{{ .Values.global.imageTag }}"
+      command: ["/bin/sh", "-c"]
+      args:
+        - |
+          yarn strapi import --force -f seed-data.tar.gz
+      envFrom:
+        - secretRef:
+            name: pg-app
+        - secretRef:
+            name: api
+      env:
+        - name: DATABASE_HOST
+          value: "$(PGHOST)"
+        - name: DATABASE_PORT
+          value: "$(PGPORT)"
+        - name: DATABASE_NAME
+          value: "$(PGDATABASE)"
+        - name: DATABASE_USERNAME
+          value: "$(PGUSER)"
+        - name: DATABASE_PASSWORD
+          value: "$(PGPASSWORD)"
+        - name: HOST
+          value: "0.0.0.0"
+        - name: PORT
+          value: "1337"
+        - name: DATABASE_CLIENT
+          value: postgres

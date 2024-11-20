@@ -1,4 +1,6 @@
 api:
+  vars:
+    ENV: prod
   addVolumes:
     - uploads
   volumeMounts:
