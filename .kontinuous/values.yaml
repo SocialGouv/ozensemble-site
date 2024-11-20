@@ -21,6 +21,8 @@ api:
         name: pg-app
     - secretRef:
         name: api
+    - secretRef:
+        name: ozensemble-dev-app-access-key
   vars:
     DATABASE_HOST: "$(PGHOST)"
     DATABASE_PORT: "$(PGPORT)"
