@@ -34,3 +34,7 @@ api:
           value: "1337"
         - name: DATABASE_CLIENT
           value: postgres
+        - name: ENV
+          value: review
+        - name: BRANCH_NAME
+          value: "{{ .Values.global.branchSlug }}"
