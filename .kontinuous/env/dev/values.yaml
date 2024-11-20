@@ -45,7 +45,7 @@ deactivate:
       cleanup-bucket:
         image: bitnami/rclone:latest
         run: |
-          rclone purge remote:{{ .Values.global.branchSlug }}
+          rclone purge remote:${BUCKET_NAME}/{{ .Values.global.branchSlug }}
         checkout: false
         env:
           - name: RCLONE_CONFIG_REMOTE_TYPE
@@ -71,4 +71,9 @@ deactivate:
             valueFrom:
               secretKeyRef:
                 name: ozensemble-dev-app-access-key
-                key: bucket_ENDPOINT
+                key: bucket_endpoint
+          - name: BUCKET_NAME
+            valueFrom:
+              secretKeyRef:
+                name: ozensemble-dev-app-access-key
+                key: bucket_name
