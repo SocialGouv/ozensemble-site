@@ -1,4 +1,4 @@
-module.exports = () => ({
+module.exports = ({ env }) => ({
   'sitemap': {
       enabled: true,
       config: {
