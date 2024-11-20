@@ -22,7 +22,6 @@ module.exports = ({ env }) => ({
               accessKeyId: env('bucket_access_key'),
               secretAccessKey: env('bucket_secret_key'),
             },
-            region: env('AWS_REGION'),
             params: {
               ACL: 'public-read',
               signedUrlExpires: 15 * 60,
