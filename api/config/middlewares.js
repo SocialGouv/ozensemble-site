@@ -13,9 +13,9 @@ module.exports = ({ env }) => [
             "data:",
             "blob:",
             "market-assets.strapi.io",
-            // `${env("bucket_name")}.${new URL(env("bucket_endpoint")).hostname}`,
-            `${process.env.bucket_name}.${
-              new URL(process.env.bucket_endpoint).hostname
+            `${env("bucket_name")}.${
+              new URL(env("bucket_endpoint", "https://fabrique.social.gouv.fr"))
+                .hostname
             }`,
           ],
           "media-src": [
@@ -23,8 +23,9 @@ module.exports = ({ env }) => [
             "data:",
             "blob:",
             "market-assets.strapi.io",
-            `${process.env.bucket_name}.${
-              new URL(process.env.bucket_endpoint).hostname
+            `${env("bucket_name")}.${
+              new URL(env("bucket_endpoint", "https://fabrique.social.gouv.fr"))
+                .hostname
             }`,
           ],
           upgradeInsecureRequests: null,
