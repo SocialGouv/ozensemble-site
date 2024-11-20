@@ -15,14 +15,19 @@ module.exports = ({ env }) => ({
       config: {
         provider: 'aws-s3',
         providerOptions: {
-          accessKeyId: env('bucket_access_key'),
-          secretAccessKey: env('bucket_secret_key'),
-          region: env('bucket_region'),
-          endpoint: env('bucket_endpoint'),
-          params: {
-            ACL: 'public-read',
-            signedUrlExpires: 15 * 60,
-            Bucket: env('ozensemble-dev-app'),
+          s3Options: {
+            region: env('bucket_region'),
+            endpoint: env('bucket_endpoint'),
+            credentials: {
+              accessKeyId: env('bucket_access_key'),
+              secretAccessKey: env('bucket_secret_key'),
+            },
+            region: env('AWS_REGION'),
+            params: {
+              ACL: 'public-read',
+              signedUrlExpires: 15 * 60,
+              Bucket: env('bucket_name'),
+            },
           },
         },
         actionOptions: {
