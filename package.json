@@ -2,8 +2,5 @@
   "name": "ozensemble-site",
   "version": "1.8.0",
   "license": "MIT",
-  "private": true,
-  "dependencies": {
-    "@strapi/provider-upload-aws-s3": "5.4.0"
-  }
+  "private": true
 }
