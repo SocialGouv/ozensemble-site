@@ -13,6 +13,9 @@ api:
     limits:
       cpu: "300m"
       memory: "1Gi"
+  envFrom:
+    - secretRef:
+        name: ozensemble-prod-app-access-key
 
 next-app:
   host: ozensemble.fabrique.social.gouv.fr

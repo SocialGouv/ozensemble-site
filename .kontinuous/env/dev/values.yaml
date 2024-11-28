@@ -38,3 +38,42 @@ api:
           value: review
         - name: BRANCH_NAME
           value: "{{ .Values.global.branchSlug }}"
+
+deactivate:
+  jobs-deactivate:
+    runs:
+      cleanup-bucket:
+        image: bitnami/rclone:latest
+        run: |
+          rclone purge remote:${BUCKET_NAME}/{{ .Values.global.branchSlug }}
+        checkout: false
+        env:
+          - name: RCLONE_CONFIG_REMOTE_TYPE
+            value: s3
+          - name: RCLONE_CONFIG_REMOTE_PROVIDER
+            value: Other
+          - name: RCLONE_CONFIG_REMOTE_ACCESS_KEY_ID
+            valueFrom:
+              secretKeyRef:
+                name: ozensemble-dev-app-access-key
+                key: bucket_access_key
+          - name: RCLONE_CONFIG_REMOTE_SECRET_ACCESS_KEY
+            valueFrom:
+              secretKeyRef:
+                name: ozensemble-dev-app-access-key
+                key: bucket_secret_key
+          - name: RCLONE_CONFIG_REMOTE_REGION
+            valueFrom:
+              secretKeyRef:
+                name: ozensemble-dev-app-access-key
+                key: bucket_region
+          - name: RCLONE_CONFIG_REMOTE_ENDPOINT
+            valueFrom:
+              secretKeyRef:
+                name: ozensemble-dev-app-access-key
+                key: bucket_endpoint
+          - name: BUCKET_NAME
+            valueFrom:
+              secretKeyRef:
+                name: ozensemble-dev-app-access-key
+                key: bucket_name
