@@ -16,11 +16,6 @@ api:
   imagePackage: api
   probesPath: /_health
   containerPort: "1337"
-  envFrom:
-    - secretRef:
-        name: pg-app
-    - secretRef:
-        name: api
 
   vars:
     DATABASE_HOST: "$(PGHOST)"
