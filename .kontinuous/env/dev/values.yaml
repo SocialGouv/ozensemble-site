@@ -1,6 +1,9 @@
 api:
   vars:
     ENV: review
+  envFrom:
+    - secretRef:
+        name: ozensemble-dev-app-access-key
 
   initContainers:
     - name: import
