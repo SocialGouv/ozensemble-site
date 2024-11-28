@@ -1,6 +1,15 @@
 api:
+  vars:
+    ENV: preprod
   addVolumes:
     - uploads
   volumeMounts:
     - mountPath: /app/public/uploads
       name: uploads
+  envFrom:
+    - secretRef:
+        name: pg-app
+    - secretRef:
+        name: api
+    - secretRef:
+        name: ozensemble-dev-app-access-key

@@ -1,35 +1,29 @@
 api:
-  ~preDeploy.cleaner:
-    match:
-      kind: Deployment
-    value: true
-  volumes:
-    - name: public
-  volumeMounts:
-    - mountPath: /app/public
-      name: public
+  vars:
+    ENV: review
+  envFrom:
+    - secretRef:
+        name: pg-app
+    - secretRef:
+        name: api
+    - secretRef:
+        name: ozensemble-dev-app-access-key
 
-  # Strapi wants to move the entire uploads dir to a backup when you import data
-  # so public cannot be a volume, it must be its parent
-  # see https://github.com/strapi/strapi/issues/17809
   initContainers:
-    - name: import-and-prepare
-      image:
-        "{{ .Values.global.registry }}/{{ .Values.global.projectName }}/{{
+    - name: import
+      image: "{{ .Values.global.registry }}/{{ .Values.global.projectName }}/{{
         .Values.global.imageRepository }}/api:{{ .Values.global.imageTag }}"
       command: ["/bin/sh", "-c"]
       args:
         - |
-          yarn strapi import --force -f seed-data.tar.gz && \
-          cp -r public/. /mnt/public
-      volumeMounts:
-        - name: public
-          mountPath: /mnt/public
+          yarn strapi import --force -f seed-data.tar.gz
       envFrom:
         - secretRef:
             name: pg-app
         - secretRef:
             name: api
+        - secretRef:
+            name: ozensemble-dev-app-access-key
       env:
         - name: DATABASE_HOST
           value: "$(PGHOST)"
@@ -47,3 +41,46 @@ api:
           value: "1337"
         - name: DATABASE_CLIENT
           value: postgres
+        - name: ENV
+          value: review
+        - name: BRANCH_NAME
+          value: "{{ .Values.global.branchSlug }}"
+
+deactivate:
+  jobs-deactivate:
+    runs:
+      cleanup-bucket:
+        image: bitnami/rclone:latest
+        run: |
+          rclone purge remote:${BUCKET_NAME}/{{ .Values.global.branchSlug }}
+        checkout: false
+        env:
+          - name: RCLONE_CONFIG_REMOTE_TYPE
+            value: s3
+          - name: RCLONE_CONFIG_REMOTE_PROVIDER
+            value: Other
+          - name: RCLONE_CONFIG_REMOTE_ACCESS_KEY_ID
+            valueFrom:
+              secretKeyRef:
+                name: ozensemble-dev-app-access-key
+                key: bucket_access_key
+          - name: RCLONE_CONFIG_REMOTE_SECRET_ACCESS_KEY
+            valueFrom:
+              secretKeyRef:
+                name: ozensemble-dev-app-access-key
+                key: bucket_secret_key
+          - name: RCLONE_CONFIG_REMOTE_REGION
+            valueFrom:
+              secretKeyRef:
+                name: ozensemble-dev-app-access-key
+                key: bucket_region
+          - name: RCLONE_CONFIG_REMOTE_ENDPOINT
+            valueFrom:
+              secretKeyRef:
+                name: ozensemble-dev-app-access-key
+                key: bucket_endpoint
+          - name: BUCKET_NAME
+            valueFrom:
+              secretKeyRef:
+                name: ozensemble-dev-app-access-key
+                key: bucket_name

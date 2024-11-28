@@ -16,11 +16,7 @@ api:
   imagePackage: api
   probesPath: /_health
   containerPort: "1337"
-  envFrom:
-    - secretRef:
-        name: pg-app
-    - secretRef:
-        name: api
+
   vars:
     DATABASE_HOST: "$(PGHOST)"
     DATABASE_PORT: "$(PGPORT)"
@@ -30,6 +26,7 @@ api:
     HOST: "0.0.0.0"
     PORT: "1337"
     DATABASE_CLIENT: postgres
+    BRANCH_NAME: "{{ .Values.global.branchSlug }}"
   replicas: 1 # mandatory because volume is RWO
   strategyType: Recreate # idem
   securityContext:
