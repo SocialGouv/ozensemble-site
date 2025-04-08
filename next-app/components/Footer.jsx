@@ -2,14 +2,6 @@
 
 import { useState, useEffect } from "react"
 import { FaPhoneAlt } from "react-icons/fa"
-import {
-  ANDROID_URL,
-  IOS_URL,
-  INSTAGRAM_URL,
-  FACEBOOK_URL,
-  TWITTER_URL,
-  LINKEDIN_URL,
-} from "~/constants"
 import ContactPopup from "./ContactPopup"
 
 export default function Footer() {
@@ -64,8 +56,8 @@ export default function Footer() {
             >
               → Donnez votre avis
             </button> */}
-            <ArrowList text="Comment ça marche ?" link="/#how-it-works" />
-            <ArrowList text="Qui sommes-nous ?" link="/#who-are-we" />
+            <ArrowList text="Comment ça marchait ?" link="/#how-it-works" />
+            <ArrowList text="Qui étions-nous ?" link="/#who-are-we" />
             {/* <ArrowList
               text="Nous contacter ?"
               link="mailto:ozensemble@fabrique.social.gouv.fr"
@@ -105,10 +97,7 @@ export default function Footer() {
               <p>Liens du gouv</p>
               <div className="w-4/5 mt-3 mb-5 border-b border-green-300" />
             </div>
-            <ArrowList
-              text="info.gouv.fr"
-              link="https://www.info.gouv.fr/"
-            />
+            <ArrowList text="info.gouv.fr" link="https://www.info.gouv.fr/" />
             <ArrowList
               text="service-public.fr"
               link="https://www.service-public.fr/"
@@ -117,83 +106,14 @@ export default function Footer() {
               text="legifrance.gouv.fr"
               link="https://www.legifrance.gouv.fr/"
             />
-            <ArrowList
-              text="data.gouv.fr"
-              link="https://www.data.gouv.fr/"
-            />
-
-          </div>
-          <div className="max-w-md col-span-4 mb-8 lg:col-span-3">
-            <div className="inline-block">
-              <p>Téléchargez l'application Oz Ensemble</p>
-              <div className="w-1/4 mt-3 mb-5 border-b border-green-300" />
-            </div>
-            <div className="grid grid-flow-col gap-6 max-w-md">
-              <a href={ANDROID_URL} target="_blank" rel="noopener noreferrer">
-                <img
-                  className="object-contain"
-                  src={`${baseUrl}/images/other/google-play-fr.png`}
-                  alt="Disponible sur Google Play"
-                />
-              </a>
-              <a href={IOS_URL} target="_blank" rel="noopener noreferrer">
-                <img
-                  className="object-contain"
-                  src={`${baseUrl}/images/other/app-store-fr.png`}
-                  alt="Télécharger dans l'App Store"
-                />
-              </a>
-            </div>
-            <div className="inline-block mt-5">
-              <p>Suivez-nous</p>
-              <div className="w-1/4 mt-3 mb-5 border-b border-green-300" />
-            </div>
-            <div className="flex gap-6">
-              <a
-                href={INSTAGRAM_URL}
-                className="transform hover:scale-110 transition-transform"
-              >
-                <img
-                  className="object-contain w-[40px]"
-                  src={`${baseUrl}/images/icon/instagram.svg`}
-                  alt="Vers profil instagram"
-                />
-              </a>
-              <a
-                href={FACEBOOK_URL}
-                className="transform hover:scale-110 transition-transform"
-              >
-                <img
-                  className="object-contain w-[40px]"
-                  src={`${baseUrl}/images/icon/facebook.svg`}
-                  alt="Vers profil facebook"
-                />
-              </a>
-              <a
-                href={TWITTER_URL}
-                className="transform hover:scale-110 transition-transform"
-              >
-                <img
-                  className="object-contain w-[40px]"
-                  src={`${baseUrl}/images/icon/X.svg`}
-                  alt="Vers profil twitter"
-                />
-              </a>
-              <a
-                href={LINKEDIN_URL}
-                className="transform hover:scale-110 transition-transform"
-              >
-                <img
-                  className="object-contain w-[40px] "
-                  src={`${baseUrl}/images/icon/linkedin.svg`}
-                  alt="Vers profil linkedin"
-                />
-              </a>
-            </div>
+            <ArrowList text="data.gouv.fr" link="https://www.data.gouv.fr/" />
           </div>
         </div>
         <div className="text-center mb-4 mx-[10%]">
-          <p>La Fabrique Numérique des Ministères Sociaux © 2024</p>
+          <p>
+            La Fabrique Numérique des Ministères Sociaux ©{" "}
+            {new Date().getFullYear()}
+          </p>
         </div>
       </footer>
     </>

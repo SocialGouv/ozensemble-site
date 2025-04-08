@@ -6,7 +6,7 @@ import { Key} from "react";
 export const metadata = {
   title: "Partenaires | Oz Ensemble",
   description:
-    "Découvrez les partenaires d'Oz Ensemble, une application mobile pour maitriser sa consommation d'alcool.",
+    "Découvrez les partenaires qui ont soutenu Oz Ensemble, une application mobile qui fut dédiée à la maîtrise de la consommation d'alcool.",
 }
 
 async function getPartners() {

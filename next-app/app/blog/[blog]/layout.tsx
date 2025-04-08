@@ -1,5 +1,5 @@
 import React from "react"
-import Navigation, { DownloadPopupStandalone } from "~/components/Navigation"
+import Navigation from "~/components/Navigation"
 import Footer from "~/components/Footer"
 import fs from "fs"
 import path from "path"
@@ -14,22 +14,21 @@ export async function generateMetadata({
 }: {
   params: { blog: string }
 }): Promise<Metadata> {
-  const path = `/articles`;
+  const path = `/articles`
   const urlParamsObject = {
     filters: { slug: params.blog },
-  };
-  const options = {};
-  const post = await fetchAPI(path, urlParamsObject, options);
-  const postAttributes = post.data[0].attributes;
+  }
+  const options = {}
+  const post = await fetchAPI(path, urlParamsObject, options)
+  const postAttributes = post.data[0].attributes
   return {
     title: `${postAttributes.title} | Oz Ensemble`,
     description: postAttributes.description,
-  };
+  }
 }
 export default function BlogLayout({ children }) {
   return (
     <>
-      <DownloadPopupStandalone />
       <Navigation />
       {children}
       <Footer />
@@ -38,11 +37,11 @@ export default function BlogLayout({ children }) {
 }
 
 export async function generateStaticParams() {
-  const path = `/articles`;
+  const path = `/articles`
   const urlParamsObject = {
     fields: ["slug"],
-  };
-  const options = {};
-  const posts = await fetchAPI(path, urlParamsObject, options);
-  return  posts.data.map((post) => ({  blog: post.attributes.slug }));;
+  }
+  const options = {}
+  const posts = await fetchAPI(path, urlParamsObject, options)
+  return posts.data.map((post) => ({ blog: post.attributes.slug }))
 }

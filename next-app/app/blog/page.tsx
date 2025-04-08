@@ -1,5 +1,5 @@
 import React from "react"
-import Navigation, { DownloadPopupStandalone } from "~/components/Navigation"
+import Navigation from "~/components/Navigation"
 import Footer from "~/components/Footer"
 import BlogCard from "~/components/BlogCard"
 import { fetchAPI, getStrapiMedia } from "~/app/api/strapi"
@@ -14,7 +14,6 @@ export default async function Blog() {
 
   return (
     <div className="mt-[70px]">
-      <DownloadPopupStandalone />
       <div className="flex flex-col min-h-screen">
         <Navigation />
         <div className="flex-grow py-16 mx-[10%] sm:mx-20 h-auto">
@@ -29,28 +28,28 @@ export default async function Blog() {
                   (post) => new Date(post.attributes.PublishAt) <= new Date()
                 )
                 .map((post) => {
-                  const postAttributes = post.attributes;
+                  const postAttributes = post.attributes
                   const imageUrl = getStrapiMedia(
                     postAttributes.cover.data.attributes.url
-                  );
+                  )
                   const date = new Date(
                     postAttributes.PublishAt
                   ).toLocaleDateString("fr-FR", {
                     day: "numeric",
                     month: "long",
                     year: "numeric",
-                  });
+                  })
                   return (
-                  <BlogCard
-                    key={post.id}
-                    imageUrl={imageUrl}
-                    title={postAttributes.title}
-                    date={date}
-                    articleUrl={`/blog/${postAttributes.slug}`}
-                    alt={postAttributes.cover.data.attributes.alternativeText}
-                  />
-                )
-              })}
+                    <BlogCard
+                      key={post.id}
+                      imageUrl={imageUrl}
+                      title={postAttributes.title}
+                      date={date}
+                      articleUrl={`/blog/${postAttributes.slug}`}
+                      alt={postAttributes.cover.data.attributes.alternativeText}
+                    />
+                  )
+                })}
             </div>
           </div>
         </div>
@@ -62,7 +61,7 @@ export default async function Blog() {
 
 async function getBlogPosts() {
   try {
-    const path = `/articles`;
+    const path = `/articles`
     const urlParamsObject = {
       populate: {
         autorsBio: {
@@ -72,12 +71,12 @@ async function getBlogPosts() {
         cover: { fields: ["url", "alternativeText"] },
       },
       sort: { PublishAt: "desc" },
-    };
-    const options = {};
-    const responseData = await fetchAPI(path, urlParamsObject, options);
-    return responseData.data;
+    }
+    const options = {}
+    const responseData = await fetchAPI(path, urlParamsObject, options)
+    return responseData.data
   } catch (error) {
-    console.error(error);
-    return [];
+    console.error(error)
+    return []
   }
 }

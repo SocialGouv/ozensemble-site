@@ -1,6 +1,5 @@
 import Footer from "~/components/Footer"
 import Navigation from "~/components/Navigation"
-import { ANDROID_URL, IOS_URL } from "~/constants"
 import Link from "next/link"
 
 export default function Index() {
@@ -11,45 +10,90 @@ export default function Index() {
         <div className="mt-[70px] md:flex pt-20 pb-8 md:pb-32 auto-cols-fr md:w-5/6 xl:w-[1100px] mx-[10%] md:m-auto">
           <div className="w-full md:w-1/2 text-center md:text-left flex items-center">
             <div>
-              <h1 className="mb-2 text-3xl font-bold lg:text-6xl text-oz-blue">
+              <h1 className="mb-2 font-bold text-lg text-oz-blue">
                 Oz Ensemble
               </h1>
-              <p className="mb-5 text-lg  leading-normal lg:leading-9 lg:text-2xl">
-                L'application mobile pour maitriser sa consommation d'alcool
+              <p className="mb-5 text-4xl font-bold">
+                L'application mobile pour maitriser sa consommation d'alcool va
+                s'arrêter de fonctionner début mai 2025.
               </p>
-              <div className="grid grid-flow-col gap-3 sm:gap-6 max-w-sm mb-7 mx-auto md:mx-0">
-                <a
-                  className="!after:hidden"
-                  href={ANDROID_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <img
-                    className="object-contain w-full"
-                    src="images/other/google-play-fr.png"
-                    alt="disponible sur google play"
-                  />
-                </a>
-                <a href={IOS_URL} target="_blank" rel="noopener noreferrer">
-                  <img
-                    className="object-contain w-full"
-                    src="images/other/app-store-fr.png"
-                    alt="télécharger dans l'app store"
-                  />
-                </a>
-              </div>
               <div className="flex flex-col space-y-6 lg:pb-10">
                 <Checklist
-                  title="100% gratuit, 100 % anonyme et sans création de compte"
-                  subtitle="Si vous souhaitez supprimer toutes vos données d’un coup, il vous suffit de désinstaller l’application."
+                  title="N'oubliez pas de sauvegarder vos données"
+                  subtitle="Rendez-vous dans le paramétrage de votre application pour sauvegarder les données de votre historique. Vous pourriez les réutiliser dans une application qui pourrait être compatible avec votre historique. Faites cette étape avant la fermeture du service début mai 2025."
                 />
                 <Checklist
-                  title="Sécurité des données"
-                  subtitle="Je reste propriétaire des données saisies, je les partage uniquement si je le souhaite"
+                  title="Continuez à suivre vos consommations"
+                  subtitle={
+                    <>
+                      Pour votre santé, nous vous conseillons de continuer à
+                      suivre votre consommation. La liste n'est pas exhaustive,
+                      mais vous pourriez utiliser (liste triée par ordre
+                      alphabétique) :
+                      <ul className="list-disc list-inside ml-8">
+                        <li>
+                          <a
+                            className=" inline-flex h-4 items-center font-semibold border-b border-black gap-x-2"
+                            href="https://mydefi.life/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            mydefi
+                            <img
+                              src="images/icon/external-link.svg"
+                              alt="Icone indiquant une redirection, ici vers le site mydefi"
+                              className="w-4"
+                            />
+                          </a>
+                        </li>
+                        <li>
+                          <a
+                            className=" inline-flex h-4 items-center font-semibold border-b border-black gap-x-2"
+                            href="https://option-zero.fr/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            Option Zero
+                            <img
+                              src="images/icon/external-link.svg"
+                              alt="Icone indiquant une redirection, ici vers le site option zero"
+                              className="w-4"
+                            />
+                          </a>
+                        </li>
+                        <li>
+                          <a
+                            className=" inline-flex h-4 items-center font-semibold border-b border-black gap-x-2"
+                            href="https://dryjanuary.fr/lapplication-try-dry/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            Try Dry
+                            <img
+                              src="images/icon/external-link.svg"
+                              alt="Icone indiquant une redirection, ici vers le site try dry"
+                              className="w-4"
+                            />
+                          </a>
+                        </li>
+                      </ul>
+                    </>
+                  }
                 />
                 <Checklist
-                  title="Simple, rapide et intuitive"
-                  subtitle="En quelques secondes par jour, je remplis mon agenda de consommation"
+                  title="Une question?"
+                  subtitle={
+                    <>
+                      Pour toute question, n'hesitez pas à nous contacter à
+                      l'adresse email{" "}
+                      <a
+                        className="underline"
+                        href="mailto:ozensemble@fabrique.social.gouv.fr"
+                      >
+                        ozensemble@fabrique.social.gouv.fr
+                      </a>
+                    </>
+                  }
                 />
               </div>
             </div>
@@ -105,13 +149,13 @@ export default function Index() {
         >
           <div className="w-full mb-6 lg:mb-0 lg:w-5/12">
             <h3 className="mb-8 text-2xl font-bold leading-normal lg:text-4xl text-oz-blue">
-              Oz Ensemble, comment ça marche ?
+              Oz Ensemble, comment ça marchait ?
             </h3>
             <p className="text-base text-black mb-4">
-              Chez Oz Ensemble, l’objectif est de vous redonner la maîtrise de
+              Chez Oz Ensemble, l’objectif était de vous redonner la maîtrise de
               votre consommation d’alcool, tout au long de l’année,{" "}
               <span className="sr-only">
-                Le texte suivant est en gras et de couleur rouge
+                Le texte suivant était en gras et de couleur rouge
               </span>
               <strong className="text-oz-pink mb-4">
                 sans nécessairement promouvoir l’abstinence totale et
@@ -119,10 +163,10 @@ export default function Index() {
               </strong>
             </p>
             <p className="text-base text-black mb-4">
-              Oz Ensemble s’appuie sur les dernières recommandations de la HAS
+              Oz Ensemble s’appuyait sur les dernières recommandations de la HAS
               (Haute Autorité de Santé) qui promeut la{" "}
               <span className="sr-only">
-                Le texte suivant est en gras et de couleur rouge
+                Le texte suivant était en gras et de couleur rouge
               </span>
               <strong className="text-oz-pink ">
                 réduction des risques alcool
@@ -130,36 +174,37 @@ export default function Index() {
               par les acteurs de la prévention et du soin en addictologie.
             </p>
             <p className="text-base text-black">
-              Oz Ensemble enrichie également le{" "}
+              Oz Ensemble enrichissait également le{" "}
               <span className="sr-only">
                 Le texte suivant est en gras et de couleur rouge
               </span>
               <strong className="text-oz-pink">
                 travail de suivi des professionnels
               </strong>{" "}
-              de santé grâce à l’agenda de consommation que le patient pourra
-              vous partager.
+              de santé grâce à l’agenda de consommation que le patient pouvait
+              lui partager.
             </p>
           </div>
           <div className="w-full space-y-6 lg:w-6/12">
-            <Checklist2 content="Évaluez votre situation et le niveau de risque de votre consommation grâce aux tests et bilans." />
-            <Checklist2 content="Ajoutez votre consommation et fixez-vous un objectif ainsi vous pourrez suivre vos économies en euros et calories." />
-            <Checklist2 content="Réalisez des exercices et découvrez des articles de santé afin d’accroître votre motivation à changer vos habitudes de consommation." />
-            <Checklist2 content="Si besoin, vous pouvez prendre un rendez-vous sur Doctolib avec un professionnel de l’addiction de l’équipe Oz Ensemble." />
+            <Checklist2 content="Vous pouviez évaluer votre situation et le niveau de risque de votre consommation grâce aux tests et bilans." />
+            <Checklist2 content="Vous pouviez ajouter votre consommation et fixer vous un objectif ainsi vous pouviez suivre vos économies en euros et calories." />
+            <Checklist2 content="Vous pouviez réaliser des exercices et découvrir des articles de santé afin d’accroître votre motivation à changer vos habitudes de consommation." />
+            <Checklist2 content="Si besoin, vous pouviez prendre un rendez-vous sur Doctolib avec un professionnel de l’addiction de l’équipe Oz Ensemble." />
           </div>
         </div>
 
         <div className="p-10 lg:pt-16 sm:rounded-xl md:rounded-3xl bg-oz-gray sm:mx-20 xl:mx-auto xl:w-[1100px]">
           <h3 className="text-2xl font-bold text-center lg:text-4xl text-oz-blue mb-14">
-            À qui s'adresse Oz Ensemble ?
+            À qui s'adressait Oz Ensemble ?
           </h3>
           <div className="grid grid-cols-1 gap-9 lg:grid-cols-3 text-center">
             <div className="p-5 bg-white rounded-2xl">
               <h4 className="text-oz-pink text-2xl mb-4">Aux usagers</h4>
-              <p>Vous vous interrogez sur votre consommation ?</p>
-              <p>Vous buvez plus de 2 verres par jour ?</p>
+              <p>Vous vous interrogiez sur votre consommation ?</p>
+              <p>Vous buviez plus de 2 verres par jour ?</p>
               <p>
-                Vous désirez apprendre à maitriser votre consommation d’alcool ?
+                Vous désiriez apprendre à maitriser votre consommation d’alcool
+                ?
               </p>
             </div>
             <div className="p-6 bg-white rounded-2xl">
@@ -167,7 +212,7 @@ export default function Index() {
                 Aux professionnels de santé
               </h4>
               <p className="text-base text-black">
-                Vous souhaitez un outil complémentaire pour orienter une
+                Vous souhaitiez un outil complémentaire pour orienter une
                 personne dépendante à l’alcool ? Ainsi qu’accompagner vos
                 patients vers une maitrise de leur consommation ?
               </p>
@@ -177,7 +222,7 @@ export default function Index() {
                 Aux acteurs sociaux
               </h4>
               <p className="text-base text-black">
-                Vous souhaitez aider une personne dépendante à l’alcool et
+                Vous souhaitiez aider une personne dépendante à l’alcool et
                 sensibiliser vos bénéficiaires à maitriser leur consommation ?
               </p>
             </div>
@@ -224,10 +269,10 @@ export default function Index() {
           <div className="mx-[10%] sm:mx-20 md:mx-auto md:w-7/12 lg:w-[750px] ">
             <div className="bottom-9 bg-grey-600">
               <h3 className="text-2xl font-bold text-center lg:text-4xl text-oz-blue">
-                Qui sommes nous ?
+                Qui étions nous ?
               </h3>
               <p className="text-center my-7">
-                OZ Ensemble est un dispositif expérimental créé par le{" "}
+                OZ Ensemble fut un dispositif expérimental créé par le{" "}
                 <a
                   href="https://www.linkedin.com/in/geraldine-talbot-13989b263/"
                   className=" inline-flex h-4 items-center font-semibold border-b border-black "
@@ -425,8 +470,8 @@ export default function Index() {
 
 const Checklist = ({ title, subtitle }) => (
   <div>
-    <h6 className="text-base text-oz-pink">
-      <strong>✓ {title}</strong>
+    <h6>
+      ‼️ <strong className="text-xl text-oz-pink">{title}</strong>
     </h6>
     <p className="text-sm text-black">{subtitle}</p>
   </div>
