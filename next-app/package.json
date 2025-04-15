@@ -15,7 +15,7 @@
     "fs": "^0.0.1-security",
     "fs-extra": "^11.2.0",
     "gray-matter": "^4.0.3",
-    "next": "latest",
+    "next": "^14.2.25",
     "next-compose-plugins": "^2.2.1",
     "next-mdx-remote-client": "^1.0.3",
     "qs": "^6.12.1",
