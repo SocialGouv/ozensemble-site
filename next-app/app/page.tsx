@@ -80,21 +80,6 @@ export default function Index() {
                     </>
                   }
                 />
-                <Checklist
-                  title="Une question?"
-                  subtitle={
-                    <>
-                      Pour toute question, n'hesitez pas à nous contacter à
-                      l'adresse email{" "}
-                      <a
-                        className="underline"
-                        href="mailto:ozensemble@fabrique.social.gouv.fr"
-                      >
-                        ozensemble@fabrique.social.gouv.fr
-                      </a>
-                    </>
-                  }
-                />
               </div>
             </div>
           </div>
