@@ -2,13 +2,11 @@
 
 import { useEffect, useState } from "react"
 import { HiMenu } from "react-icons/hi"
-import ContactPopup from "./ContactPopup"
 import { isMobile } from "react-device-detect"
 
 export default function Navigation() {
   const [showPopup, setShowPopup] = useState(false)
   const [isOpen, setIsOpen] = useState(false)
-  const [showContactPopup, setShowContactPopup] = useState(false)
   const [isMobileDetected, setIsMobileDetected] = useState(false)
 
   useEffect(() => {
@@ -20,11 +18,6 @@ export default function Navigation() {
 
   return (
     <>
-      {/* Popups and overlays on top of the page */}
-      <ContactPopup
-        showPopup={showContactPopup}
-        setShowPopup={setShowContactPopup}
-      />
       <nav className="flex items-center justify-between px-5 bg-white fixed w-full h-[70px] top-0 z-0">
         <div>
           <a className="flex-center" href="/">
@@ -73,7 +66,6 @@ export default function Navigation() {
               target="/partners"
               setIsOpen={setIsOpen}
             />
-            <ContactPopupTrigger setShowPopup={setShowContactPopup} />
           </div>
         </div>
       </nav>
@@ -90,16 +82,3 @@ const Link = ({ name, target = null, setIsOpen }) => (
     {name}
   </a>
 )
-
-const ContactPopupTrigger = ({ setShowPopup }) => {
-  return (
-    <>
-      <button
-        className="text-sm font-bold transition-all text-oz-blue hover:text-oz-green mr-6 cursor-pointer"
-        onClick={() => setShowPopup(true)}
-      >
-        Nous contacter
-      </button>
-    </>
-  )
-}

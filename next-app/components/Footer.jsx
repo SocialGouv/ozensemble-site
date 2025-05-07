@@ -1,11 +1,8 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { FaPhoneAlt } from "react-icons/fa"
-import ContactPopup from "./ContactPopup"
 
 export default function Footer() {
-  const [showContactPopup, setShowContactPopup] = useState(false)
   const [baseUrl, setBaseUrl] = useState("")
 
   useEffect(() => {
@@ -15,31 +12,9 @@ export default function Footer() {
   }, [])
   return (
     <>
-      {/* Popup and overlay on top of the page */}
-      <ContactPopup
-        showPopup={showContactPopup}
-        setShowPopup={setShowContactPopup}
-      />
-
       <footer className="py-10 text-white bg-oz-blue">
         <div className="grid-flow-col gap-5 mx-10 md:mx-15 xl:mx-40 md:grid auto-cols-fr">
           <div className="col-span-4 mb-8">
-            <p>
-              Notre équipe spécialisée en addictologie est présente pour
-              répondre à toutes vos questions.
-            </p>
-            <p className="my-5 text-sm font-light">
-              Du lundi au vendredi de 9h à 13h et de 14h à 18h
-            </p>
-            <a
-              href="tel:+33148571421"
-              className="flex items-center gap-3 p-3 px-6 border border-white rounded-full w-min"
-            >
-              <FaPhoneAlt />
-              <p className="text-sm font-light">
-                01{"\u00A0"}48{"\u00A0"}57{"\u00A0"}14{"\u00A0"}21
-              </p>
-            </a>
           </div>
           <div className="col-span-2 mb-8">
             <div className="inline-block">
@@ -64,12 +39,6 @@ export default function Footer() {
             /> */}
             <ArrowList text="Plan du site" link="/plan" />
             <ArrowList text="Ils parlent de nous" link="/partners" />
-            <button
-              className="block underline text-sm font-light mb-2 cursor-pointer"
-              onClick={() => setShowContactPopup(true)}
-            >
-              → Nous contacter ?
-            </button>
             <ArrowList text="Kit média" link="/#kit-media" />
           </div>
           <div className="col-span-2 mb-8">
