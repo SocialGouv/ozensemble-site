@@ -5823,14 +5823,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"better-sqlite3@npm:8.6.0":
-  version: 8.6.0
-  resolution: "better-sqlite3@npm:8.6.0"
+"better-sqlite3@npm:11.10.0":
+  version: 11.10.0
+  resolution: "better-sqlite3@npm:11.10.0"
   dependencies:
     bindings: "npm:^1.5.0"
     node-gyp: "npm:latest"
     prebuild-install: "npm:^7.1.1"
-  checksum: 10c0/4d5481bd173331c163add61c2fd12577e235d62abb1f72500b3856fd2af70a448a5515a3f12dd48f34bb97cfdf13d200ca81cd2ae16fc55627b96c5b9bd47bb0
+  checksum: 10c0/1fffbf9e5fc9d24847a3ecf09491bceab1c294b46ba41df1c449dc20b6f5c5d9d94ff24becd0b1632ee282bd21278b7fea53a5a6215bb99209ded0ae05eda3b0
   languageName: node
   linkType: hard
 
@@ -11862,7 +11862,7 @@ __metadata:
     "@strapi/plugin-users-permissions": "npm:4.24.0"
     "@strapi/provider-upload-aws-s3": "npm:^5.4.0"
     "@strapi/strapi": "npm:4.24.0"
-    better-sqlite3: "npm:8.6.0"
+    better-sqlite3: "npm:11.10.0"
     pg: "npm:^8.12.0"
     react: "npm:^18.0.0"
     react-dom: "npm:^18.0.0"
@@ -14937,14 +14937,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tslib@npm:^2.0.0, tslib@npm:^2.0.3, tslib@npm:^2.1.0, tslib@npm:^2.4.0, tslib@npm:^2.5.0, tslib@npm:^2.6.0":
-  version: 2.6.2
-  resolution: "tslib@npm:2.6.2"
-  checksum: 10c0/e03a8a4271152c8b26604ed45535954c0a45296e32445b4b87f8a5abdb2421f40b59b4ca437c4346af0f28179780d604094eb64546bee2019d903d01c6c19bdb
-  languageName: node
-  linkType: hard
-
-"tslib@npm:^2.6.2":
+"tslib@npm:^2.0.0, tslib@npm:^2.0.3, tslib@npm:^2.1.0, tslib@npm:^2.4.0, tslib@npm:^2.5.0, tslib@npm:^2.6.0, tslib@npm:^2.6.2":
   version: 2.8.1
   resolution: "tslib@npm:2.8.1"
   checksum: 10c0/9c4759110a19c53f992d9aae23aac5ced636e99887b51b9e61def52611732872ff7668757d4e4c61f19691e36f4da981cd9485e869b4a7408d689f6bf1f14e62
