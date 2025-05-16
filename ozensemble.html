@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oz Ensemble - Fin de l'application</title>
+    <style>
+        /* Styles généraux */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        
+        /* Header et navigation */
+        .oz-header-gradient {
+            background: linear-gradient(135deg, #6e45e2 0%, #88d3ce 100%);
+            padding-bottom: 2rem;
+        }
+        
+        nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 1.25rem;
+            background-color: white;
+            position: fixed;
+            width: 100%;
+            height: 70px;
+            top: 0;
+            z-index: 0;
+            box-sizing: border-box;
+        }
+        
+        .logo {
+            width: 3.5rem;
+        }
+        
+        /* Contenu principal */
+        .header-content {
+            margin-top: 70px;
+            display: flex;
+            padding: 5rem 0 2rem;
+            width: 83.333333%;
+            max-width: 1100px;
+            margin-left: 10%;
+            margin-right: 10%;
+        }
+        
+        @media (min-width: 768px) {
+            .header-content {
+                margin: auto;
+                padding: 5rem 0 8rem;
+            }
+        }
+        
+        .text-content {
+            width: 100%;
+            text-align: center;
+            display: flex;
+            align-items: center;
+        }
+        
+        @media (min-width: 768px) {
+            .text-content {
+                width: 50%;
+                text-align: left;
+            }
+        }
+        
+        .text-container {
+            width: 100%;
+        }
+        
+        .title {
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+            font-size: 1.125rem;
+            color: #1e40af; /* text-oz-blue */
+        }
+        
+        .subtitle {
+            margin-bottom: 1.25rem;
+            font-size: 2.25rem;
+            font-weight: bold;
+        }
+        
+        .text-content p {
+            font-size: 0.875rem;
+            color: black;
+            margin-bottom: 1.5rem;
+        }
+        
+        .image-content {
+            width: 66.666667%;
+            margin: auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding-left: 5%;
+            margin-top: 3.5rem;
+        }
+        
+        @media (min-width: 768px) {
+            .image-content {
+                width: 50%;
+                margin-top: 0;
+            }
+        }
+        
+        .hero-image {
+            max-width: 66.666667%;
+        }
+        
+        @media (min-width: 768px) {
+            .hero-image {
+                max-width: 100%;
+                max-height: 450px;
+            }
+        }
+        
+        @media (min-width: 1024px) {
+            .hero-image {
+                max-height: 600px;
+            }
+        }
+        
+        /* Footer */
+        footer {
+            padding: 2.5rem 0;
+            background-color: #1e40af; /* bg-oz-blue */
+            color: white;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-auto-flow: column;
+            gap: 1.25rem;
+            margin: 0 2.5rem;
+        }
+        
+        @media (min-width: 768px) {
+            .footer-content {
+                margin: 0 3.75rem;
+            }
+        }
+        
+        @media (min-width: 1280px) {
+            .footer-content {
+                margin: 0 10rem;
+            }
+        }
+        
+        .footer-col {
+            margin-bottom: 2rem;
+        }
+        
+        .footer-link {
+            margin-bottom: 0.5rem;
+        }
+        
+        .footer-link a {
+            color: white;
+            text-decoration: underline;
+            font-size: 0.875rem;
+            font-weight: 300;
+        }
+        
+        .copyright {
+            text-align: center;
+            margin-bottom: 1rem;
+            margin-left: 10%;
+            margin-right: 10%;
+        }
+    </style>
+</head>
+<body>
+    <header class="oz-header-gradient">
+        <nav>
+            <div>
+                <a href="#">
+                    <img class="logo" src="https://ozensemble.fabrique.social.gouv.fr/images/logo_oz.png" alt="Logo principal, cliquez pour accéder à l'accueil">
+                </a>
+            </div>
+            <div>
+                <!-- Menu de navigation vide comme demandé -->
+            </div>
+        </nav>
+        
+        <div class="header-content">
+            <div class="text-content">
+                <div class="text-container">
+                    <h2 class="subtitle">Oz Ensemble, fin de l'application</h2>
+                    <div>
+                        <p>
+                            Après cinq années de collaboration avec la Fabrique du numérique des ministères sociaux, l'application Oz Ensemble est arrivée au terme de son parcours. Conçue comme un projet innovant, Oz Ensemble a rempli sa mission d'expérimentation en tant que compagnon numérique pour accompagner la réduction des consommations d'alcool.
+                        </p>
+                        <p>
+                            L'application permettait à chacun d'évaluer sa situation, de se fixer des objectifs personnalisés, et de suivre ses progrès, en autonomie ou avec un accompagnement à distance. Elle s'adressait à toute personne souhaitant questionner ou faire évoluer sa consommation, y compris celles qui n'étaient pas engagées dans un parcours de soins.
+                        </p>
+                        <p>
+                            La Fabrique du numérique ayant pour mission de concevoir et d'expérimenter des outils sans vocation à en assurer la pérennisation, l'application Oz Ensemble a définitivement cessé de fonctionner en mai 2025.
+                        </p>
+                        <p>
+                            Nous remercions chaleureusement toutes les personnes qui ont utilisé ou soutenu ce service au fil des années.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="image-content">
+                <img class="hero-image" src="https://ozensemble.fabrique.social.gouv.fr/images/other/hero.png" alt="3 affichages écrans décoratifs de l'application Oz Ensemble">
+            </div>
+        </div>
+    </header>
+    
+    <main>
+        <!-- Contenu principal vide comme demandé -->
+    </main>
+    
+    <footer>
+        <div class="footer-content">
+            <div class="footer-col" style="grid-column: span 4;"></div>
+            <div class="footer-col" style="grid-column: span 2;">
+                <div class="footer-link">
+                    <a href="https://ozensemble.fabrique.social.gouv.fr/files/26022024-Oz_Ensemble-Mentions_legales_site_V4.pdf">→ Mentions légales</a>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>La Fabrique Numérique des Ministères Sociaux © 2025</p>
+        </div>
+    </footer>
+</body>
+</html>

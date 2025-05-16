@@ -47,25 +47,7 @@ export default function Navigation() {
             // eslint-disable-next-line
             onClick={(e) => e.stopPropagation()}
           >
-            <Link name="Accueil" target="/" setIsOpen={setIsOpen} />
-            <Link
-              name="Comment ça marchait"
-              target="/#how-it-works"
-              setIsOpen={setIsOpen}
-            />
-            {/* <Link
-              name="Nous contacter"
-              target="mailto:ozensemble@fabrique.social.gouv.fr"
-              setIsOpen={setIsOpen}
-              onClick={() => setShowContactPopup(true)}
-            /> */}
-            <Link name="Blog" target="/blog" setIsOpen={setIsOpen} />
-            <Link name="Plan du site" target="/plan" setIsOpen={setIsOpen} />
-            <Link
-              name="Ils parlent de nous"
-              target="/partners"
-              setIsOpen={setIsOpen}
-            />
+            {/* Navigation links removed as requested */}
           </div>
         </div>
       </nav>
