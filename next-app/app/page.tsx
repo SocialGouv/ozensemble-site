@@ -14,16 +14,22 @@ export default function Index() {
               </h2>
               <div className="flex flex-col space-y-6 lg:pb-10">
                 <p className="text-sm text-black">
-                  Après cinq années de collaboration avec la Fabrique du numérique des ministères sociaux, l'application Oz Ensemble est arrivée au terme de son parcours. Conçue comme un projet innovant, Oz Ensemble a rempli sa mission d'expérimentation en tant que compagnon numérique pour accompagner la réduction des consommations d'alcool.
+                  Après cinq années de collaboration avec la Fabrique du Ministère du Travail, de la Santé, des Solidarités et des Familles, l'application Oz Ensemble est arrivée au terme de son parcours. Conçue comme un projet innovant, Oz Ensemble a rempli sa mission d'expérimentation en tant que compagnon numérique pour accompagner la réduction des consommations d'alcool.
                 </p>
                 <p className="text-sm text-black">
                   L'application permettait à chacun d'évaluer sa situation, de se fixer des objectifs personnalisés, et de suivre ses progrès, en autonomie ou avec un accompagnement à distance. Elle s'adressait à toute personne souhaitant questionner ou faire évoluer sa consommation, y compris celles qui n'étaient pas engagées dans un parcours de soins.
                 </p>
                 <p className="text-sm text-black">
-                  La Fabrique du numérique ayant pour mission de concevoir et d'expérimenter des outils sans vocation à en assurer la pérennisation, l'application Oz Ensemble a définitivement cessé de fonctionner en mai 2025.
+                  Faute de financements permettant de prolonger le service au-delà de sa phase d'expérimentation, l'application Oz Ensemble a définitivement cessé de fonctionner en mai 2025.
                 </p>
                 <p className="text-sm text-black">
-                  Nous remercions chaleureusement toutes les personnes qui ont utilisé ou soutenu ce service au fil des années.
+                  Nous remercions chaleureusement toutes les personnes qui ont utilisé ou soutenu ce service au fil des années, ainsi que les partenaires publics qui ont rendu ce projet possible, notamment :
+                </p>
+                <p className="text-sm text-black">
+                  – l'Agence Régionale de Santé Île-de-France,<br />
+                  – la MILDECA (Mission interministérielle de lutte contre les drogues et les conduites addictives),<br />
+                  – la Direction du Numérique du Ministère du Travail, de la Santé, des Solidarités et des Familles,<br />
+                  – et la DINUM (Direction interministérielle du numérique).
                 </p>
               </div>
             </div>

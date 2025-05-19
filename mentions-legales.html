@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Oz Ensemble - Fin de l'application</title>
+    <title>Oz Ensemble - Mentions légales</title>
     <style>
         /* Styles généraux */
         body {
@@ -41,6 +41,7 @@
         .header-content {
             margin-top: 70px;
             display: flex;
+            flex-direction: column;
             padding: 5rem 0 2rem;
             width: 83.333333%;
             max-width: 1100px;
@@ -58,13 +59,10 @@
         .text-content {
             width: 100%;
             text-align: center;
-            display: flex;
-            align-items: center;
         }
         
         @media (min-width: 768px) {
             .text-content {
-                width: 50%;
                 text-align: left;
             }
         }
@@ -92,38 +90,19 @@
             margin-bottom: 1.5rem;
         }
         
-        .image-content {
-            width: 66.666667%;
-            margin: auto;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding-left: 5%;
-            margin-top: 3.5rem;
+        .section-card {
+            background-color: white;
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
         
-        @media (min-width: 768px) {
-            .image-content {
-                width: 50%;
-                margin-top: 0;
-            }
-        }
-        
-        .hero-image {
-            max-width: 66.666667%;
-        }
-        
-        @media (min-width: 768px) {
-            .hero-image {
-                max-width: 100%;
-                max-height: 450px;
-            }
-        }
-        
-        @media (min-width: 1024px) {
-            .hero-image {
-                max-height: 600px;
-            }
+        .section-title {
+            font-size: 1.25rem;
+            font-weight: bold;
+            color: #1e40af;
+            margin-bottom: 1rem;
         }
         
         /* Footer */
@@ -179,7 +158,7 @@
     <header class="oz-header-gradient">
         <nav>
             <div>
-                <a href="#">
+                <a href="/">
                     <img class="logo" src="https://ozensemble.fabrique.social.gouv.fr/images/logo_oz.png" alt="Logo principal, cliquez pour accéder à l'accueil">
                 </a>
             </div>
@@ -191,31 +170,38 @@
         <div class="header-content">
             <div class="text-content">
                 <div class="text-container">
-                    <h2 class="subtitle">Oz Ensemble, fin de l'application</h2>
-                    <div>
+                    <h2 class="subtitle">Mentions légales</h2>
+                    
+                    <div class="section-card">
+                        <h3 class="section-title">Editeur</h3>
                         <p>
-                            Après cinq années de collaboration avec la Fabrique du Ministère du Travail, de la Santé, des Solidarités et des Familles, l'application Oz Ensemble est arrivée au terme de son parcours. Conçue comme un projet innovant, Oz Ensemble a rempli sa mission d'expérimentation en tant que compagnon numérique pour accompagner la réduction des consommations d'alcool.
+                            La Plateforme est éditée par la Fabrique numérique du Ministère du Travail, de la Santé, des Solidarités et des Familles, située : <br>
+                            Tour Highline<br>
+                            8 Rue François Ory<br>
+                            92120 Montrouge<br>
+                            France <br>
+                            Téléphone : 01 44 38 36 02 
                         </p>
+                    </div>
+                    
+                    <div class="section-card">
+                        <h3 class="section-title">Directrice de la publication</h3>
                         <p>
-                            L'application permettait à chacun d'évaluer sa situation, de se fixer des objectifs personnalisés, et de suivre ses progrès, en autonomie ou avec un accompagnement à distance. Elle s'adressait à toute personne souhaitant questionner ou faire évoluer sa consommation, y compris celles qui n'étaient pas engagées dans un parcours de soins.
+                            Madame Anne JEANJEAN, Directrice du numérique Ministère du Travail, de la Santé, des Solidarités et des Familles.
                         </p>
+                    </div>
+                    
+                    <div class="section-card">
+                        <h3 class="section-title">Hébergement du site</h3>
                         <p>
-                            Faute de financements permettant de prolonger le service au-delà de sa phase d'expérimentation, l'application Oz Ensemble a définitivement cessé de fonctionner en mai 2025.
-                        </p>
-                        <p>
-                            Nous remercions chaleureusement toutes les personnes qui ont utilisé ou soutenu ce service au fil des années, ainsi que les partenaires publics qui ont rendu ce projet possible, notamment :
-                        </p>
-                        <p>
-                            – l'Agence Régionale de Santé Île-de-France,<br>
-                            – la MILDECA (Mission interministérielle de lutte contre les drogues et les conduites addictives),<br>
-                            – la Direction du Numérique du Ministère du Travail, de la Santé, des Solidarités et des Familles,<br>
-                            – et la DINUM (Direction interministérielle du numérique).
+                            Cette plateforme est hébergée par : <br>
+                            OVH SAS <br>
+                            2 rue Kellermann <br>
+                            59100 Roubaix <br>
+                            France
                         </p>
                     </div>
                 </div>
-            </div>
-            <div class="image-content">
-                <img class="hero-image" src="https://ozensemble.fabrique.social.gouv.fr/images/other/hero.png" alt="3 affichages écrans décoratifs de l'application Oz Ensemble">
             </div>
         </div>
     </header>

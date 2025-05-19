@@ -20,14 +20,14 @@ export default function Footer() {
           <div className="col-span-2 mb-8">
             <ArrowList
               text="Mentions légales"
-              link="/files/26022024-Oz_Ensemble-Mentions_legales_site_V4.pdf"
+              link="/mentions-legales"
             />
           </div>
           {/* Section Liens du gouv supprimée comme demandé */}
         </div>
         <div className="text-center mb-4 mx-[10%]">
           <p>
-            La Fabrique Numérique des Ministères Sociaux ©{" "}
+            La Fabrique du Ministère du Travail, de la Santé, des Solidarités et des Familles ©{" "}
             {new Date().getFullYear()}
           </p>
         </div>
