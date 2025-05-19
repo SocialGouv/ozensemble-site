@@ -12,11 +12,11 @@ export default function Navigation() {
 
   return (
     <>
-      <nav className="flex items-center justify-between px-5 bg-white fixed w-full h-[70px] top-0 z-0">
+      <nav className="flex items-center justify-between px-5 bg-white fixed w-full h-[120px] top-0 z-0">
         <div>
           <a className="flex-center" href="/">
             <img
-              className="w-20"
+              className="w-40"
               src="/images/logo_mtssf.jpg"
               alt="Logo principal, cliquez pour accéder à l'accueil"
             />

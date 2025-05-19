@@ -6,7 +6,7 @@ export default function MentionsLegales() {
     <>
       <header className="oz-header-gradient">
         <Navigation />
-        <div className="mt-[70px] md:flex pt-20 pb-8 md:pb-32 auto-cols-fr md:w-5/6 xl:w-[1100px] mx-[10%] md:m-auto">
+        <div className="mt-[120px] md:flex pt-20 pb-8 md:pb-32 auto-cols-fr md:w-5/6 xl:w-[1100px] mx-[10%] md:m-auto">
           <div className="w-full text-center md:text-left">
             <div>
               <h2 className="mb-5 text-4xl font-bold">
