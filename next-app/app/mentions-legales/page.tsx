@@ -17,11 +17,11 @@ export default function MentionsLegales() {
                   <h3 className="text-xl font-bold text-oz-blue mb-4">Editeur</h3>
                   <p className="text-sm text-black mb-4">
                     La Plateforme est éditée par la Fabrique numérique du Ministère du Travail, de la Santé, des Solidarités et des Familles, située : <br />
-                    Tour Highline<br />
-                    8 Rue François Ory<br />
-                    92120 Montrouge<br />
-                    France <br />
-                    Téléphone : 01 44 38 36 02 
+                    MINISTERE DU TRAVAIL DE LA SANTE DES SOLIDARITES ET DES FAMILLES <br />
+                    DIRECTION DU NUMERIQUE FABRIQUE NUMERIQUE<br />
+                    14 avenue Duquesne <br />
+                    75350 PARIS 07 SP<br />
+                    Tél : 01 40 56 60 00
                   </p>
                 </div>
 
