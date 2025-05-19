@@ -12,7 +12,7 @@ export default function Navigation() {
 
   return (
     <>
-      <nav className="flex items-center justify-between px-5 bg-white fixed w-full h-[120px] top-0 z-0">
+      <nav className="flex items-center justify-between px-5 bg-white w-full h-[120px] top-0 z-0">
         <div>
           <a className="flex-center" href="/">
             <img
@@ -35,7 +35,7 @@ export default function Navigation() {
           </button>
 
           <div
-            className={`fixed inset-y-0 top-0 right-0 p-4 pl-6 pt-12 md:p-0 lg:justify-end transform shadow-xl md:shadow-none md:transform-none md:w-auto md:relative md:border-0 transition-transform z-0 flex flex-col items-start bg-white space-y-8 md:space-y-0 md:items-center md:flex-row w-72 ${
+            className={`inset-y-0 top-0 right-0 p-4 pl-6 pt-12 md:p-0 lg:justify-end transform shadow-xl md:shadow-none md:transform-none md:w-auto md:relative md:border-0 transition-transform z-0 flex flex-col items-start bg-white space-y-8 md:space-y-0 md:items-center md:flex-row w-72 ${
               isOpen ? "translate-x-0" : "translate-x-full"
             }`}
             // eslint-disable-next-line
