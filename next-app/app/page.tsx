@@ -54,25 +54,3 @@ export default function Index() {
     </>
   )
 }
-
-const Checklist = ({ title, subtitle }) => (
-  <div>
-    <h6>
-      ‼️ <strong className="text-xl text-oz-pink">{title}</strong>
-    </h6>
-    <p className="text-sm text-black">{subtitle}</p>
-  </div>
-)
-
-const Checklist2 = ({ content }) => (
-  <div className="mt-[70px]">
-    <div className="flex p-5 rounded-xl bg-oz-gray">
-      <img
-        className="mr-3 md:mx-7"
-        src="images/icon/check-circle-oz-green.svg"
-        alt="Icone coche turquoise entourée "
-      />
-      <p className="text-base text-black">{content}</p>
-    </div>
-  </div>
-)

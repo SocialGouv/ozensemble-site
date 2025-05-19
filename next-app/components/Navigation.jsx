@@ -2,19 +2,13 @@
 
 import { useEffect, useState } from "react"
 import { HiMenu } from "react-icons/hi"
-import { isMobile } from "react-device-detect"
 
 export default function Navigation() {
-  const [showPopup, setShowPopup] = useState(false)
   const [isOpen, setIsOpen] = useState(false)
-  const [isMobileDetected, setIsMobileDetected] = useState(false)
 
   useEffect(() => {
     document.body.addEventListener("click", () => setIsOpen(false))
   })
-  useEffect(() => {
-    setIsMobileDetected(isMobile)
-  }, [])
 
   return (
     <>
@@ -22,8 +16,8 @@ export default function Navigation() {
         <div>
           <a className="flex-center" href="/">
             <img
-              className="w-14"
-              src="/images/logo_oz.png"
+              className="w-20"
+              src="/images/logo_mtssf.jpg"
               alt="Logo principal, cliquez pour accéder à l'accueil"
             />
           </a>
@@ -54,13 +48,3 @@ export default function Navigation() {
     </>
   )
 }
-
-const Link = ({ name, target = null, setIsOpen }) => (
-  <a
-    className="text-sm font-bold transition-all text-oz-blue hover:text-oz-green mr-6"
-    href={target}
-    onClick={() => setIsOpen(false)}
-  >
-    {name}
-  </a>
-)
