@@ -14,13 +14,13 @@ export default function MentionsLegales() {
               </h2>
               <div className="flex flex-col space-y-6 lg:pb-10">
                 <div className="bg-white rounded-lg p-6 shadow-md">
-                  <h3 className="text-xl font-bold text-oz-blue mb-4">Editeur</h3>
+                  <h3 className="text-xl font-bold text-oz-blue mb-4">Editeur du site</h3>
                   <p className="text-sm text-black mb-4">
-                    La Plateforme est éditée par la Fabrique numérique du Ministère du Travail, de la Santé, des Solidarités et des Familles, située : <br />
-                    MINISTERE DU TRAVAIL DE LA SANTE DES SOLIDARITES ET DES FAMILLES <br />
-                    DIRECTION DU NUMERIQUE FABRIQUE NUMERIQUE<br />
+                    Le site est édité par  : <br />
+                    Direction du numérique <br />
+                    Ministère du Travail, de la Santé, des Solidarités et des Familles située : <br />
                     14 avenue Duquesne <br />
-                    75350 PARIS 07 SP<br />
+                    75350 PARIS 07 SP <br />
                     Tél : 01 40 56 60 00
                   </p>
                 </div>
@@ -33,9 +33,9 @@ export default function MentionsLegales() {
                 </div>
 
                 <div className="bg-white rounded-lg p-6 shadow-md">
-                  <h3 className="text-xl font-bold text-oz-blue mb-4">Hébergement du site</h3>
+                  <h3 className="text-xl font-bold text-oz-blue mb-4">Hébergement</h3>
                   <p className="text-sm text-black mb-4">
-                    Cette plateforme est hébergée par : <br />
+                    Ce site est hébergé par : <br />
                     OVH SAS <br />
                     2 rue Kellermann <br />
                     59100 Roubaix <br />
