@@ -1,9 +1,6 @@
-import Matomo from "~/components/Matomo"
 import "~/style/default.css"
 import { ROOT_URL } from "~/constants"
 import type { Metadata } from "next"
-// import { getHtmlAttributes } from "@codegouvfr/react-dsfr/next-appdir/getHtmlAttributes"
-// import { defaultColorScheme } from "./defaultColorScheme"
 
 export const metadata: Metadata = {
   title: "Oz Ensemble",
@@ -24,13 +21,11 @@ export default function RootLayout({ children }) {
   const lang = "fr"
   return (
     <html
-      //  {...getHtmlAttributes({ defaultColorScheme, lang })} // for dark mode
       data-fr-scheme="light" // we don't want dark mode
       lang={lang}
     >
       <body>
         {children}
-        <Matomo />
       </body>
     </html>
   )
