@@ -53,7 +53,6 @@ jobs:
 
   build-next-app:
     environment: build-review-auto
-    needs: [build-api]
     outputs:
       tags: ${{ steps.meta.outputs.tags }}
     runs-on: ubuntu-latest

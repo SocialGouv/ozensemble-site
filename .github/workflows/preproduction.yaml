@@ -47,7 +47,6 @@ jobs:
 
   build-next-app:
     environment: build-preproduction
-    needs: [build-api]
     outputs:
       tags: ${{ steps.meta.outputs.tags }}
     runs-on: ubuntu-latest
