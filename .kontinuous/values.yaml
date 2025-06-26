@@ -1,6 +1,5 @@
 next-app:
   ~chart: app
-  ~needs: ["build-next-app"]
   imagePackage: next-app
   probesPath: /
   envFrom:
@@ -12,7 +11,7 @@ pg:
 
 api:
   ~chart: app
-  ~needs: ["build-api", "pg"]
+  ~needs: ["pg"]
   imagePackage: api
   probesPath: /_health
   containerPort: "1337"
@@ -31,20 +30,3 @@ api:
   strategyType: Recreate # idem
   securityContext:
     fsGroup: 1000
-
-jobs:
-  runs:
-    build-next-app:
-      use: build
-      ~needs: ["api"]
-      with:
-        context: ./next-app
-        imagePackage: next-app
-        buildArgs:
-          NEXT_PUBLIC_STRAPI_API_URL: "https://api-{{ .Values.global.host}}"
-
-    build-api:
-      use: build
-      with:
-        imagePackage: api
-        context: ./api
