@@ -64,12 +64,6 @@ jobs:
             type=sha,prefix=sha-,format=long,priority=890
             type=raw,value=latest,enable=${{ github.ref == format('refs/heads/{0}', github.event.repository.default_branch) }},priority=200
 
-      - name: Env
-        id: env
-        uses: socialgouv/kontinuous/.github/actions/env@v1
-        with:
-          subdomain: api
-
       - name: 📦 Build and push Docker image for next-app
         uses: socialgouv/workflows/actions/buildkit@v1
         with:
@@ -86,7 +80,7 @@ jobs:
           buildkit-svc-count: ${{ vars.BUILDKIT_SVC_COUNT }}
           buildkit-daemon-address: ${{ vars.BUILDKIT_DAEMON_ADDRESS }}
           build-args: |
-            NEXT_PUBLIC_STRAPI_API_URL=https://${{ steps.env.outputs.subdomain_api }}.ovh.fabrique.social.gouv.fr
+            NEXT_PUBLIC_STRAPI_API_URL=https://api-ozensemble.fabrique.social.gouv.fr
 
   kontinuous:
     needs: [build-api, build-next-app]
