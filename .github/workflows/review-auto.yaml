@@ -54,7 +54,6 @@ jobs:
           cert: ${{ secrets.BUILDKIT_OPERATOR_CERT }}
           key: ${{ secrets.BUILDKIT_OPERATOR_KEY }}
           context: "./api"
-          file: "Dockerfile"
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
           push: true
@@ -109,7 +108,6 @@ jobs:
           cert: ${{ secrets.BUILDKIT_OPERATOR_CERT }}
           key: ${{ secrets.BUILDKIT_OPERATOR_KEY }}
           context: "./next-app"
-          file: "Dockerfile"
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
           build-args: |
